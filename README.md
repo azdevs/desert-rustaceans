@@ -12,6 +12,8 @@ The [Rust book](https://doc.rust-lang.org/book/) which has you playing with code
 
 The [New Rustaceans Podcast](https://newrustacean.com/) to keep your mind in the game even while you're out and about.
 
+Of course [crates.io](https://crates.io) where you get you some crates.
+
 [**more links...**](links.md)
 
 ## Talk Ideas
