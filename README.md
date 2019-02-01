@@ -16,7 +16,7 @@ The [New Rustaceans Podcast](https://newrustacean.com/) to keep your mind in the
 
 ## Talk Ideas
 
-Want to give a talk at our meetup? Want to hear more about a particular topic? Here are some topic ideas to ...
+Want to give a talk at our meetup? Want to hear more about a particular topic? Here are some topic ideas ...
 
 * wasm
 * embedded
