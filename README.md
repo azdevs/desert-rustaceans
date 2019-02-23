@@ -1,4 +1,4 @@
-# [Desert Rustaceans](https://www.meetup.com/Desert-Rustaceans/) [![Join us on Slack](https://img.shields.io/badge/slack-%23rust-red.svg)](https://azwebdevs.org)
+# [Desert Rustaceans](https://www.meetup.com/Desert-Rustaceans/) [![Join us on Slack](https://img.shields.io/badge/slack-%23rust-red.svg)](https://azdevs.org)
 
 Desert Rustaceans is a local Meetup hosted by [@elbow-jason](https://github.com/elbow-jason) and [@jacobrosethal](https://github.com/jacobrosethal). We meet monthly to discuss [Rust](https://www.rust-lang.org), as well as our weekly [booze.rs](https://booze.rs) online/offline study groups. Come learn Rust with us!
 
