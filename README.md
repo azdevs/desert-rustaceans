@@ -1,6 +1,6 @@
 # [Desert Rustaceans](https://www.meetup.com/Desert-Rustaceans/) [![Join us on Slack](https://img.shields.io/badge/slack-%23rust-red.svg)](https://azdevs.org)
 
-Desert Rustaceans is a local Meetup hosted by [@elbow-jason](https://github.com/elbow-jason) and [@jacobrosethal](https://github.com/jacobrosethal). We meet monthly to discuss [Rust](https://www.rust-lang.org), as well as our weekly [booze.rs](https://booze.rs) online/offline study groups. Come learn Rust with us!
+Desert Rustaceans is a local Meetup hosted by [@elbow-jason](https://github.com/elbow-jason) and [@jacobrosenthal](https://github.com/jacobrosenthal). We meet monthly to discuss [Rust](https://www.rust-lang.org), as well as our weekly [booze.rs](https://booze.rs) online/offline study groups. Come learn Rust with us!
 
 This repo serves as a place for us to collect links and other notes from our meetings.
 
@@ -13,8 +13,6 @@ The [Rust book](https://doc.rust-lang.org/book/) which has you playing with code
 The [New Rustaceans Podcast](https://newrustacean.com/) to keep your mind in the game even while you're out and about.
 
 Of course [crates.io](https://crates.io) where you get you some crates.
-
-[**more links...**](links.md)
 
 ## Talk Ideas
 
@@ -35,3 +33,17 @@ Want to give a talk at our meetup? Want to hear more about a particular topic? H
 * Patterns (prelude, alias, that github, unwrap_or_else  match and ?)
 * antipatterns
 * mobile ios android
+
+
+## Building the site locally
+[Install zola](https://www.getzola.org/documentation/getting-started/installation/) then:
+```
+git clone --recursive git@github.com:azdevs/desert-rustaceans.git
+cd desert-rustaceans
+zola build && zola serve
+```
+And you'll see your the url the local server is available at
+
+Check out the rest of the docs on that page. Help always wanted, and were not tied to this theme at all. 
+
+Pushes to master automatically deploy to our github pages via travis
