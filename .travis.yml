@@ -1,4 +1,7 @@
 language: minimal
+branches:
+  only:
+    master
 
 before_script:
   # Download and unzip the zola executable
@@ -11,8 +14,6 @@ script:
 # If you are using a different folder than `public` for the output directory, you will
 # need to change the `zola` command and the `ghp-import` path
 after_success: |
-  [ $TRAVIS_BRANCH = master ] &&
-  [ $TRAVIS_PULL_REQUEST = false ] &&
   zola build &&
   sudo pip install ghp-import &&
   ghp-import -n public &&
