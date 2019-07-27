@@ -14,6 +14,7 @@ script:
 # If you are using a different folder than `public` for the output directory, you will
 # need to change the `zola` command and the `ghp-import` path
 after_success: |
+  cp CNAME public &&
   sudo -H pip install ghp-import &&
   ghp-import -n public &&
   git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
