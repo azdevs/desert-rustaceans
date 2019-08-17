@@ -1,3 +1,4 @@
+# you need to add GH_TOKEN added in Travis https://docs.travis-ci.com/user/deployment/pages/
 language: minimal
 branches:
   only:
@@ -9,12 +10,14 @@ before_script:
   - curl -s -L https://github.com/getzola/zola/releases/download/v0.8.0/zola-v0.8.0-x86_64-unknown-linux-gnu.tar.gz | sudo tar xvzf - -C /usr/local/bin
 
 script:
-  - zola build
+  - zola build && echo 'rust.azdevs.org' > public/CNAME
 
-# If you are using a different folder than `public` for the output directory, you will
-# need to change the `zola` command and the `ghp-import` path
-after_success: |
-  cp CNAME public &&
-  sudo -H pip install ghp-import &&
-  ghp-import -n public &&
-  git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages
+# does .nojekyll for us apparently
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN  
+  local_dir: public
+  keep_history: false
+  on:
+    branch: master
