@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Backend Web Frameworks</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-05-22/#backend-web-overview-via-jacobrosenthal" class="toc-link">Backend Web Overview via @jacobRosenthal</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-05-22/#why-rust-for-backend" class="toc-link">Why Rust for backend:</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-05-22/#what-is-the-backend-space" class="toc-link">What is the backend space</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-05-22/#backend-web-frameworks" class="toc-link">Backend Web Frameworks</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-05-22/#websockets" class="toc-link">Websockets</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-05-22/#meet-rocket-via-mysteriouspants" class="toc-link">Meet Rocket via @mysteriouspants</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-05-22/#why-rocket" class="toc-link">Why rocket</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-05-22/#getting-started" class="toc-link">Getting Started</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-05-22&#x2F;">Backend Web Frameworks</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-05-22</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Theres several production ready frameworks and the Rust working groups are also working on a new player, Tide. Well discuss the ecosystem in general and then well have Christopher Miller talking about his use of rocket.rs and its design decisions vs Tower.</p>
+<p>Well probably keep most front end chat for another (next months?) meetup but maybe a brief digression. So come with your questions and help set the agenda.</p>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h3 id="backend-web-overview-via-jacobrosenthal">Backend Web Overview via <a href="https://github.com/jacobRosenthal">@jacobRosenthal</a></h3>
+<h4 id="why-rust-for-backend">Why Rust for backend:</h4>
+<ul>
+<li>speed and footprint. Certainly huge gains over something like Node or Python. Performs well against c++ and golang but theyre all in the mix. https://www.techempower.com/benchmarks/#section=data-r15&amp;hw=ph&amp;test=plaintext Though frankly not that many of us are deploying load balancers</li>
+<li>presumably because we like Rust and want to write more of it</li>
+</ul>
+<h4 id="what-is-the-backend-space">What is the backend space</h4>
+<ul>
+<li>api servers</li>
+<li>database connectors</li>
+<li>websockets</li>
+<li>much more https://www.arewewebyet.org</li>
+</ul>
+<h4 id="backend-web-frameworks">Backend Web Frameworks</h4>
+<p>The barest tcp server example http://rosettacode.org/wiki/Hello_world/Web_server#Rust like the node few liner from years back http://rosettacode.org/wiki/Hello_world/Web_server#JavaScript/</p>
+<p>what does a web page request even look like? we can talk to that server with a browser obviously.
+we dont need a webbrowser to connect though, we could use already installed telnet to <code>telnet localhost 8080</code>
+and we literally get our Content text sent to us</p>
+<p>but pretty much everyone goes one step up and uses <a href="https://github.com/hyperium/hyper">hyper</a> for a bare minimum server</p>
+<p>Up from that you have full featured platforms (many of which might use hyper themselves) not unlike you might have used in other languages
+Tons of options available to choose from https://github.com/flosse/rust-web-framework-comparison</p>
+<p>The big split is those that are trying to implmenet the (still not shipped) asynchronous networking. Those trying might still be stuck on nightly. Other more stable projects are delaying their implementation until really soon so expect some churn or try to build for the future now. Most of the existing ones use Tokio, a userland library that has been where most async code has lived the past few years.</p>
+<p>Beyond that its a personal choice of syntax (procedural, declaritive). Things like if you're setting up routes with macros decorating functions like <a href="https://rocket.rs/v0.4/guide/overview/#routing">rocket</a>, or calling a function like <a href="https://actix.rs/docs/getting-started/">actix</a></p>
+<p>The rust web-wg is building <a href="https://github.com/rustasync/tide">Tide</a> in order to find and bolster the underlying crates and show idiomatic style especially around the new async and future language features. not sure if they expect that it becomes standard or just teaching tool. IE they want to show how not to use tokio but the underlying core libraries for async.</p>
+<h4 id="websockets">Websockets</h4>
+<p>Ive personally used <a href="https://github.com/housleyjk/ws-rs/">ws-rs</a>
+<code>cargo run --example server</code> and <code>cargo run --example client</code></p>
+<p>But instead of using the client example, we can also test on the command line. I like the pure Rust <a href="https://github.com/vi/websocat">websocat</a> for communicating / testing
+Keep the server running and do
+<code>websocat --linemode-strip-newlines ws://127.0.0.1:3012</code> and you can type and see the results on your server</p>
+<p>Basically youll start with a match statement in the server to detect strings probably (though binary is avialable) where you're just calling a funciton based on the string you get sent and trying to parse params. Well that gets silly fast, so theres a standard for that. <a href="https://www.jsonrpc.org">jsonrpc</a></p>
+<p><a href="https://github.com/paritytech/jsonrpc/tree/master/ws">jsonrpc from paritytech</a> implements it for us in Rust and uses ws-rs under the hood so its a pretty simple switch for I think much cleaner interface. And now you're using a standard so all client that supports jsonrpc (all of them) in whatever language you might want to use on the client side can call your exposed functions with parameters even.
+<code>cargo run --example ws</code> and <code>echo 'say_hello' | websocat -n1 --jsonrpc ws://127.0.0.1:3030</code></p>
+<p>But these patterns are not very async-ey.. want them to spit out a future/ stream instead of spin of an event loop. And you're going to have a thread pool of some kind, manual or something like tokio or core futures. It would be cool for the http and the websocket to share the same thread pool, all in one application. Plus that really helps us tie websocket directly into our web flow, theres no reason these should be seperate, theyre just tcp routes</p>
+<p>I still havent settled on anything myself, but my googling has found these might be better implementations, but I dont think either has jsonrpc:</p>
+<ul>
+<li>https://github.com/snapview/tokio-tungstenite</li>
+<li>https://github.com/websockets-rs/rust-websocket/blob/master/examples/async-server.rs</li>
+</ul>
+<p>Probably most promising, <a href="https://github.com/actix/examples/blob/master/websocket/src/main.rs">actix server</a> has a nice web server and websocket example <code>websocat --linemode-strip-newlines ws://127.0.0.1:8080/ws</code></p>
+<h3 id="meet-rocket-via-mysteriouspants">Meet Rocket via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h3>
+<h4 id="why-rocket">Why rocket</h4>
+<p>I like <a href="https://rocket.rs">Rocket</a> because it focuses heavily on programmer ergonomics with lots of macros. A strong convention-over-configuration pattern makes it easy to get going rapidly. Negatives are, of course, nightly-only compiler support.</p>
+<h4 id="getting-started">Getting Started</h4>
+<ul>
+<li>
+<p>to get templates out of rocket contrib first activate the feature
+<code>toml rocket_contrib = { version = &quot;0.4.1&quot;, features = [&quot;handlebars_templates&quot;] }</code></p>
+</li>
+<li>
+<p>default templates dir is $crate_root/templates</p>
+</li>
+<li>
+<p>requires serde
+<code>toml serde = &quot;1.0.90&quot; serde_derive = &quot;1.0.90&quot;</code></p>
+</li>
+<li>
+<p>you can drive the template using contexts which are serializable to Object (must be a map of thing to thing). these elements are available to your templates</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676ccc;">#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">derive</span><span style="color:#61676c;">(Serialize)]
+</span><span style="color:#fa6e32;">struct </span><span style="color:#399ee6;">TemplateContext </span><span style="color:#61676c;">{
+</span><span style="color:#61676c;">    title</span><span style="color:#61676ccc;">: </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">&#39;static str</span><span style="color:#61676c;">,
+</span><span style="color:#61676c;">    </span><span style="font-style:italic;color:#abb0b6;">// This key tells handlebars which template is the parent.
+</span><span style="color:#61676c;">    parent</span><span style="color:#61676ccc;">: </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">&#39;static str</span><span style="color:#61676c;">,
+</span><span style="color:#61676c;">}
+</span></pre></li>
+<li>
+<p>render using a template</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">fn </span><span style="color:#f29718;">index</span><span style="color:#61676c;">() </span><span style="color:#61676ccc;">-&gt;</span><span style="color:#61676c;"> Template {
+</span><span style="color:#61676c;">Template</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">render(</span><span style="color:#86b300;">&quot;index&quot;</span><span style="color:#61676ccc;">, </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">TemplateContext {
+</span><span style="color:#61676c;">title</span><span style="color:#61676ccc;">: </span><span style="color:#86b300;">&quot;page title&quot;</span><span style="color:#61676ccc;">,
+</span><span style="color:#61676c;">parent</span><span style="color:#61676ccc;">: </span><span style="color:#86b300;">&quot;layouts/base&quot;
+</span><span style="color:#61676c;">})
+</span><span style="color:#61676c;">}
+</span></pre>
+<p>the parent is used to pick the layout - this is totally by convention and can be omitted for pages that aren't laid out</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">
+</span></pre></li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-04-24&#x2F;">‹ Options or Results and_then Combinators</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-07-24&#x2F;">Cross Compiling Rust to Your Pi ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/cli/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines</title>
+                <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-08-26/</link>
+                <guid>https%3A//rust.azdevs.org/2020-08-26/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Serving PyTorch Predictions with Rocket via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Extending a File Renaming CLI Tool via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zanayr&#x2F;&quot;&gt;@RyanFickenscher&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Boa JavaScript Lexer, Parser, Compiler built with Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zanayr&#x2F;&quot;&gt;@RyanFickenscher&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Rust on PyGamer Updates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Smol Async Example via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Caveat on Using rust-analyzer in VSCode&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Lightning Talks</title>
+                <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-06-24/</link>
+                <guid>https%3A//rust.azdevs.org/2020-06-24/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mandelbrot Plotter in Python and WASM via &lt;a href=&quot;https:&#x2F;&#x2F;hoetker.engineer&#x2F;&quot;&gt;@AndrewHoetker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Loading Binary Data for Might and Magic via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;OAuth Authentication and Authorization in twentyfive-stars via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;CLI Tools You Should Know&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>uf2 Binary Serialization and Cargo Subcommands</title>
+                <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-10-24/</link>
+                <guid>https%3A//rust.azdevs.org/2019-10-24/</guid>
+                <description>&lt;p&gt;Topics Included:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Binary serialization for bootloader protocols.&lt;&#x2F;li&gt;
+&lt;li&gt;Rust and WASM in a Chrome extension&lt;&#x2F;li&gt;
+&lt;li&gt;Elixer and Rust and OpenCL&lt;&#x2F;li&gt;
+&lt;li&gt;Command line argument processing&lt;&#x2F;li&gt;
+&lt;li&gt;Handy tools like clippy, cargo-expand, cargo&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

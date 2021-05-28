@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Lightning Talks</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-06-24/#mandelbrot-plotter-in-python-and-wasm-via-andrewhoetker" class="toc-link">Mandelbrot Plotter in Python and WASM via @AndrewHoetker</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-06-24/#loading-binary-data-for-might-and-magic-via-mysteriouspants" class="toc-link">Loading Binary Data for Might and Magic via @mysteriouspants</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-06-24/#oauth-authentication-and-authorization-in-twentyfive-stars-via-blainebublitz" class="toc-link">OAuth Authentication and Authorization in twentyfive-stars via @BlaineBublitz</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-06-24/#search-indexers-and-processing-large-amounts-of-data-via-eliogrieco" class="toc-link">Search Indexers and Processing Large Amounts of Data via @ElioGrieco</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-06-24/#cli-tools-you-should-know" class="toc-link">CLI Tools You Should Know</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#cargo-tree" class="toc-link">Cargo Tree</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#choose" class="toc-link">Choose</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#exa" class="toc-link">Exa</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#diskus" class="toc-link">Diskus</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#ripgrep" class="toc-link">Ripgrep</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#fd" class="toc-link">Fd</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#bat" class="toc-link">Bat</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#broot" class="toc-link">Broot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-06-24/#hunter" class="toc-link">Hunter</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-06-24/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-06-24&#x2F;">Lightning Talks</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-06-24</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Mandelbrot Plotter in Python and WASM via <a href="https://hoetker.engineer/">@AndrewHoetker</a></li>
+<li>Loading Binary Data for Might and Magic via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>OAuth Authentication and Authorization in twentyfive-stars via <a href="https://github.com/phated">@BlaineBublitz</a></li>
+<li>CLI Tools You Should Know</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="mandelbrot-plotter-in-python-and-wasm-via-andrewhoetker">Mandelbrot Plotter in Python and WASM via <a href="https://hoetker.engineer/">@AndrewHoetker</a></h1>
+<p>Presentation Slides: <a href="https://ahoetker.github.io/mandelbrot-presentation/#/">https://ahoetker.github.io/mandelbrot-presentation/#/</a></p>
+<p>Python Package Repo: <a href="https://github.com/ahoetker/mandelbrot-rs">https://github.com/ahoetker/mandelbrot-rs</a></p>
+<p>WASM Repo: <a href="https://github.com/ahoetker/mandelbrot-wasm">https://github.com/ahoetker/mandelbrot-wasm</a></p>
+<p>Mandelbrot Common Repo: <a href="https://github.com/ahoetker/mandelbrot">https://github.com/ahoetker/mandelbrot</a></p>
+<p>Andrew presented on Rust's portability by creating a crate for visualizing the Mandelbrot set and consuming it in WASM and Python packages.</p>
+<p>For the Python package, he used <a href="https://crates.io/crates/pyo3">pyo3</a> to generate a native Python module. He then used the module in a Jupyter notebook simply with:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">from matplotlib import pyplot as plt
+from mandelbrot_rs import generate
+
+image = generate(n=1000, threshold=4, max_steps=50)
+plt.imshow(image, cmap=&quot;Spectral&quot;)
+plt.axis(&quot;off&quot;)
+plt.show()
+</span></pre>
+<p>Behind the simplicity of this code is Rust's performance and thread-safety without the need for Python's GIL (Global Interpreter Lock).</p>
+<p>For the WASM package, he used <a href="https://github.com/rustwasm/wasm-bindgen">wasm-bindgen</a> to create the package. Andrew demonstrated using the power of using <code>CanvasRenderingContext2d</code>, <code>HtmlCanvasElement</code>, and <code>ImageData</code> from <code>websys</code> to allow the Rust-built WASM code to manipulate an HTML Canvas element directly without crossing the FFI (Foreign Function Interface) boundary.</p>
+<h1 id="loading-binary-data-for-might-and-magic-via-mysteriouspants">Loading Binary Data for Might and Magic via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<p>Chris showed his hobby project for taking data from an old Might and Magic game and loading it into a struct. He was inspired by a crazy Russian dude who did the same thing using Turbo Pascal. While working on the project, he found that Rust's error system helped force him to handle failures and be mindful of where they occurred in the callstack. Compare this to Exceptions in Java which rocket through the callstack. However there are a lot of error crates to choose from.</p>
+<p>Andrew recommended using <a href="https://crates.io/crates/anyhow">anyhow</a> for binary projects and <a href="https://crates.io/crates/thiserror">thiserror</a> in library projects. With anyhow, you can use an <code>anyhow::Result</code> to propagate errors up through all your functions up to where you need to handle it and then match on the error type in one place. Thiserror is kind of like the opposite of anyhow, it provides a convenient derive macro for the <code>std::error::Error</code> trait.</p>
+<h1 id="oauth-authentication-and-authorization-in-twentyfive-stars-via-blainebublitz">OAuth Authentication and Authorization in twentyfive-stars via <a href="https://github.com/phated">@BlaineBublitz</a></h1>
+<p>Repo: <a href="https://github.com/phated/twentyfive-stars">https://github.com/phated/twentyfive-stars</a></p>
+<p>Blaine added authentication and authorization to his GraphQL server. He wanted his solution to be async, implemented as vanilla as possible. He discovered that it is hard to do async Rust while avoiding the tokio ecosystem. One solution is to fork a bunch of libraries. However, using smol your code can be written to adapt to <a href="https://crates.io/crates/async-std">async-std</a> or <a href="https://crates.io/crates/tokio">tokio</a>. Just wrap your async blocks with <code>smol::run</code>. <strong>Do not use</strong> <code>smol::block_on</code> as it turns your async operation into a blocking operation which slows it down.</p>
+<p>The question arose: why not tokio? The answer is simply because the ecosystem Blaine choose initially used async-std (he picked <a href="https://crates.io/crates/tide">tide</a> as an HTTP server). So he was locked in. Historically, tokio was built at a time when async Rust was still in development (for years). The tokio team did what they needed to do to make things work. Later on, we had async-std which made some improvements, to which tokio added those improvements and made some of their own. The async Rust world bifricated leading to two different ecosystems. We shouldn't have to buy into one or the other. This is the problem that <a href="https://crates.io/crates/smol">smol</a> intends to solve (see <a href="https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html">blog post</a>). Blaine notes that Tide now adopted smal as its async runtime.</p>
+<p>He ended up forking the <a href="https://crates.io/crates/oauth2">oauth2</a> crate so that he could make it async and remove the <a href="https://crates.io/crates/reqwest">reqwest</a> dependency that it ships with (which again depends on tokio). It would be better if reqwest didn't wind up in the binary. If your library (oauth2 in this case) needs to make network requests, accept a client instead of forcing one on your consumer.</p>
+<p>Finally, Blaine demonstrated using <code>field(guard())</code> macros for locking down mutations:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">pub struct PermissionGuard {
+    pub permission: Permission,
+}
+
+#[async_trait::async_trait]
+impl Guard for PermissionGuard {
+    async fn check(&amp;self, ctx: &amp;Context&lt;&#39;_&gt;) -&gt; FieldResult&lt;()&gt; {
+        let maybe_user = ctx.data_opt::&lt;User&gt;();
+        if let Some(user) = maybe_user {
+            if user.has_permission(&amp;self.permission) {
+                Ok(())
+            } else {
+                Err(&quot;Invalid permissions&quot;.into())
+            }
+        } else {
+            Err(&quot;Must be authenticated&quot;.into())
+        }
+    }
+}
+</span></pre>
+<p>And used in the mutation:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">#[field(guard(PermissionGuard(permission = &quot;Permission::CreateWaves&quot;)))]
+pub async fn add_wave(&amp;self, ctx: &amp;Context&lt;&#39;_&gt;, wave: WaveInput) -&gt; FieldResult&lt;Wave&gt; { ... }
+</span></pre><h1 id="search-indexers-and-processing-large-amounts-of-data-via-eliogrieco">Search Indexers and Processing Large Amounts of Data via <a href="http://www.eliogrieco.com/">@ElioGrieco</a></h1>
+<p>Elio is interested in search indexers and tools for processing large amounts of unstructured data. His adventures have turned up the following libraries and projects.</p>
+<ul>
+<li>
+<p><a href="https://crates.io/crates/linkify">linkify</a> is a library for finding links in plain-text.</p>
+</li>
+<li>
+<p><a href="https://crates.io/crates/sonic-server">sonic-server</a> is a fast, lightweight, schema-less search backend</p>
+</li>
+<li>
+<p><a href="https://crates.io/crates/indradb">indradb</a> is a graph database implemented with Rust.</p>
+</li>
+</ul>
+<h1 id="cli-tools-you-should-know">CLI Tools You Should Know</h1>
+<blockquote>
+<p>&quot;Because the differences between bsd and gnu find weren't enough, now we have rust utils.&quot;</p>
+</blockquote>
+<ul>
+<li>Mysterious Pants</li>
+</ul>
+<h2 id="cargo-tree">Cargo Tree</h2>
+<p><code>cargo tree</code> is included in Cargo as of v1.44.0. If you're running an older version, update with <code>rustup update</code>. Cargo tree lets you visualize a crate's dependency graph in a tree-like format</p>
+<h2 id="choose">Choose</h2>
+<p><a href="https://github.com/theryangeary/choose">choose</a> is a Rust-implementation of <code>cut</code> (and sometimes <code>awk</code>). It features negative indexing, reverse ranges, regular expression field separators, and has faster performance than <code>awk</code>.</p>
+<h2 id="exa">Exa</h2>
+<p><a href="https://github.com/ogham/exa">exa</a> is a Rust implementation of <code>ls</code>. It includes such features as colorized output, Git awareneness, and tons of options for display and filtering.</p>
+<h2 id="diskus">Diskus</h2>
+<p><a href="https://github.com/sharkdp/diskus">diskus</a> is a minimal fast, Rust implementation of <code>du -sh</code>. According to the <a href="https://github.com/sharkdp/diskus#benchmark">benchmarks</a>, it's anywhere from 2x to 10x faster.</p>
+<h2 id="ripgrep">Ripgrep</h2>
+<p><a href="https://github.com/sharkdp/ripgrep">ripgrep</a> is a line-oriented search tool that recursively searches your current directory for a regex pattern while respecting your gitignore rules.</p>
+<h2 id="fd">Fd</h2>
+<p><a href="https://github.com/sharkdp/fd">fd</a> is a simple, fast, user-friendly Rust implementation of <code>find</code>. It includes such features as colorized output, ignoring .gitignore patterns, unicode-awareness, and more.</p>
+<h2 id="bat">Bat</h2>
+<p><a href="https://github.com/sharkdp/bat">bat</a> is <code>cat</code> with wings. It includes such features as syntax highlighting, git integration, showing non-printable characters, automatic paging, file concatenation, and more.</p>
+<h2 id="broot">Broot</h2>
+<p><a href="https://github.com/Canop/broot">broot</a> is a CLI File Commander of sorts. It features compact directory overviews, file manipulation, and quick change-directory, and more.</p>
+<h2 id="hunter">Hunter</h2>
+<p><a href="https://github.com/rabite0/hunter">hunter</a> is a similar tool to <code>broot</code>. It features quick actions based on file type, multi-file selection, a minibuffer with completion and file/directory/tab substitution, and more.</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/ndarray">ndarray</a>: n-dimensional container for general elements and numerics. Akin to Python's numpy</li>
+<li><a href="https://crates.io/crates/anyhow">anyhow</a>: a trait object based error type for easy idiomatic error handling in Rust applications</li>
+<li><a href="https://crates.io/crates/thiserror">thiserror</a>: provides a convenient derive macro for the <code>std::error::Error</code> trait</li>
+<li><a href="https://crates.io/crates/linkify">linkify</a>: a library for finding links in plain-text</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;wasm&#x2F;">#WASM</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;math&#x2F;">#Math</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;cli&#x2F;">#CLI</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-05-27&#x2F;">‹ sqlx and WASM in React</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-07-29&#x2F;">Discord Bots, Digital Signal Processing, and TensorFlow Lite ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

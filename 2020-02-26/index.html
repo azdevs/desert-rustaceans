@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Embedded and Performance</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#recognizing-hand-drawn-numbers-on-pygamer-via-danielpbank" class="toc-link">Recognizing &quot;Hand-Drawn&quot; Numbers on PyGamer via @DanielPBank</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#intro-to-embedded-via-craig-jbishop" class="toc-link">Intro to Embedded via @craig_jbishop</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#more-rust-embedded-via-jacobrosenthal" class="toc-link">More Rust Embedded via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#a-crate-you-should-know-via-philgebhardt" class="toc-link">A Crate You Should Know via @PhilGebhardt</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#how-to-write-fast-rust-code-via-christophersebastian" class="toc-link">How To Write Fast Rust Code via @ChristopherSebastian</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#miscellaneous" class="toc-link">Miscellaneous</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-02-26/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-02-26&#x2F;">Embedded and Performance</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-02-26</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Intro to Embedded via <a href="https://github.com/craigjb">@craig_jbishop</a></li>
+<li>More Rust Embedded via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+<li>How To Write Fast Rust Code via <a href="https://github.com/likebike">@ChristopherSebastian</a></li>
+<li>Recognizing &quot;Hand-Drawn&quot; Numbers on PyGamer via <a href="https://github.com/danielbank">@DanielPBank</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="recognizing-hand-drawn-numbers-on-pygamer-via-danielpbank">Recognizing &quot;Hand-Drawn&quot; Numbers on PyGamer via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
+<p>I'm working on making an example app for the PyGamer which allows the user to draw numbers and the app infers what number is drawn. I want to use a model that was trained on the <a href="http://yann.lecun.com/exdb/mnist/">MNIST dataset</a>, load it in the app, and use it to run inference. I found a crate called <a href="https://rust.azdevs.org/2020-02-26/">tch</a>, which is Rust bindings for the <a href="https://pytorch.org/cppdocs/">PyTorch C++ API</a>. There is some <a href="https://github.com/LaurentMazare/tch-rs/issues/50">example code</a> in a GitHub Issue for saving / loading models. Now I just need to build it for an embedded system. Is it possible? I can add the <code>#![no_std]</code> pragma and it still builds. When I add the <code>#![no_main]</code> pragma, the build fails with an error:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">error: linking with `cc` failed: exit code: 1
+  |
+  ...
+  = note: ld: entry point (_main) undefined. for architecture x86_64
+          clang: error: linker command failed with exit code 1 (use -v to see invocation)
+</span></pre>
+<p>It may be possible to build this for an embedded system, but I need to inspect the source code thoroughly for things like usage of Vec or HashMap (or any kind of std::collections).</p>
+<p>Jacob mentioned that he was working on a <a href="https://github.com/jacobrosenthal/tensorflow-lite-sys">tensorflow-lite-sys</a>, Rust bindings of the TensorFlow Lite for Microcontrollers. This would support embedded systems and may be an easier avenue to go.</p>
+<h1 id="intro-to-embedded-via-craig-jbishop">Intro to Embedded via <a href="https://github.com/craigjb">@craig_jbishop</a></h1>
+<p>Craig takes us through an <a href="https://craigjb.com/2019/12/31/stm32l0-rust/">Intro to Embedded Rust</a>. Some highlights:</p>
+<ul>
+<li>
+<p>The various layers of the Rust embedded ecosystem: low-level cortex-m support, minimal cortex-m startup and runtime (cortex-m-rt), panic handlers, peripheral access crates (PACs), hardware access layers (HALs), peripheral and device drivers, board support crates, real time operating systems (RTOS), and finally application code.</p>
+</li>
+<li>
+<p>The benefits of owning and using a debugger over using the bootloader mode.</p>
+</li>
+<li>
+<p>Automating task running with a Makefile.toml and <a href="https://github.com/sagiegurari/cargo-make">cargo-make</a></p>
+</li>
+</ul>
+<h1 id="more-rust-embedded-via-jacobrosenthal">More Rust Embedded via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Jacob expands upon Craig's talk with a few more points:</p>
+<ul>
+<li>
+<p><a href="https://github.com/rust-embedded/cortex-m-quickstart/">cortex-m-quickstart</a>, a template for building apps for ARM Cortex-M microcontrollers</p>
+</li>
+<li>
+<p>Using <a href="https://github.com/dtolnay/cargo-expand">cargo-expand</a> to expand the macro code of a Hello World Rust application (the app template resulting from running <code>cargo new foo</code>). There is still a lot of underlying code that depends on std libraries, none of which will work in an embedded application.</p>
+</li>
+</ul>
+<h1 id="a-crate-you-should-know-via-philgebhardt">A Crate You Should Know via <a href="https://github.com/philgebhardt">@PhilGebhardt</a></h1>
+<p>Phil talks about <a href="https://crates.io/crates/clap">clap</a>, a crate for doing command-line argument parsing. Jacob adds as an addendum the <a href="https://crates.io/crates/structopt">structopt</a> crate, which is built on clap and uses derived macros.</p>
+<h1 id="how-to-write-fast-rust-code-via-christophersebastian">How To Write Fast Rust Code via <a href="https://github.com/likebike">@ChristopherSebastian</a></h1>
+<p>Christopher shows off his <a href="https://crates.io/crates/fasteval">extremely fast crate for evaluating algebraic expressions</a> and explains some of the techniques he used to make it fast. He wrote <a href="http://likebike.com/posts/How_To_Write_Fast_Rust_Code.html">a blog post about writing fast rust code</a> and goes through the points, such as taking noise-free measurements, profiling with <code>perf</code>, compiling with <code>RUSTFLAGS=&quot;--emit=asm&quot;</code>, and reducing redundant computations.</p>
+<h1 id="miscellaneous">Miscellaneous</h1>
+<ul>
+<li>
+<p>Some Rust buzz related to <a href="https://fuchsia.dev/">Fuschia</a>, Google's New OS: <a href="https://fuchsia.googlesource.com/fuchsia/+/refs/heads/master/docs/project/policy/programming_languages.md#Rust">Rust is approved for use throughout the Fuchsia Platform Source Tree</a></p>
+</li>
+<li>
+<p><a href="https://www.gremlin.com/">Gremlin</a>, Failure as a Service. This company is using Rust. Woot!</p>
+</li>
+</ul>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/fasteval">fasteval</a>: Fast and safe evaluation of algebraic expressions</li>
+<li><a href="https://crates.io/crates/flamegraph">flamegraph</a>: A simple cargo subcommand for generating flamegraphs, using inferno under the hood</li>
+<li><a href="https://crates.io/crates/tch">tch</a>: Rust wrappers for the PyTorch C++ api (libtorch)</li>
+<li><a href="https://crates.io/crates/structopt">structopt</a>: Parse command line argument by defining a struct</li>
+<li><a href="https://crates.io/crates/clap">clap</a>: A simple to use, efficient, and full-featured Command Line Argument Parser</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;embedded&#x2F;">#Embedded</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;performance&#x2F;">#Performance</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-01-22&#x2F;">‹ Lightning Talks</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-04-29&#x2F;">GraphQL and OAuth ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

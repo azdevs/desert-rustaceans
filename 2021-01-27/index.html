@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Rebuilding a Rocket Server with Actix and Other Projects</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-01-27/#rebuilding-a-rocket-server-with-actix-via-mysteriouspants" class="toc-link">Rebuilding a Rocket Server with Actix via @mysteriouspants</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#farewell-rocket-hello-actix" class="toc-link">Farewell Rocket, Hello Actix</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#routing" class="toc-link">Routing</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#error-handling" class="toc-link">Error Handling</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#magical-destructuring-of-a-web-path" class="toc-link">Magical Destructuring of a Web Path</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#using-the-tera-templating-engine" class="toc-link">Using the Tera Templating Engine</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-01-27/#dark-forest-tweeter-via-jacobrosenthal" class="toc-link">Dark Forest Tweeter via @jacobrosenthal</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#simple-polling-of-events" class="toc-link">Simple Polling of Events</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#shared-state-across-threads" class="toc-link">Shared State Across Threads</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-01-27/#pulling-data-from-the-dark-forest-graph" class="toc-link">Pulling Data from the Dark Forest Graph</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-01-27/#thinking-about-mobile-development-with-rust-via-danielpbank" class="toc-link">Thinking about Mobile Development with Rust via @DanielPBank</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-01-27/#rant-about-the-state-of-rust-web-frameworks-via-christophersebastian" class="toc-link">Rant about the State of Rust Web Frameworks via @ChristopherSebastian</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-01-27/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-01-27&#x2F;">Rebuilding a Rocket Server with Actix and Other Projects</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-01-27</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Rebuilding a Rocket Server with Actix via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>Dark Forest Tweeter via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+<li>Thinking about Mobile Development with Rust via <a href="https://github.com/danielbank">@DanielPBank</a></li>
+<li>Rant about the State of Rust Web Frameworks via <a href="https://github.com/likebike">@ChristopherSebastian</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="rebuilding-a-rocket-server-with-actix-via-mysteriouspants">Rebuilding a Rocket Server with Actix via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<p>Repo: <a href="https://github.com/idevgames/idevgames.com">https://github.com/idevgames/idevgames.com</a></p>
+<h2 id="farewell-rocket-hello-actix">Farewell Rocket, Hello Actix</h2>
+<p>Chris is trying <a href="https://actix.rs/">Actix</a> because <a href="https://rocket.rs/">Rocket</a> has been rather irritating him. It boils down to some of the boilerplate that Rocket has when you start to do nontrivial things. For example, in Rocket to return a result of a handler, you do something that can give an <code>Outcome</code>. This can be a <code>Template</code> or a <code>Redirect</code> - but critically they're two different types. So if you want &quot;a redirect to the login page, or the page template itself, or an error page if the database has gone on holiday&quot; you end up with some abomination of a return type like <code>Result&lt;Template, Result&lt;Redirect, MyError&gt;&gt;</code> and then your handler code gets really messy converting into that.</p>
+<p>The thing that drew Chris to want to try Actix is that its Actix-Web return type is a plain <code>HttpResponse</code> which has some builder methods to construct what you actually want - e.g. <code>HttpResponse::Ok().content_type(&quot;text/html&quot;).body(&quot;&lt;!doctype html&gt;...&quot;)</code></p>
+<p>While it looks wordier it makes that initial decision between <code>Template</code> and <code>Redirect</code> much easier, since the redirect case turns into <code>HttpResponse::Unauthorized().header(&quot;Location&quot;, &quot;/login&quot;)</code> or some such.</p>
+<p>This is kind of counter to Chris's first reaction, that the more granular types in Rocket were better, where after some thunking around and writing all too much boilerplate it seems that the more general types in Actix look to be a better fit for purpose.</p>
+<h2 id="routing">Routing</h2>
+<p>One difference between Rocket and Actix is how they handle routing. With Rocket, <a href="https://github.com/idevgames/uDevGames.com/blob/mainline/src/serve.rs#L40">routing happens on your handlers</a>. With Actix, <a href="https://github.com/idevgames/idevgames.com/blob/mainline/src/cli/serve.rs#L34">routing happens when you actually connect controllers</a>.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>Chris used <a href="https://crates.io/crates/thiserror">thiserror</a> to convert the different types of errors that could occur in the wild into a <a href="https://github.com/idevgames/idevgames.com/blob/mainline/src/controllers/mod.rs#L20"><code>HandlerError</code></a> which can produce an HTTP error code.</p>
+<h2 id="magical-destructuring-of-a-web-path">Magical Destructuring of a Web Path</h2>
+<p>One interesting point was how Actix was able to destructure a <code>snippet_id</code> from a parameterized tuple of <code>web::Path()</code> in the <a href="https://github.com/idevgames/idevgames.com/blob/mainline/src/controllers/snippets.rs#L192">controller logic</a>.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">// GET /snippets/{taxonomy}/{snippet_id}/edit form for editing an existing snippet
+pub async fn edit(
+    ctxt: web::Data&lt;ApplicationContext&gt;,
+    session: Session,
+    web::Path((taxonomy, snippet_id)): web::Path&lt;(String, i32)&gt;,
+) -&gt; Result&lt;HttpResponse, super::HandlerError&gt; {
+    ...
+}
+</span></pre>
+<p>We verified that it is not type-checking as the following also works without compiler errors:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">// GET /snippets/{taxonomy}/{snippet_id}/edit form for editing an existing snippet
+pub async fn edit(
+    ctxt: web::Data&lt;ApplicationContext&gt;,
+    session: Session,
+    web::Path(taxonomy): web::Path&lt;String&gt;,
+) -&gt; Result&lt;HttpResponse, super::HandlerError&gt; {
+    ...
+}
+</span></pre><h2 id="using-the-tera-templating-engine">Using the Tera Templating Engine</h2>
+<p>Previously, Chris was using Zola for a templating engine, but he didn't like that it required a code change every time he wanted to update the site. He changed to <a href="https://github.com/Keats/tera">Tera</a> which is inspired by Jinja2 and the Django templating engine from Python. He also likes <a href="https://github.com/Stebalien/horrorshow-rs">horrorshow</a>, which uses a macro-based approach.</p>
+<h1 id="dark-forest-tweeter-via-jacobrosenthal">Dark Forest Tweeter via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Repo: <a href="https://github.com/jacobrosenthal/sophon_tweets">https://github.com/jacobrosenthal/sophon_tweets</a></p>
+<p>Jacob shared more details of his Sophon Tweeter project.</p>
+<h2 id="simple-polling-of-events">Simple Polling of Events</h2>
+<p>It uses the same pattern for polling futures using <a href="https://crates.io/crates/futures-micro">futures_micro</a> that he used in his <a href="https://github.com/jacobrosenthal/shtcx-rs/blob/smol2/examples/monitor-shtc3.rs#L26">Rust SHTCx / SHTWx Driver</a> project.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">    futures_micro::or!(
+        ctrl_c,
+        collect_from_graph(wrapped_state.clone()), //COLLECT_DELAY
+        collect_from_node(wrapped_state.clone()),  //COLLECT_DELAY
+        tweets(wrapped_state.clone()),             //STAGGER_DELAY
+        tweet_counts(),                            //COUNTS_DELAY
+    )
+    .await
+    .unwrap();
+</span></pre><h2 id="shared-state-across-threads">Shared State Across Threads</h2>
+<p>It loads / saves state to a state file and the threads share the state using a <a href="https://docs.rs/rustc-std-workspace-std/1.0.1/std/sync/struct.Mutex.html"><code>Mutex</code></a>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">async fn tweets(wrapped_state: Arc&lt;Mutex&lt;SophonShare&gt;&gt;) -&gt; Result&lt;(), SophonError&gt; {
+    loop {
+        // scope for mutex release
+        {
+            let mut share = wrapped_state.lock().await;
+            ...
+        }
+    }
+}
+</span></pre>
+<p><code>wrapped_state.lock()</code> returns a <a href="https://docs.rs/rustc-std-workspace-std/1.0.1/std/sync/struct.MutexGuard.html"><code>MutexGuard</code></a> which unlocks the lock when it is dropped (falls out of scope). So there is no issue with forgetting to unlock the Mutex.</p>
+<h2 id="pulling-data-from-the-dark-forest-graph">Pulling Data from the Dark Forest Graph</h2>
+<p>There is a GraphQL query for pulling data from the <a href="https://thegraph.com/explorer/subgraph/jacobrosenthal/dark-forest-v05?selected=logs">Dark Forest Graph</a> and serializing it into purpose-built structs. This all happens in the <a href="https://github.com/jacobrosenthal/sophon_tweets/blob/master/src/graph.rs">graph.rs</a> file.</p>
+<p>The Repo for creating the graph is written in TypeScript: <a href="https://github.com/jacobrosenthal/darkforest-graph">https://github.com/jacobrosenthal/darkforest-graph</a></p>
+<h1 id="thinking-about-mobile-development-with-rust-via-danielpbank">Thinking about Mobile Development with Rust via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
+<p>Daniel is on a quest to build a mobile app. Naturally he would like to use Rust, but is unsure how to go about it. There were two possible options discussed.</p>
+<ul>
+<li><strong>Option 1</strong>: Using <a href="https://github.com/BrainiumLLC/cargo-mobile">cargo-mobile</a>, the entire app could be built in Rust (without even needing to touch Android Studio or XCode!). You simply run <code>cargo android run</code> and it will build and run on a connected Android device. Cargo-mobile projects are based off of template packs which, at the time of writing, include packs for <a href="https://bevyengine.org/">bevy</a>, <a href="https://github.com/gfx-rs/wgpu-rs">wgpu</a>, and <a href="https://github.com/rust-windowing/winit">winit</a>. Jacob likes this approach because you don't have to touch stinky IDE's and can write entirely in Rust. Daniel was scared by the limited documentation, lack of tutorials, and newness of the project. If you were building a Bevy game, this would be a cool project to check out though.</li>
+</ul>
+<p>Under the hood, cargo-mobile is using <a href="https://github.com/rust-windowing/android-ndk-rs">android-ndk-rs</a>, a wrapper for the <a href="https://developer.android.com/ndk">Android NDK</a>.</p>
+<p>Random aside about Bevy: <a href="https://github.com/vleue/bevmnist">there is a really cool demo of running the MNIST classifier with Bevy and Tract</a></p>
+<ul>
+<li><strong>Option 2</strong>: We can write the bulk of the mobile apps in their respective language (Kotlin or Swift) and only write cross-platform functionality with Rust. There is <a href="https://robertohuertas.com/2019/10/27/rust-for-android-ios-flutter/">a good tutorial</a> that outlines the process for building a shared Rust library that interfaces using <a href="https://anssi-fr.github.io/rust-guide/07_ffi.html">Foreign Function Interface</a>.</li>
+</ul>
+<h1 id="rant-about-the-state-of-rust-web-frameworks-via-christophersebastian">Rant about the State of Rust Web Frameworks via <a href="https://github.com/likebike">@ChristopherSebastian</a></h1>
+<p>Chris rants about the difficulty in working with the various Rust Web Frameworks. There are too many dependencies, too many layers of abstractions, and it creates an unpredictable amount of work. The types are more important than the memory or performance. The ecosystem still feels immature.</p>
+<p>Of all the frameworks, he likes <a href="https://github.com/http-rs/tide">tide</a> the best.</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/cargo-mobile">cargo-mobile</a>: Coming soon, a way to build mobile apps with Rust</li>
+<li><a href="https://crates.io/crates/trunk">trunk</a>: Build WASM Web Apps without the intermediary NPM Modules</li>
+<li><a href="https://crates.io/crates/tera">tera</a>: A template engine inspired by Jinja2 and the Django template language</li>
+<li><a href="https://crates.io/crates/horrorshow">horrorshow</a>: A templating library written in Rust macros</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;ffi&#x2F;">#FFI</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;mobile&#x2F;">#Mobile</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-10-28&#x2F;">‹ Gaming Discussion, More Dark Forest, and Async Rust</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-02-24&#x2F;">LRU Cache, Const Generics, and Embedded Stuff ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

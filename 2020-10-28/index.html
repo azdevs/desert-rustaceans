@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Gaming Discussion, More Dark Forest, and Async Rust</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-10-28/#a-discussion-about-game-development" class="toc-link">A Discussion about Game Development</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-10-28/#rust-gpu-and-embark-studios" class="toc-link">rust-gpu and Embark Studios</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-10-28/#other-links-from-the-game-dev-discussion" class="toc-link">Other Links from the Game Dev Discussion</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-10-28/#more-dark-forest-game-via-jacobrosenthal-and-blainebublitz" class="toc-link">More Dark Forest Game via @jacobrosenthal and @BlaineBublitz</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-10-28/#learning-async-rust-via-christophersebastian" class="toc-link">Learning Async Rust via @ChristopherSebastian</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-10-28/#the-simplest-async-example-written-in-rust" class="toc-link">The Simplest Async Example Written in Rust</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-10-28/#picking-an-async-runtime" class="toc-link">Picking an Async Runtime</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-10-28/#side-conversation-on-good-learning-materials" class="toc-link">Side Conversation on Good Learning Materials</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-10-28/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-10-28&#x2F;">Gaming Discussion, More Dark Forest, and Async Rust</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-10-28</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>A Discussion about Game Development</li>
+<li>More Dark Forest Game via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a> and <a href="https://github.com/phated">@BlaineBublitz</a></li>
+<li>Learning Async Rust via <a href="https://github.com/likebike">@ChristopherSebastian</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="a-discussion-about-game-development">A Discussion about Game Development</h1>
+<p>We were joined by <a href="https://github.com/igetgames">Marcus Brown</a> and <a href="https://github.com/thejustinwalsh">Justin Walsh</a>, the organizers of the <a href="https://www.meetup.com/UnrealPhx/events/273887197/">Phoenix Unreal Engine Developers</a> meetup. Both are excited about Rust and it's potential for game development.</p>
+<p>Rust's safety is attractive. Marcus described how tooling in C++ provides safety but doesn't optimize code. Venturing into the optimization space is where it gets dangerous. Of course there are tools like static analysis, but for large enough codebases (i.e. games) it doesn't catch everything.</p>
+<p>Rust's performance is another benefit. The Unreal Engine implements a garbage collection scheme that the developer has no direct control over. If there are a large number of items being prepared for deletion in a garbage collection cluster, it can cause a hitch (or hitched frame) which impacts performance. Perhaps some parts of the code could be implemented in Rust giving performance optimizations without the dangerous side effects.</p>
+<p>Jacob notes that the best pattern for game development in Rust is <a href="https://en.wikipedia.org/wiki/Entity_component_system">ECS</a> which runtime-checks all your stuff anyway, so you are not getting as much bang for the buck. An <a href="https://www.youtube.com/watch?v=aKLntZcp27M">excellent talk by Catherine West</a> covers this in detail.</p>
+<h2 id="rust-gpu-and-embark-studios">rust-gpu and Embark Studios</h2>
+<p>Chris Miller brought up <a href="https://github.com/EmbarkStudios/rust-gpu">rust-gpu</a>, a project to make Rust a first-class language and ecosystem for building GPU code. It is made by <a href="https://www.embark-studios.com/">Embark Studios</a> a games studio that uses Rust for development (perhaps the only one). They are aggresively hiring at the time this meetup occurred.</p>
+<h2 id="other-links-from-the-game-dev-discussion">Other Links from the Game Dev Discussion</h2>
+<ul>
+<li>
+<p><a href="https://rust.azdevs.org/2020-10-28/arewegameyet.rs">Are We Game Yet?</a>: A guide to the Rust game development ecosystem</p>
+</li>
+<li>
+<p><a href="https://crates.io/crates/vulkano">Vulkano</a>: Rust wrapper for the <a href="https://www.khronos.org/vulkan/">Vulkan graphics API</a></p>
+</li>
+<li>
+<p><a href="https://github.com/gfx-rs/rspirv">rspirv</a>: Rust implementation of SPIR-V module processing functionalities</p>
+</li>
+<li>
+<p><a href="https://github.com/vickles/riddle">Riddle</a>: A Rust media library in the vein of SDL</p>
+</li>
+</ul>
+<h1 id="more-dark-forest-game-via-jacobrosenthal-and-blainebublitz">More Dark Forest Game via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a> and <a href="https://github.com/phated">@BlaineBublitz</a></h1>
+<p>Dark Forest Toolbox Repo: <a href="https://github.com/phated/sophon">https://github.com/phated/sophon</a></p>
+<p>Sophon Tweeter Repo: <a href="https://github.com/jacobrosenthal/sophon_tweets">https://github.com/jacobrosenthal/sophon_tweets</a></p>
+<p>Dark Forest is an infinitely hackable real-time strategy idle-click game. It is based on <a href="https://z.cash/technology/zksnarks/">zk-SNARKs</a> (Zero-Knowledge Succinct Non-Interactive Argument of Knowledge).</p>
+<p>Some examples of the infinite hackability of the game:</p>
+<ul>
+<li>
+<p>You can modify the client code. For instance, Blaine ripped out the tutorial code since they didn't need it and it was slow.</p>
+</li>
+<li>
+<p>You don't technically need to pick a homeworld in the beginning of the game. Jacob and Blaine spent 4 hours just mining before they staked out homeworlds (though this didn't seem to give any advantage in the game)</p>
+</li>
+<li>
+<p>You can <a href="https://twitter.com/jacobrosenthal/status/1315829450953519106">explore outside the circle of the current known universe</a> (since the radius of the universe expands as more players get added to it)</p>
+</li>
+<li>
+<p>You can <a href="https://github.com/agajews/mimc-fast/pull/2">improve the efficiency of the miner's hash function</a> to gain more information faster.</p>
+</li>
+<li>
+<p>The Ethereum smart contract it is based on is not salted, so you could technically figure out stuff about the universe before the contract is even being used.</p>
+</li>
+</ul>
+<p>At the time of the meetup, Blaine and Jacob were hosting <a href="https://sophon.netlify.app/">their client</a> which has <a href="https://twitter.com/jacobrosenthal/status/1315852916847112194">extended tools</a> and <a href="https://twitter.com/jacobrosenthal/status/1315853920653066240">attack notifications</a></p>
+<p>They also made <a href="https://github.com/jacobrosenthal/sophon_tweets">a project for automatically tweeting out stats from the public ethereum smart contract</a>. The Twitter account is <a href="https://twitter.com/sophon_eth">@sophon_eth</a>. This repo uses tokio for async and was discussed in the next section of the meetup.</p>
+<p>One final link from this talk was <a href="https://github.com/tomusdrw/rust-web3">rust-web3</a>, an Ethereum JSON-RPC multi-transport client built using Rust.</p>
+<h1 id="learning-async-rust-via-christophersebastian">Learning Async Rust via <a href="https://github.com/likebike">@ChristopherSebastian</a></h1>
+<p>Chris needed to build a web frontend that could also fetch data from Redis and stream it to out to clients talking to an HTTP server. It would be simple to write in Go, but Chris wanted to use Rust because of the way it will integrate with other parts of the project which already are written in Rust. As he was building an HTTP server, Chris needed to write async code. He found that writing async in Rust was not as straightforward as it was writing it in C, so he wanted to learn more.</p>
+<h2 id="the-simplest-async-example-written-in-rust">The Simplest Async Example Written in Rust</h2>
+<p>The quest started with finding the simplest example written in Rust that has zero dependencies. Jacob wrote <a href="https://github.com/jacobrosenthal/smoller">a an example for the meetup</a>. Chris found <a href="https://github.com/spacejam/extreme">a more functional example</a> which is only 44 lines of code. It's so small we can inline it here:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">use std::sync::{Arc, Condvar, Mutex};
+use std::task::{Context, Poll, RawWaker, RawWakerVTable, Waker};
+
+#[derive(Default)]
+struct Park(Mutex&lt;bool&gt;, Condvar);
+
+fn unpark(park: &amp;Park) {
+    *park.0.lock().unwrap() = true;
+    park.1.notify_one();
+}
+
+static VTABLE: RawWakerVTable = RawWakerVTable::new(
+    |clone_me| unsafe {
+        let arc = Arc::from_raw(clone_me as *const Park);
+        std::mem::forget(arc.clone());
+        RawWaker::new(Arc::into_raw(arc) as *const (), &amp;VTABLE)
+    },
+    |wake_me| unsafe { unpark(&amp;Arc::from_raw(wake_me as *const Park)) },
+    |wake_by_ref_me| unsafe { unpark(&amp;*(wake_by_ref_me as *const Park)) },
+    |drop_me| unsafe { drop(Arc::from_raw(drop_me as *const Park)) },
+);
+
+/// Run a `Future`.
+pub fn run&lt;F: std::future::Future&gt;(mut f: F) -&gt; F::Output {
+    let mut f = unsafe { std::pin::Pin::new_unchecked(&amp;mut f) };
+    let park = Arc::new(Park::default());
+    let sender = Arc::into_raw(park.clone());
+    let raw_waker = RawWaker::new(sender as *const _, &amp;VTABLE);
+    let waker = unsafe { Waker::from_raw(raw_waker) };
+    let mut cx = Context::from_waker(&amp;waker);
+
+    loop {
+        match f.as_mut().poll(&amp;mut cx) {
+            Poll::Pending =&gt; {
+                let mut runnable = park.0.lock().unwrap();
+                while !*runnable {
+                    runnable = park.1.wait(runnable).unwrap();
+                }
+                *runnable = false;
+            }
+            Poll::Ready(val) =&gt; return val,
+        }
+    }
+}
+</span></pre>
+<p>One thing that is different about Rust <a href="https://doc.rust-lang.org/std/future/trait.Future.html">Futures</a> compared to other languages: if the Future needs to be called again, it is the responsibility of the Future to reschedule itself inside the runtime. For futures to work at all there has to be a runtime that it registers itself with.</p>
+<p>The <a href="https://rust-lang.github.io/async-book/">Asynchronous Programming in Rust Book</a> is a comprehensive guide to using Rust's async features.</p>
+<p>Another great resource is <a href="https://www.youtube.com/watch?v=9_3krAQtD2k">Jon Gjengset's 4-hour video where he dives deep into Rust futures and async/await</a>.</p>
+<h2 id="picking-an-async-runtime">Picking an Async Runtime</h2>
+<p>In the Rust ecosystem, there are two major async runtimes, <a href="https://async.rs/">async-std</a> and <a href="https://tokio.rs/">tokio</a>. There is also <a href="https://crates.io/crates/smol">smol</a>, an async runtime without extra runtime-agnostic stuff (concurrency primitives, extension traits, etc.). Note that (<a href="https://github.com/async-rs/async-std/pull/757">async-std is now based on smol</a>).</p>
+<p>The <a href="https://runrust.miraheze.org/wiki/Main_Page">Rustlang Community Wiki</a> has a good overview of the <a href="https://runrust.miraheze.org/wiki/Async_crate_comparison">Rust Async Ecosystem</a>. To date, it seems like tokio is still the biggest player in the game and growing:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">Async Market Growth Rates (1-month):
+    tokio:    32000 --&gt; 37000
+    async-std: 6000 --&gt;  7000
+    smol:      2800 --&gt;  2700
+</span></pre><h3 id="smol">Smol</h3>
+<p>Smol is actually not small because it has a lot of dependencies, but the nice thing about it is that all those dependencies are written by the same guy, <a href="https://github.com/stjepang">Stjepan Glavina</a>. He was the person who made <a href="https://crates.io/crates/crossbeam">crossbeam</a> channels, wrote the executor for async-std, and was also on the tokio team. So it is built on solid foundations. However, one worrying thing is that Stjepan deleted his <a href="https://stjepang.github.io/">blog</a> including <a href="https://web.archive.org/web/20200611125600/https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html">the post on why he made smol</a>. There are unconfirmed reports that <a href="https://twitter.com/stjepang/status/1186636642011869184">he is abandoning Rust for JavaScript</a> 😜.</p>
+<p>Smol's philosophy is: &quot;Let's not keep reinventing API's, let's just write one and wrap synchronous things with it&quot; (e.g. <code>smol::Async&lt;&lt;std::net::TcpSocket&gt;&gt;</code>).</p>
+<p><strong>Why use Smol?</strong> It can be split out into many crates. If you don't need one piece, you can just swap it out. For instance in embedded programming we can't use the smol executor because it uses std, so we swap that out for a different executor.</p>
+<h3 id="tokio">Tokio</h3>
+<p>Tokio is the oldest framework and grew up in the days before there was async support in std. As such, it doesn't try to match the std API. It has a lot of baggage but it is not going anywhere and is even growing in terms of market share.</p>
+<p><strong>Why use Tokio?</strong> If you are writing async and you don't know what you need, use Tokio: it's a good default and it has the whole kitchen sink.</p>
+<p><strong>Why NOT to use Tokio?</strong> If you are building something that someone else will be using, don't use tokio because you are forcing other people into the tokio ecosystem too. It affects everything it touches. Instead just use the <a href="https://crates.io/crates/futures">futures crate</a> and give people an async library without prescribing a runtime executor.</p>
+<h3 id="async-std">Async-std</h3>
+<p>Async-std tries to be 1:1 with the Rust std library. The philosophy is that if you learn sync Rust, your knowledge should transfer over (e.g. <code>async_std::net::TcpSocket</code> vs <code>std::net::TcpSocket</code>).</p>
+<p><a href="https://github.com/http-rs/tide">Tide</a> is a minimal and pragmatic Rust web application framework that was written by the async-std team to showcase the use of async-std in an HTTP server. Many of the other web server frameworks are bought into the tokio framework.</p>
+<h2 id="side-conversation-on-good-learning-materials">Side Conversation on Good Learning Materials</h2>
+<p>Jon Gjengset is a great teacher and has <a href="https://www.youtube.com/c/JonGjengset/videos">awesome videos</a>. For a projects-based approach to learning Rust, Chris liked the <a href="https://rust-unofficial.github.io/too-many-lists/">Learning Rust with Entirely Too Many Linked Lists Book</a> as well as the <a href="https://bfnightly.bracketproductions.com/">Roguelike Tutorial in Rust Book</a> (and <a href="https://tomassedovic.github.io/roguelike-tutorial/">another Roguelike Tutorial in Rust + tcod</a>).</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/rust-gpu">rust-gpu</a>: Project to make Rust a first-class language and ecosystem for building GPU code</li>
+<li><a href="https://crates.io/crates/futures">futures</a>: A library providing the foundations for asynchronous programming in Rust</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;games&#x2F;">#Games</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;rust&#x2F;">#Rust</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;blockchain&#x2F;">#Blockchain</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-09-30&#x2F;">‹ Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-01-27&#x2F;">Rebuilding a Rocket Server with Actix and Other Projects ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

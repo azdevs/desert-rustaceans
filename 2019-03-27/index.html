@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Scientific Computing</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-03-27/#scientific-computing-via-jacobrosenthal" class="toc-link">Scientific Computing via @jacobRosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-03-27/#linear-regression-and-classification-via-danielbank" class="toc-link">Linear regression and classification via @danielbank</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-03-27/#neural-nets-via-elbow-jason" class="toc-link">Neural Nets via @elbow-jason</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-03-27/#matrix-math-via-craigjb" class="toc-link">Matrix math via @craigjb</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-03-27/#level-up-your-crate-via-mysteriouspants" class="toc-link">Level Up Your Crate via @mysteriouspants</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-03-27&#x2F;">Scientific Computing</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-03-27</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>First Chris Miller talks the ins and outs of making your own crate. Then Daniel Bank talks regression and classification over data sets. Finally Craig Bishop will close with 3D math and simple rendering with Rust using the crate cgmath. Think: vectors, matrices, transforms, projections, Phong lighting, and image output.</p>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h3 id="scientific-computing-via-jacobrosenthal">Scientific Computing via <a href="https://github.com/jacobRosenthal">@jacobRosenthal</a></h3>
+<ul>
+<li><a href="https://en.wikiversity.org/wiki/Scientific_computing">&quot;Scientific computing is the science of solving problems with computers&quot;</a></li>
+<li>https://vimeo.com/13497928 Numbers Look Around You (Maths) via @reedspool</li>
+</ul>
+<h3 id="linear-regression-and-classification-via-danielbank">Linear regression and classification via <a href="https://github.com/danielbank">@danielbank</a></h3>
+<p><a href="https://github.com/danielbank/rust-ml-examples">Linear regression and classification</a></p>
+<ul>
+<li><a href="http://www.arewelearningyet.com/">Are We Learning Yet</a></li>
+<li><a href="https://github.com/AtheMathmo/rusty-machine/">Rusty Machine</a></li>
+<li><a href="http://athemathmo.github.io/2016/07/28/rusty-machine-talk.html#/10">Rusty Machine Model traits</a></li>
+<li><a href="https://github.com/AtheMathmo/rusty-machine/issues/199">Rusty Machine vs Rust Sim</a></li>
+<li><a href="https://docs.rs/csv/1.0.5/csv/tutorial/index.html">CSV Tutorial</a></li>
+<li><a href="https://blog.burntsushi.net/rust-error-handling/">Error Handling in Rust</a></li>
+<li><a href="https://newonlinecourses.science.psu.edu/stat501/node/382/">Linear Regression</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/svm.html">Support Vector Machines</a></li>
+<li><a href="https://crates.io/crates/rusty-machine">rusty-machine</a></li>
+<li><a href="https://crates.io/crates/csv">csv</a></li>
+<li><a href="https://crates.io/crates/serde">serde</a></li>
+<li><a href="https://crates.io/crates/serde_derive">serde_derive</a></li>
+</ul>
+<h3 id="neural-nets-via-elbow-jason">Neural Nets via <a href="https://github.com/elbow-jason">@elbow-jason</a></h3>
+<ul>
+<li>An impromptu talk about nueral nets and <a href="https://github.com/elbow-jason/lib_annex">annex</a></li>
+</ul>
+<h3 id="matrix-math-via-craigjb">Matrix math via <a href="https://github.com/craigjb">@craigjb</a></h3>
+<p><a href="https://github.com/craigjb/cgmathdemo">Matrix math, scaling, rotating, reflection, shearing, composing</a></p>
+<ul>
+<li>https://github.com/rustgd/cgmath</li>
+<li>http://www.ccis.northeastern.edu/home/fell/CSU540/lectures/CSU540SP2008-11-MatricesandTransformations.ppt</li>
+</ul>
+<h3 id="level-up-your-crate-via-mysteriouspants">Level Up Your Crate via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h3>
+<ul>
+<li><a href="https://www.mysteriouspants.com/blog/2019/level-up-your-crate/">Level Up Your Crate</a></li>
+<li>https://doc.rust-lang.org/cargo/reference/manifest.html</li>
+<li>https://www.mysteriouspants.com</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;math&#x2F;">#Math</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;ml&#x2F;">#ML</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-02-27&#x2F;">‹ Embedded</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-04-24&#x2F;">Options or Results and_then Combinators ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

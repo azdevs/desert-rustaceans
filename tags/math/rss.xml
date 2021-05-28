@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/math/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Discord Bots, Digital Signal Processing, and TensorFlow Lite</title>
+                <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-07-29/</link>
+                <guid>https%3A//rust.azdevs.org/2020-07-29/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discord Bots via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Digital Signal Processing via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Managing Game State via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Lightning Talks</title>
+                <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-06-24/</link>
+                <guid>https%3A//rust.azdevs.org/2020-06-24/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mandelbrot Plotter in Python and WASM via &lt;a href=&quot;https:&#x2F;&#x2F;hoetker.engineer&#x2F;&quot;&gt;@AndrewHoetker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Loading Binary Data for Might and Magic via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;OAuth Authentication and Authorization in twentyfive-stars via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;CLI Tools You Should Know&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Scientific Computing</title>
+                <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-03-27/</link>
+                <guid>https%3A//rust.azdevs.org/2019-03-27/</guid>
+                <description>&lt;p&gt;First Chris Miller talks the ins and outs of making your own crate. Then Daniel Bank talks regression and classification over data sets. Finally Craig Bishop will close with 3D math and simple rendering with Rust using the crate cgmath. Think: vectors, matrices, transforms, projections, Phong lighting, and image output.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

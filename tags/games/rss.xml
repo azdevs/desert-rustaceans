@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/games/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</title>
+                <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-05-26/</link>
+                <guid>https%3A//rust.azdevs.org/2021-05-26/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wheel of Names with Bevy via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Embedded Graphics Updates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Making a Tiny Game with Raylib via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Enforcing Api Specs with Traits &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Gaming Discussion, More Dark Forest, and Async Rust</title>
+                <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-10-28/</link>
+                <guid>https%3A//rust.azdevs.org/2020-10-28/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Discussion about Game Development&lt;&#x2F;li&gt;
+&lt;li&gt;More Dark Forest Game via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Learning Async Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;likebike&quot;&gt;@ChristopherSebastian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server</title>
+                <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-09-30/</link>
+                <guid>https%3A//rust.azdevs.org/2020-09-30/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rants via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nelsonjchen&quot;&gt;@NelsonChen&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Linking with C Libraries via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;likebike&quot;&gt;@ChristopherSebastian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;An Async Rocket Server with OAuth, Cookies, Diesel, and Templates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Dark Forest Game via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Discord Bots, Digital Signal Processing, and TensorFlow Lite</title>
+                <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-07-29/</link>
+                <guid>https%3A//rust.azdevs.org/2020-07-29/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discord Bots via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Digital Signal Processing via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Managing Game State via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Games</title>
+                <pubDate>Thu, 31 Jan 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-01-31/</link>
+                <guid>https%3A//rust.azdevs.org/2019-01-31/</guid>
+                <description>&lt;p&gt;I know there are folks in our community already making Text Adventures, Roguelikes, Web assembled stuff and even physical games on a microcontrollers so well have plenty to talk about.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

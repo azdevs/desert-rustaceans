@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Embedded</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-02-27/#what-is-embedded-via-craigjb" class="toc-link">What is embedded via @craigjb</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-02-27/#the-rust-embedded-ecosystem-via-jacobrosenthal" class="toc-link">The Rust embedded ecosystem via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-02-27/#rtfm-via-nraynaud" class="toc-link">RTFM via @nraynaud</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-02-27/#debugging-in-rust-via-joshmcguigan" class="toc-link">Debugging in Rust via @JoshMcguigan</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-02-27&#x2F;">Embedded</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-02-27</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>I know there are folks in our community already making drones, stepper drivers, robots, and more so well have plenty to talk about.</p>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h3 id="what-is-embedded-via-craigjb">What is embedded via <a href="https://github.com/craigjb">@craigjb</a></h3>
+<p>Rust vs C. svd2rust from registers to structs.</p>
+<ul>
+<li>https://github.com/rust-embedded/svd2rust</li>
+</ul>
+<h3 id="the-rust-embedded-ecosystem-via-jacobrosenthal">The Rust embedded ecosystem via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h3>
+<p>PACs, HALs, BSPs. A bare minimum example.</p>
+<ul>
+<li>https://github.com/rust-embedded/cortex-m-quickstart</li>
+<li>https://github.com/jacobrosenthal/workshop-iot-devfest/blob/master/readme.md</li>
+<li>http://blog.japaric.io/brave-new-io/</li>
+<li>https://doc.rust-lang.org/book</li>
+<li>https://docs.rust-embedded.org/book/start/registers.html</li>
+<li>https://docs.rust-embedded.org/embedonomicon/main.html</li>
+</ul>
+<h3 id="rtfm-via-nraynaud">RTFM via <a href="https://github.com/nraynaud">@nraynaud</a></h3>
+<p>A concurrency framework for building real time systems</p>
+<ul>
+<li>https://github.com/japaric/cortex-m-rtfm</li>
+<li>http://rtfm-lang.org</li>
+</ul>
+<h3 id="debugging-in-rust-via-joshmcguigan">Debugging in Rust via <a href="https://github.com/JoshMcguigan">@JoshMcguigan</a></h3>
+<p>Debugging in constrained systems without gdb, bit banging the serial protocol, data integrity over line protocols.</p>
+<ul>
+<li>https://rust-embedded.github.io/discovery/</li>
+<li>https://github.com/JoshMcguigan/betafpv-f3</li>
+<li>https://github.com/JoshMcguigan/bit-bang-serial</li>
+<li>https://github.com/awelkie/cobs.rs</li>
+<li>https://github.com/mrhooray/crc-rs</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;embedded&#x2F;">#Embedded</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-01-31&#x2F;">‹ Games</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-03-27&#x2F;">Scientific Computing ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

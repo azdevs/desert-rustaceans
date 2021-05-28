@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Discord Bots, Digital Signal Processing, and TensorFlow Lite</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-07-29/#discord-bots-via-mysteriouspants" class="toc-link">Discord Bots via @mysteriouspants</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-07-29/#digital-signal-processing-via-jacobrosenthal" class="toc-link">Digital Signal Processing via @jacobrosenthal</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-07-29/#dsp" class="toc-link">DSP</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-07-29/#signals" class="toc-link">Signals</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-07-29/#rust-math-performance-and-cmsis-dsp-sys" class="toc-link">Rust math performance and cmsis-dsp-sys</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-07-29/#graphing-libraries-terminal-user-interaces-and-cargo-embed" class="toc-link">Graphing Libraries, Terminal User Interaces, and Cargo Embed</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-07-29/#magic-wand-tensorflow-lite-example-for-the-pygamer" class="toc-link">Magic Wand TensorFlow Lite Example for the PyGamer</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-07-29/#managing-game-state-via-danielpbank" class="toc-link">Managing Game State via @DanielPBank</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-07-29/#ecs" class="toc-link">ECS</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-07-29/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-07-29&#x2F;">Discord Bots, Digital Signal Processing, and TensorFlow Lite</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-07-29</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Discord Bots via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>Digital Signal Processing via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+<li>Managing Game State via <a href="https://github.com/danielbank">@DanielPBank</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="discord-bots-via-mysteriouspants">Discord Bots via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<p>Repo: <a href="https://github.com/mysteriouspants/mysteriousbot">https://github.com/mysteriouspants/mysteriousbot</a></p>
+<p>Chris shared his Discord bot which discourages people from talking politics outside the <em>#politics</em> channel (indeed a noble cause). He used <a href="https://crates.io/crates/serenity">Serenity</a> which is an opinionated Rust library for the Discord API. Chris didn't like some of the opinions (specifically that bot commands should start with a character like <code>!</code> or <code>~</code>) but luckily the framework had an escape method that runs on any message, so he used that to make <a href="https://github.com/mysteriouspants/mysteriousbot/blob/caba97f1d219076c28e45f61648e4675e3166a3b/src/mysterious_message_handler.rs">his own handler</a>.</p>
+<p>One advantage of writing the project in Rust was that it made deploying the bot really simple. As Chris writes:</p>
+<blockquote>
+<p>&quot;to deploy you just take the built binary, scp it somewhere, and run it. There's no grand dependency chain from the OS to worry about, even the TLS layer is handled internally thanks to RusTLS.&quot;</p>
+</blockquote>
+<p>Chris posted an <a href="https://www.mysteriouspants.com/blog/mysteriousbot-weekend-notes/">in-depth article about it on his blog</a>, check it out!</p>
+<h1 id="digital-signal-processing-via-jacobrosenthal">Digital Signal Processing via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Repo: <a href="https://www.arm.com/resources/education/books/dsptextbook">https://www.arm.com/resources/education/books/dsptextbook</a></p>
+<p>I've has been working through the <a href="https://www.arm.com/resources/education/books/dsptextbook">Digital Signal Processing using Arm Cortex-M based Microcontrollers</a> book. The goal was to better understand translating C code to Rust, attempting to utilize functional paradigms, and exlore and fill in the math shortcomings in no_std embedded Rust.</p>
+<p>Ive got a nice setup https://github.com/jacobrosenthal/dsp-discoveryf4-rust/  where I'm building up the examples from the book in Rust and some nice patterns around graphing on command line, or in browser when necessary, as well as running them on an actual device and doing timing calculations to see how Rust fares.</p>
+<h2 id="dsp">DSP</h2>
+<p>Digital Signal Processing is about trying to find the signal in the noise. THis is a very short crash course on signals and systems, mostly from the point of view of translating c code to a functional style.</p>
+<h2 id="signals">Signals</h2>
+<p>There are five fundamental discrete time signals, unit pulse, unit step, unit ramp, exponential, and sinusoidal. We can use these to make simulated streams of data to practice against as well as to build up filters we'll run against that data.</p>
+<p>A unit pulse is 1 at 0, and 0 everywhere else. Writing things the C way, you have to be careful not to overflow the array.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let mut</span><span style="color:#61676c;"> unit_pulse </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">[</span><span style="color:#ff8f40;">0</span><span style="color:#fa6e32;">f32</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;"> N]</span><span style="color:#61676ccc;">;
+</span><span style="color:#fa6e32;">for</span><span style="color:#61676c;"> n </span><span style="color:#ed9366;">in </span><span style="color:#ff8f40;">0</span><span style="color:#ed9366;">..</span><span style="color:#61676c;">N {
+    </span><span style="color:#fa6e32;">if</span><span style="color:#61676c;"> n </span><span style="color:#ed9366;">== </span><span style="color:#ff8f40;">0 </span><span style="color:#61676c;">{
+        unit_pulse[n] </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">1.0</span><span style="color:#61676ccc;">;
+    </span><span style="color:#61676c;">} </span><span style="color:#fa6e32;">else </span><span style="color:#61676c;">{
+        unit_pulse[n] </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">0.0</span><span style="color:#61676ccc;">;
+    </span><span style="color:#61676c;">}
+}
+</span></pre>
+<p>In cases when we dont need random access to any previous elements we can do a litte more idiomatic Rust by using an iter_mut over the existing buffer to keep us from accessing outside of our array.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let mut</span><span style="color:#61676c;"> unit_pulse </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">[</span><span style="color:#ff8f40;">0</span><span style="color:#fa6e32;">f32</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;"> N]</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+unit_pulse</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">iter_mut</span><span style="color:#61676c;">()</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">enumerate</span><span style="color:#61676c;">()</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">for_each</span><span style="color:#61676c;">(|(</span><span style="color:#ff8f40;">n</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">val</span><span style="color:#61676c;">)| {
+    </span><span style="color:#fa6e32;">if</span><span style="color:#61676c;"> n </span><span style="color:#ed9366;">== </span><span style="color:#ff8f40;">0 </span><span style="color:#61676c;">{
+        </span><span style="color:#ed9366;">*</span><span style="color:#61676c;">val </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">1.0</span><span style="color:#61676ccc;">;
+    </span><span style="color:#61676c;">} </span><span style="color:#fa6e32;">else </span><span style="color:#61676c;">{
+        </span><span style="color:#ed9366;">*</span><span style="color:#61676c;">val </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">0.0</span><span style="color:#61676ccc;">;
+    </span><span style="color:#61676c;">}
+})</span><span style="color:#61676ccc;">;
+</span></pre>
+<p>An even more fully functional approach is available though. Well use a range, and <code>map</code> each of those values.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">type </span><span style="color:#399ee6;">N </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">heapless</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">consts</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">U10</span><span style="color:#61676ccc;">;
+</span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> unit_pulse_iter </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">0</span><span style="color:#ed9366;">..</span><span style="color:#61676c;">(N</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">to_usize()))</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">map</span><span style="color:#61676c;">(|</span><span style="color:#ff8f40;">n</span><span style="color:#61676c;">| </span><span style="color:#fa6e32;">if</span><span style="color:#61676c;"> n </span><span style="color:#ed9366;">== </span><span style="color:#ff8f40;">0 </span><span style="color:#61676c;">{ </span><span style="color:#ff8f40;">1.0 </span><span style="color:#61676c;">} </span><span style="color:#fa6e32;">else </span><span style="color:#61676c;">{ </span><span style="color:#ff8f40;">0.0 </span><span style="color:#61676c;">})</span><span style="color:#61676ccc;">;
+</span></pre>
+<p>Theres obviously quite a bit of visual 'noise' now with the length encoded as a type, and the turbofish in the collect. Luckily we can go back to arrays and remove the turbofish shortly when const generics are merged.</p>
+<p>Note iterators are lazy and have to be consumed. Our iterator is thus is a rather small data strucutre thats very cheap to clone, which means iterators are very memory efficient on top of their safety. In no_std Rust we dont have Vec, but there is a library called Heapless that has a vec type. When it comes time to fetch all those values, well need to use that instead of array using <code>collect</code></p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> unit_pulse </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> unit_pulse_iter</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">collect</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">&lt;heapless</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Vec&lt;</span><span style="color:#fa6e32;">f32</span><span style="color:#61676c;">&gt;&gt;()</span><span style="color:#61676ccc;">;
+</span></pre>
+<p>Another fundamental is a unit step. Its just 1 everywhere.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> unit_step </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">core</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">iter</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">repeat(</span><span style="color:#ff8f40;">1.0</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">take</span><span style="color:#61676c;">(N</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">to_usize())</span><span style="color:#61676ccc;">;
+</span></pre>
+<p>We can combine fundamental signals to make discrete time systems. In this case we subtract two unit steps to create a window filter.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> window </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">core</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">iter</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">repeat(</span><span style="color:#ff8f40;">0.0</span><span style="color:#61676c;">)
+    </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">take</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">4</span><span style="color:#61676c;">)
+    </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">chain</span><span style="color:#61676c;">(unit_step</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">clone</span><span style="color:#61676c;">())
+    </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">take</span><span style="color:#61676c;">(N</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">to_usize())
+    </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">zip</span><span style="color:#61676c;">(unit_step</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">clone</span><span style="color:#61676c;">())
+    </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">map</span><span style="color:#61676c;">(|(</span><span style="color:#ff8f40;">us_delay</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">us</span><span style="color:#61676c;">)| us </span><span style="color:#ed9366;">-</span><span style="color:#61676c;"> us_delay)</span><span style="color:#61676ccc;">;
+</span></pre>
+<p>We saw a bunch of new stuff.</p>
+<ul>
+<li>A core function called <code>repeat</code> lets us get an infinity iterator of a primitive, in this case 0.</li>
+<li>Then we can <code>take</code> 4 of those zeros.</li>
+<li>We can then <code>chain</code> our unit step at the end of those 4 zeros, effectively delaying our unit step by 4.</li>
+<li>Then we can <code>zip</code> that delayed unit step signal with another unit step signal so we get one of each of them at a time.</li>
+<li>Finally we again use <code>map</code> to subtract the delayed unit step from the naked unit step.</li>
+</ul>
+<p>The result is four 1s and the rest zeros.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#86b300;">&quot;window&quot;</span><span style="color:#f29718;">:</span><span style="color:#61676c;"> 1.0000, 1.0000, 1.0000, 1.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000
+</span><span style="color:#f29718;">⡉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉</span><span style="color:#61676c;">                                            1.0
+</span><span style="color:#f29718;">⠄
+⠂
+⡁
+⠄
+⠂
+⡁
+⠄
+⠂
+⡁
+⠄
+⠂
+⡁
+⠄
+⠂
+⠁⠈</span><span style="color:#61676c;"> ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠈ ⠁⠈ ⠁ 0.0
+</span><span style="color:#f29718;">0.0</span><span style="color:#61676c;">                    4.0                               10.0
+</span></pre>
+<p>A digression. An exponential signal looks like</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> exponential </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">0</span><span style="color:#ed9366;">..</span><span style="color:#61676c;">(N</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">to_usize()))</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">map</span><span style="color:#61676c;">(|</span><span style="color:#ff8f40;">val</span><span style="color:#61676c;">| A</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">powf</span><span style="color:#61676c;">(val </span><span style="color:#ed9366;">as </span><span style="color:#fa6e32;">f32</span><span style="color:#61676c;">))</span><span style="color:#61676ccc;">;
+</span></pre><pre style="background-color:#fafafa;">
+<span style="color:#86b300;">&quot;exponential&quot;</span><span style="color:#f29718;">:</span><span style="color:#61676c;"> 1.0000, 0.8000, 0.6400, 0.5120, 0.4096, 0.3277, 0.2621, 0.2097, 0.1678, 0.1342
+</span><span style="color:#f29718;">⡁</span><span style="color:#61676c;">                                                             1.0
+</span><span style="color:#f29718;">⠄                                                            
+⠂                                                            
+⡁</span><span style="color:#61676c;">     ⠄                                                      
+</span><span style="color:#f29718;">⠄                                                            
+⠂                                                            
+⡁</span><span style="color:#61676c;">           ⠂                                                
+</span><span style="color:#f29718;">⠄                                                            
+⠂</span><span style="color:#61676c;">                 ⠄                                          
+</span><span style="color:#f29718;">⡁                                                            
+⠄</span><span style="color:#61676c;">                       ⠂                                    
+</span><span style="color:#f29718;">⠂</span><span style="color:#61676c;">                             ⡀                              
+</span><span style="color:#f29718;">⡁</span><span style="color:#61676c;">                                   ⡀                        
+</span><span style="color:#f29718;">⠄</span><span style="color:#61676c;">                                         ⡀                  
+</span><span style="color:#f29718;">⠂</span><span style="color:#61676c;">                                               ⠄            
+</span><span style="color:#f29718;">⠁</span><span style="color:#61676c;">                                                     ⠁       0.1
+</span><span style="color:#f29718;">0.0</span><span style="color:#61676c;">                                                      10.0
+</span></pre>
+<p>Now we can filter our exponential signal with our window signal.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> exp_window </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> exponential</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">zip</span><span style="color:#61676c;">(window)</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">map</span><span style="color:#61676c;">(|(</span><span style="color:#ff8f40;">ex</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">x5</span><span style="color:#61676c;">)| ex </span><span style="color:#ed9366;">*</span><span style="color:#61676c;"> x5)</span><span style="color:#61676ccc;">;
+</span></pre><pre style="background-color:#fafafa;">
+<span style="color:#61676c;">&quot;exp_window&quot;: 1.0000, 0.8000, 0.6400, 0.5120, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000
+⡁                                                             1.0
+⠄                                                            
+⠂                                                            
+⡁     ⠁                                                      
+⠄                                                            
+⠂           ⠄                                                
+⡁                                                            
+⠄                 ⠂                                          
+⠂                                                            
+⡁                                                            
+⠄                                                            
+⠂                                                            
+⡁                                                            
+⠄                                                            
+⠂                                                            
+⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁ 0.0
+0.0                                                      10.0
+</span></pre><h2 id="rust-math-performance-and-cmsis-dsp-sys">Rust math performance and cmsis-dsp-sys</h2>
+<p>For these basic uses rust is as or more performant than C. Not to mention I've found at least three out of bounds accesses in the C code when porting it to Rust. However for bigger algorithms a completely C or Rust approach eventually falls behind highly tuned assembly language and specialized instructions. The Rust assembly language implementation is working through stabilization now, and intrinsics are beings slowly added over time, but the fact is for larger algorithms the most performant code is going to be in C for the time being.</p>
+<p>For Arm microcontrollers these algorithms are all shipped from the instruction set proider in a library called CMSIS. I've created <a href="https://crates.io/crates/cmsis-dsp-sys">cmsis-dsp-sys</a> which provides Rust bindings for the prebuilt cmsis-dsp libraries so we can stay productive and benchmark our pure Rust to see how were doing.</p>
+<p>We can measure the time it takes to run a function on an arm microcontroller using the dwt peripheral.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> cycles</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> ClockDuration </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> dwt</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">measure</span><span style="color:#61676c;">(|| </span><span style="color:#fa6e32;">unsafe </span><span style="color:#61676c;">{
+    </span><span style="font-style:italic;color:#abb0b6;">//Your function here
+</span><span style="color:#61676c;">})</span><span style="color:#61676ccc;">;
+</span></pre>
+<p>Youd want to be running these algorithms possible many times per second and have that still not affect your power too badly. This measurement is in cycles where, for my microcontroller at 168mhz, 1 cycle is 0.000000006 seconds.</p>
+<p>Lets see how some implementations perform.</p>
+<p>The gold standard, calling into the static cmsis implementation of an fft.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">cargo</span><span style="color:#61676c;"> embed</span><span style="color:#ff8f40;"> --release --example</span><span style="color:#61676c;"> 4_5_fft_calculations.rs
+</span><span style="color:#f29718;">16:18:20.478</span><span style="color:#61676c;"> cycles: 36710
+</span></pre>
+<p>My pure Rust unoptimized naive dft implementation is pretty bad.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">cargo</span><span style="color:#61676c;"> embed</span><span style="color:#ff8f40;"> --release --example</span><span style="color:#61676c;"> 4_1_dft_calculations.rs
+</span><span style="color:#f29718;">16:17:17.106</span><span style="color:#61676c;"> cycles: 12066122
+</span></pre>
+<p>And finally a pure Rust no_std fft library called microfft I found on crates.io is actually very competitive but albeit with far less functionality than the cmsis libraries.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">cargo</span><span style="color:#61676c;"> embed</span><span style="color:#ff8f40;"> --release --example</span><span style="color:#61676c;"> 4_5_fft_calculations_microfft.rs
+</span><span style="color:#f29718;">16:18:44.091</span><span style="color:#61676c;"> cycles: 40512
+</span></pre><h2 id="graphing-libraries-terminal-user-interaces-and-cargo-embed">Graphing Libraries, Terminal User Interaces, and Cargo Embed</h2>
+<p>The native graphs above were generated using <a href="https://crates.io/crates/textplots">textplots</a>: A library for plotting graphs in terminal.</p>
+<p>But occasionally for more resolution graphs I reach for <a href="https://crates.io/crates/plotly">plotly</a>: A more sophisticated plotting libary which is powered by <a href="https://plotly.com/javascript/">Plotly.js</a> (which is built on <a href="https://d3js.org/">d3.js</a>).</p>
+<p>For on device data, I have some forks going of cargo-embed to capture remote data to .dat files for graphing. <a href="https://crates.io/crates/cargo-embed">cargo-embed</a> is a general purpose tool for doing cargo builds, uploading to deivce, and receiving data back.</p>
+<p>Better yet I'm also working on doing live graphs of on device data. cargo-embed uses <a href="https://github.com/fdehau/tui-rs">tui-rs</a> a library for building rich terminal user interfaces and dashboards under the hood and I have some forks of that going.</p>
+<h2 id="magic-wand-tensorflow-lite-example-for-the-pygamer">Magic Wand TensorFlow Lite Example for the PyGamer</h2>
+<p>As an alternative to writing your own algorithms to process signals, you can train a machine learning (ML) model to come up with the relevant rules for you. TensorFlow is a library that represents computations as a dataflow graph, which is widely used in ML. There is a scaled-down version of TensorFlow, also from Google, called Tensorflow Micro Lite, which can run on constrained systems like microcontrollers. A &quot;magic wand&quot; is a common demonstration which uses a model trained on the accelerometer data to detect 'spells' (e.g. wave the device in a circular motion) and change the color of an LED based on the inferred motion.</p>
+<p>The <a href="https://crates.io/crates/tfmicro">tfmicro crate</a> was recently announced which provides no-std Rust bindings for the Tensorflow Micro Lite C code. I've got the <a href="https://github.com/jacobrosenthal/atsamd/blob/082808e3cf1ad1befe2c6aceef285dfd27328eef/boards/pygamer/examples/magic_wand.rs">magic wand example</a> for the <a href="https://www.adafruit.com/product/4242">AdaFruit PyGamer</a> mostly working though its not merged yet.</p>
+<p>More on this in the future for sure.</p>
+<h1 id="managing-game-state-via-danielpbank">Managing Game State via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
+<p>I started working on a simple game to get some practical experience working with <code>structs</code>, <code>impl</code> blocks, and the ownership model. Some interesting topics came up around making games with Rust.</p>
+<h2 id="ecs">ECS</h2>
+<p>The first recommendation was that I could look at common patterns that game developers use to inform my research. <a href="https://en.wikipedia.org/wiki/Entity_component_system">Entity–component–system (ECS)</a> is an architectural pattern that is mostly used in game development. There is a game engine written in Rust called <a href="https://amethyst.rs/">Amethyst</a> which comes with an ECS crate called <a href="https://crates.io/crates/specs">specs</a>. Chris also shared a <a href="https://www.youtube.com/watch?v=aKLntZcp27M">RustConf keynote</a> by <a href="https://github.com/kyren">Catherine West</a> where she shares good (and bad) practices for developing game engines in general, and how Rust helps guide you to those patterns.</p>
+<p>As always, a good resource for any topic in Rust is the <code>Are We ____</code> site, in this case: https://www.arewegameyet.rs/</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/serenity">serenity</a>: Rust library for the Discord API</li>
+<li><a href="https://crates.io/crates/specs">specs</a>: ECS system written in Rust</li>
+<li><a href="https://crates.io/crates/cmsis-dsp-sys">cmsis-dsp-sys</a>: Rust bindings for the prebuilt cmsis-dsp math</li>
+<li><a href="https://crates.io/crates/tfmicro">tfmicro</a>: no-std Rust Bindings for TFMicro</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;math&#x2F;">#Math</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;embedded&#x2F;">#Embedded</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;ml&#x2F;">#ML</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;chatbots&#x2F;">#Chatbots</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;games&#x2F;">#Games</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-06-24&#x2F;">‹ Lightning Talks</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-08-26&#x2F;">Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

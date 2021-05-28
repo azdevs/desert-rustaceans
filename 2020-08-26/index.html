@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#serving-pytorch-predictions-with-rocket-via-danielpbank" class="toc-link">Serving PyTorch Predictions with Rocket via @DanielPBank</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#extending-a-file-renaming-cli-tool-via-ryanfickenscher" class="toc-link">Extending a File Renaming CLI Tool via @RyanFickenscher</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#boa-javascript-lexer-parser-compiler-built-with-rust-via-ryanfickenscher" class="toc-link">Boa JavaScript Lexer, Parser, Compiler built with Rust via @RyanFickenscher</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#rust-on-pygamer-updates-via-jacobrosenthal" class="toc-link">Rust on PyGamer Updates via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#smol-async-example-via-jacobrosenthal" class="toc-link">Smol Async Example via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#caveat-on-using-rust-analyzer-in-vscode" class="toc-link">Caveat on Using rust-analyzer in VSCode</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#dark-forest-via-blainebublitz" class="toc-link">Dark Forest via @BlaineBublitz</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-08-26/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-08-26&#x2F;">Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-08-26</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Serving PyTorch Predictions with Rocket via <a href="https://github.com/danielbank">@DanielPBank</a></li>
+<li>Extending a File Renaming CLI Tool via <a href="https://github.com/zanayr/">@RyanFickenscher</a></li>
+<li>Boa JavaScript Lexer, Parser, Compiler built with Rust via <a href="https://github.com/zanayr/">@RyanFickenscher</a></li>
+<li>Rust on PyGamer Updates via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+<li>Smol Async Example via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+<li>Caveat on Using rust-analyzer in VSCode</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="serving-pytorch-predictions-with-rocket-via-danielpbank">Serving PyTorch Predictions with Rocket via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
+<p>Repo: <a href="https://github.com/danielbank/rust-tch-server">https://github.com/danielbank/rust-tch-server</a></p>
+<p>I made an <a href="https://github.com/danielbank/rust-tch-server">example web server</a> with <a href="http://rocket.rs/">Rocket</a> which serves up linear regression predictions using <a href="https://crates.io/crates/tch">tch</a>, a crate providing Rust bindings for PyTorch.  The project consists of two parts:</p>
+<ul>
+<li>
+<p>An example program called <code>train</code> which trains a linear regression model and saves its weights in a file so that it can be loaded.</p>
+</li>
+<li>
+<p>The main program, a web server that responds to POST requests to <code>/predict</code> with a prediction.</p>
+</li>
+</ul>
+<p>I found that the best place to learn how to use tch to make a linear regression model was the <a href="https://github.com/LaurentMazare/tch-rs/blob/master/tests/nn_tests.rs">tch project's tests</a>.</p>
+<p>The main challenge I faced in making the example was when I wanted to utilize the linear regression model in the prediction route.  The model is created in <code>main()</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">let mut vs = nn::VarStore::new(Device::Cpu);
+let linear = net(&amp;vs.root());
+</span></pre>
+<p>The first (naive) approach I attempted was to pass it directly to the prediction route by having Rocket manage it as state:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">rocket::ignite()
+  .manage(linear)
+  .mount(&quot;/&quot;, routes![index]).launch();
+</span></pre>
+<p>The type of <code>linear</code> is <a href="https://doc.rust-lang.org/edition-guide/rust-2018/trait-system/impl-trait-for-returning-complex-types-with-ease.html#return-position"><code>impl Module</code></a> or &quot;a type that implement nn::Module&quot;.  Trouble arises when I try to wrap this in State in the definition for the route handler:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">fn predict(bmi: Form&lt;BMI&gt;, classifier_state: State&lt;impl Module&gt;) -&gt; std::string::String { ... }
+</span></pre>
+<p>This line then reports an error:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">`impl Module` cannot be shared between threads safely
+
+help: consider further restricting this bound: ` + std::marker::Sync`rustc(E0277)
+main.rs(33, 46): `impl Module` cannot be shared between threads safely
+state.rs(106, 32): required by this bound in `rocket::State`
+`impl Trait` not allowed outside of function and inherent method return types
+</span></pre>
+<p>In this case, the advice for this error is not particularly helpful because further restricting the bounds only changes the error:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">the size for values of type `(dyn tch::nn::Module + std::marker::Sync + &#39;static)` cannot be known at compilation time
+
+doesn&#39;t have a size known at compile-time
+
+help: the trait `std::marker::Sized` is not implemented for `(dyn tch::nn::Module + std::marker::Sync + &#39;static)`
+</span></pre>
+<p>The solution I found was to use a <a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html">mutex</a> to ensure that shared access to the model in the route and main thread is protected.  The <code>main()</code> function becomes:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">rocket::ignite()
+  .manage(Mutex::new(Box::new(linear) as Box&lt;dyn Module&gt;))
+  .mount(&quot;/&quot;, routes![index, predict]).launch();
+</span></pre>
+<p>And the definition of the route handler becomes:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">fn predict(bmi: Form&lt;BMI&gt;, classifier_mutex: State&lt;Mutex&lt;Box&lt;dyn Module&gt;&gt;&gt;) -&gt; std::string::String { ... }
+</span></pre>
+<p>Another solution would be to make a concrete type that implements <code>tch::nn::Module</code> and <code>std::marker::Sync</code>.  This would take a little more work but has the advantage that the route handler definition would be a little clearer with <code>State&lt;MyConcreteType&gt;</code>.</p>
+<p>Chris notes that the <a href="https://doc.rust-lang.org/book/ch16-03-shared-state.html#atomic-reference-counting-with-arct">Shared State section</a> of the Rust book recommends using <code>Arc&lt;Send + Sync&gt;</code>.</p>
+<h1 id="extending-a-file-renaming-cli-tool-via-ryanfickenscher">Extending a File Renaming CLI Tool via <a href="https://github.com/zanayr/">@RyanFickenscher</a></h1>
+<p>Ryan shared his <a href="https://github.com/jtkirkpatrick/fdname/pull/1">contribution</a> to <a href="https://github.com/jtkirkpatrick/fdname">fdname</a>, a CLI tool for batch renaming files and directories.  He needed the ability to rename file names as hashes (to prevent duplicate files) as well as removing whitespace from the file names.  In order to implement his changes, he needed to learn how to use a <a href="https://doc.rust-lang.org/std/hash/trait.Hasher.html">hasher</a>.</p>
+<h1 id="boa-javascript-lexer-parser-compiler-built-with-rust-via-ryanfickenscher">Boa JavaScript Lexer, Parser, Compiler built with Rust via <a href="https://github.com/zanayr/">@RyanFickenscher</a></h1>
+<p>Another project that Ryan is contributing to is <a href="https://github.com/boa-dev/boa">Boa</a>, an experimental Javascript lexer, parser, and compiler written in Rust.</p>
+<p>One point that came up during his talk was the question how this project is different from <a href="https://github.com/denoland/deno">Deno</a>.  Deno is a secure runtime for JavaScript and TypeScript.  Whereas Deno has portions of its architecture written in Rust like the Tokio thread pool and its execution context (<a href="https://docs.rs/deno/0.3.8/deno/struct.Isolate.html">deno::Isolate</a>), it is still using the V8 engine which is implemented in C++.</p>
+<p><img src="https://deno.land/images/schematic_v0.2.png" alt="Deno Architecture Diagram" /></p>
+<h1 id="rust-on-pygamer-updates-via-jacobrosenthal">Rust on PyGamer Updates via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Jacob created a new repository for the <a href="https://github.com/jacobrosenthal/pygamer-quickstart">PyGamer board support crate</a>.  This makes it easier to get started than trying to find the <a href="https://github.com/atsamd-rs/atsamd/tree/master/boards/pygamer">pygamer folder</a> nested two levels deep in the <a href="https://github.com/atsamd-rs/atsamd">atsamd</a> repo.</p>
+<p>He also made improvements to the <a href="https://github.com/jacobrosenthal/hf2-rs/tree/master/hf2">hf2</a> command so now you can simply <code>cargo run --example blah</code> or hit the Play button in VSCode to build and upload to the board.</p>
+<p>One final improvement Jacob made in the examples repo was to light the red LED on the back of the PyGamer during a panic by <a href="https://github.com/jacobrosenthal/pygamer-panic-led">stealing the LED from the underlying device singleton</a>.  You won't know where you panic'ed but at least you can know that you did.</p>
+<h1 id="smol-async-example-via-jacobrosenthal">Smol Async Example via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p><a href="https://github.com/stjepang/smol">smol</a> is a fast async runtime with a small API.  It was made to address the ecosystem split between <a href="https://github.com/tokio-rs/tokio">tokio</a> and <a href="https://github.com/async-rs/async-std">async-std</a> async libraries.  The author wrote a <a href="https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html">blog post</a> about why he built it.</p>
+<p>Jacob made an <a href="https://github.com/jacobrosenthal/shtcx-rs/blob/smol2/examples/monitor-shtc3.rs">example program using smol</a> which monitors an SHTC3 sensor on Linux in the terminal.  The program shares a thread between 3 different tasks, polling a sensor in one async task, printing it in another async task, and watching for <a href="https://crates.io/crates/ctrlc">control-c signal</a> in a third, joining them all with a <code>futures::or!</code>.</p>
+<p><code>smol::block_on</code> is single-threaded by default. An alternative would be to spawn three threads for each of the processes.  However why should we deal with the overhead of additional syscalls?</p>
+<p><code>smol::channel::unbounded</code> gives you a sender and receiver:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">    smol::block_on(async {
+        ...
+        let (sender, receiver) = smol::channel::unbounded();
+        let _ = futures_micro::or!(ctrl_c.recv(), poll(sender), show(receiver)).await;
+    });
+</span></pre>
+<p><code>smol::Timer::after</code> is the async version of <code>std::thread::sleep</code></p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">async fn show(
+    receiver: Receiver&lt;(Measurement, Measurement)&gt;,
+) -&gt; Result&lt;(), smol::channel::RecvError&gt; {
+    loop {
+        // Drain any data updating the buffer
+        for (normal, _) in receiver.try_recv() {
+            println!(&quot;{:?}&quot;, normal);
+        }
+        smol::Timer::after(UI_REFRESH_DELAY).await;
+    }
+}
+</span></pre><h1 id="caveat-on-using-rust-analyzer-in-vscode">Caveat on Using rust-analyzer in VSCode</h1>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer</a> is an experimental modular compiler frontend for Rust.  It's really good but if you are using it in VSCode, there is an important caveat:  As of August 26th 2020, it has not been merged with the <a href="https://github.com/rust-lang/vscode-rust">Rust language extension</a>. <strong>You need to uninstall the Rust language extension when using rust-analyzer</strong>.  It should get merged eventually.</p>
+<h1 id="dark-forest-via-blainebublitz">Dark Forest via <a href="https://github.com/phated">@BlaineBublitz</a></h1>
+<p>Blaine wasted his week playing / editing the open source, serverless, smart contract game <a href="http://zkga.me/">Dark Forest</a> instead of writing any Rust.</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/tch">tch</a>: Rust wrappers for the PyTorch C++ api (libtorch)</li>
+<li><a href="https://crates.io/crates/ctrlc">ctrlc</a>: Ctrl-C handler that works on Unix and Windows</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;ml&#x2F;">#ML</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;cli&#x2F;">#CLI</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-07-29&#x2F;">‹ Discord Bots, Digital Signal Processing, and TensorFlow Lite</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-09-30&#x2F;">Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

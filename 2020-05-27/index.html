@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - sqlx and WASM in React</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-05-27/#sqlx-via-blainebublitz" class="toc-link">SQLX via @BlaineBublitz</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-05-27/#using-rust-built-webassembly-in-a-create-react-app-via-danielpbank" class="toc-link">Using Rust-built WebAssembly in a Create React App via @DanielPBank</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-05-27/#the-wasm-package-used-by-the-react-app-is-not-updating-when-i-change-my-code" class="toc-link">The WASM Package used by the React App is not updating when I change my code</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-05-27/#the-trait-wasm-bindgen-convert-traits-fromwasmabi-is-not-implemented-for-std-boxed-box-some-type-here" class="toc-link">the trait wasm_bindgen::convert::traits::FromWasmAbi is not implemented for std::boxed::Box&lt;[some type here...]&gt;</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-05-27/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-05-27&#x2F;">sqlx and WASM in React</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-05-27</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>SQLX via <a href="https://github.com/phated">@BlaineBublitz</a></li>
+<li>Using Rust-built WebAssembly in a Create React App via <a href="https://github.com/danielbank">@DanielPBank</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="sqlx-via-blainebublitz">SQLX via <a href="https://github.com/phated">@BlaineBublitz</a></h1>
+<p>Repo: <a href="https://github.com/phated/twentyfive-stars">https://github.com/phated/twentyfive-stars</a></p>
+<p>Diesel doesn't have async support and Blaine was fighting with its query builder pattern. Sqlx is a multidatabase driver that doesnt try to be like query builder. Sqlx give you a <code>query</code> method and you give it SQL query strings. It then does preparation of the statement, you bind your parameters, and it returns a stream for you to work with. Sqlx also gives you more powerful features because the schema can be type checked. The default behavior with <code>query</code> does not do type checking, it passes the value you bind in the place of the query. However if you use <code>query_as</code> and tell it the type that it is emulating, the returned vector of structs is type checked.</p>
+<p>More excitingly, sqlx also give you macros for both <code>query</code> and <code>query_as</code> which give you static type checking against your queries while you're working on them. The macro is taking the schema, knowing the data types, and type checking against your query to match the data type you are trying to put into. Diesel kind of gives you this because their migration system dumps out a schema definition to the filesystem and you write your typed queries against it. However, this prevents rapid prototyping (e.g. having an altered database in development before you create the migration and build your code against and see if it works). With sqlx, you can have the live feedback loop and it is still type-checked. Also, diesel do not support views where you could get that type information back from Postgres.</p>
+<p>Another cool feature being worked in sqlx is offline support. If you are offline and a schema file exists, the macros will serialize the schema out to JSON and will type check against the schema on the filesystem. This is similar to diesel but you don't always have to match the schema while developing, just when you building in production or don't have access to a database. Using <code>cargo sqlx prepare</code>, you can prepare the schema if you have a database connection. It will run a build against your project, gather up all the queries you are using, and generate a JSON file that maps to those queries.</p>
+<h1 id="using-rust-built-webassembly-in-a-create-react-app-via-danielpbank">Using Rust-built WebAssembly in a Create React App via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
+<p>Repo: <a href="https://danielbank.github.io/rust-wasm-react">https://danielbank.github.io/rust-wasm-react</a></p>
+<p>I made a <a href="https://danielbank.github.io/rust-wasm-react">simple web app</a> that performs the <a href="https://en.wikipedia.org/wiki/DBSCAN">DBSCAN clustering algorithm</a> on a collection of points. I used a Rust library called <a href="https://crates.io/crates/dbscan">dbscan</a> and followed along Richard Reedy's <a href="https://www.telerik.com/blogs/using-webassembly-with-react">Using WebAssembly with React</a> tutorial to implement it.</p>
+<p>Below were a few issues that I had to work through while building the app:</p>
+<h3 id="the-wasm-package-used-by-the-react-app-is-not-updating-when-i-change-my-code">The WASM Package used by the React App is not updating when I change my code</h3>
+<p>I experienced this issue where my WASM code was not updating when I built it and installed it in the React App. Even though I was deleting the <code>node_modules</code> folder, the <code>package-lock.json</code> was hanging onto the old package. I solved it by deleting both the <code>node_modules</code> and the <code>package-lock.json</code>.</p>
+<h3 id="the-trait-wasm-bindgen-convert-traits-fromwasmabi-is-not-implemented-for-std-boxed-box-some-type-here">the trait <code>wasm_bindgen::convert::traits::FromWasmAbi</code> is not implemented for <code>std::boxed::Box&lt;[some type here...]&gt;</code></h3>
+<p>The dbscan crate I am using wants to receive the points as a <code>Vec&lt;Vec&lt;f32&gt;&gt;</code> but when I tried to use this type for the input to the wasm function, I received an error about the <code>FromWasmAbi</code> trait not being implemented. It turns out that you are pretty limited in the types that you can use in a <code>#[wasm_bindgen]</code> function. Fortunately, you can get around it by passing your data in and out as a <code>&amp;JsValue</code> and serialize / deserialize it with Serde. See <a href="https://rustwasm.github.io/wasm-bindgen/reference/arbitrary-data-with-serde.html">Serializing and Deserializing Arbitrary Data Into and From JsValue with Serde</a>.</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/color-eyre">color-eyre</a>: A custom context for the eyre crate for colorful error reports, suggestions, and tracing-error support</li>
+<li><a href="https://crates.io/crates/dbscan">dbscan</a>: DBSCAN Clustering Algorithm</li>
+<li><a href="https://crates.io/crates/regress">regress</a>: REGex in Rust with EcmaScript Syntax</li>
+<li><a href="https://crates.io/crates/sqlx">sqlx</a>: Async SQL featuring compile-time checked queries without a DSL</li>
+<li><a href="https://crates.io/crates/wgpu">wgpu</a>: idiomatic Rust wrapper over wgpu-core</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;wasm&#x2F;">#WASM</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-04-29&#x2F;">‹ GraphQL and OAuth</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-06-24&#x2F;">Lightning Talks ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

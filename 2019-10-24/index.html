@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - uf2 Binary Serialization and Cargo Subcommands</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-10-24/#binary-serialization-via-jacobrosenthal" class="toc-link">Binary Serialization via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-10-24/#other-topics-discussed" class="toc-link">Other topics discussed:</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#using-nightly" class="toc-link">Using +nightly</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#cargo-asm-to-see-what-assembly-language-is-generated" class="toc-link">cargo-asm to see what assembly language is generated</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#cargo-expand-to-expand-macros-to-the-console-so-you-can-see-what-you-re-generating" class="toc-link">cargo-expand to expand macros to the console so you can see what you&#x27;re generating.</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#cargo-clippy-for-more-help-after-it-compiles" class="toc-link">cargo clippy for more help after it compiles</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-10-24/#cli-apps-with-clap-rs-via-danielbank" class="toc-link">CLI Apps with clap.rs via @danielbank</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#demo-repo" class="toc-link">Demo Repo</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#builder-pattern-for-making-a-cli" class="toc-link">Builder Pattern for Making a CLI</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-10-24/#learnings" class="toc-link">Learnings</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-10-24&#x2F;">uf2 Binary Serialization and Cargo Subcommands</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-10-24</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics Included:</p>
+<ul>
+<li>Binary serialization for bootloader protocols.</li>
+<li>Rust and WASM in a Chrome extension</li>
+<li>Elixer and Rust and OpenCL</li>
+<li>Command line argument processing</li>
+<li>Handy tools like clippy, cargo-expand, cargo</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="binary-serialization-via-jacobrosenthal">Binary Serialization via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Im trying to simplify uploading code to the <a href="https://www.adafruit.com/product/4242">pygamer</a>. Theres an existing <a href="https://crates.io/crates/uf2">uf2 converter</a> and you can just manually copy the file to the disk, but its kind of a lot of lines of setup and libraries we need installed. Honestly it works fine, I just like the idea of learning some more about Rust while cleaning up the workflow. This is the current state of things</p>
+<pre style="background-color:#fafafa;">
+<span style="font-style:italic;color:#abb0b6;">#only needed one time
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install</span><span style="color:#ff8f40;"> --git</span><span style="color:#61676c;"> https://github.com/sajattack/uf2conv-rs
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install cargo-binutils
+</span><span style="color:#f29718;">rustup</span><span style="color:#61676c;"> component add llvm-tools-preview
+</span><span style="font-style:italic;color:#abb0b6;">#each compile, objcopy actually already calls cargo under the hood here saving 1 line
+</span><span style="color:#61676c;">cargo objcopy</span><span style="color:#ff8f40;"> --example</span><span style="color:#61676c;"> ferris_img</span><span style="color:#ff8f40;"> --release</span><span style="color:#ed9366;"> --</span><span style="color:#61676c;"> -O binary ferris_img.bin
+</span><span style="color:#f29718;">uf2conv-rs</span><span style="color:#61676c;"> ferris_img.bin</span><span style="color:#ff8f40;"> --base</span><span style="color:#61676c;"> 0x4000</span><span style="color:#ff8f40;"> --output</span><span style="color:#61676c;"> ferris_img.uf2
+</span><span style="color:#f29718;">cp</span><span style="color:#61676c;"> ferris_img.uf2 /Volumes/PYGAMERBOOT/
+</span></pre>
+<p>But its a lot of dependencies. Instead talking to the device over the HID protocol using the microsoft bootloader protocol called <a href="https://github.com/microsoft/uf2/blob/master/hf2.md">hf2</a> which adafruit uses heavily. My work is at <a href="https://github.com/jacobrosenthal/uf2-rs">uf2-rs</a> where I use live upload over usb instead of a copy</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install</span><span style="color:#ff8f40;"> --git</span><span style="color:#61676c;"> https://github.com/jacobrosenthal/uf2
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install cargo-binutils
+</span><span style="color:#f29718;">rustup</span><span style="color:#61676c;"> component add llvm-tools-preview
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> objcopy</span><span style="color:#ff8f40;"> --example</span><span style="color:#61676c;"> ferris_img</span><span style="color:#ff8f40;"> --release</span><span style="color:#ed9366;"> --</span><span style="color:#61676c;"> -O binary ferris_img.bin
+</span><span style="color:#f29718;">uf2</span><span style="color:#61676c;"> flash</span><span style="color:#ff8f40;"> -f</span><span style="color:#61676c;"> ferris.bin 0x4000
+</span></pre>
+<p>My next step not yet done yet is to turn it into a cargo command using <a href="https://github.com/japaric/cargo-project">cargo-project</a> reducing it into something like:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install</span><span style="color:#ff8f40;"> --git</span><span style="color:#61676c;"> https://github.com/jacobrosenthal/uf2
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install cargo-binutils
+</span><span style="color:#f29718;">rustup</span><span style="color:#61676c;"> component add llvm-tools-preview
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> uf2</span><span style="color:#ff8f40;"> --example</span><span style="color:#61676c;"> ferris_img</span><span style="color:#ff8f40;"> --release</span><span style="color:#61676c;"> 0x4000
+</span></pre>
+<p>Ideally I can figure out how to convert the cargo elf file to a bin internally and remove the need for even llvm dependencies</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">cargo</span><span style="color:#61676c;"> install</span><span style="color:#ff8f40;"> --git</span><span style="color:#61676c;"> https://github.com/jacobrosenthal/uf2
+</span><span style="color:#f29718;">cargo</span><span style="color:#61676c;"> uf2</span><span style="color:#ff8f40;"> --example</span><span style="color:#61676c;"> ferris_img</span><span style="color:#ff8f40;"> --release</span><span style="color:#61676c;"> 0x4000
+</span></pre>
+<p>The big thing this library needs to solve is how binary serialization to turn this c style struct</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">pub</span><span style="color:#61676c;">(</span><span style="color:#fa6e32;">crate</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">struct </span><span style="color:#399ee6;">Command </span><span style="color:#61676c;">{
+    </span><span style="font-style:italic;color:#abb0b6;">///Command ID
+    </span><span style="color:#61676c;">id</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">u32</span><span style="color:#61676c;">,
+    </span><span style="font-style:italic;color:#abb0b6;">///arbitrary number set by the host, for example as sequence number. The response should repeat the tag.
+    </span><span style="color:#61676c;">tag</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">u16</span><span style="color:#61676c;">,
+    </span><span style="font-style:italic;color:#abb0b6;">///reserved bytes in the command should be sent as zero and ignored by the device
+    </span><span style="color:#61676c;">_reserved0</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">u8</span><span style="color:#61676c;">,
+    </span><span style="font-style:italic;color:#abb0b6;">///reserved bytes in the command should be sent as zero and ignored by the device
+    </span><span style="color:#61676c;">_reserved1</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">u8</span><span style="color:#61676c;">,
+}
+</span></pre>
+<p>into a buffer to send over the wire. In std rust you might use the std <a href="https://doc.rust-lang.org/std/io/struct.Cursor.html">cursor</a> and The core available <a href="https://doc.rust-lang.org/std/primitive.i32.html#method.from_le_bytes">from_le_bytes</a> to help us turn bytes into primitives, and not mess up indexing, but but I like to write no_std code so I use a library called <a href="https://github.com/m4b/scroll">scroll</a> like this</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">    </span><span style="font-style:italic;color:#abb0b6;">//Packets are up to 64 bytes long
+    </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> buffer </span><span style="color:#ed9366;">= &amp;</span><span style="color:#fa6e32;">mut </span><span style="color:#61676c;">[</span><span style="color:#ff8f40;">0_</span><span style="color:#fa6e32;">u8</span><span style="color:#61676ccc;">; </span><span style="color:#ff8f40;">64</span><span style="color:#61676c;">]</span><span style="color:#61676ccc;">;
+
+    </span><span style="color:#fa6e32;">let mut</span><span style="color:#61676c;"> offset </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">1</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+
+    buffer</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">gwrite_with</span><span style="color:#61676c;">(cmd</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">id</span><span style="color:#61676ccc;">, </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">mut</span><span style="color:#61676c;"> offset</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">LE</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+    buffer</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">gwrite_with</span><span style="color:#61676c;">(cmd</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">tag</span><span style="color:#61676ccc;">, </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">mut</span><span style="color:#61676c;"> offset</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">LE</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+    buffer</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">gwrite_with</span><span style="color:#61676c;">(cmd</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">_reserved0</span><span style="color:#61676ccc;">, </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">mut</span><span style="color:#61676c;"> offset</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">LE</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+    buffer</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">gwrite_with</span><span style="color:#61676c;">(cmd</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">_reserved1</span><span style="color:#61676ccc;">, </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">mut</span><span style="color:#61676c;"> offset</span><span style="color:#61676ccc;">, </span><span style="color:#ff8f40;">LE</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">;
+
+</span></pre><h1 id="other-topics-discussed">Other topics discussed:</h1>
+<h2 id="using-nightly">Using +nightly</h2>
+<p>For those not in the know say someone says you need the nightly build of a cargo crate. So you have to <code>rustup default nightly</code> first then <code>cargo install blah-thing</code> and then <code>rustup default stable</code> Instead you can add <code>+nightly</code> onto most commands to do something in nightly for just one command so all that becomes <code>cargo +nightly install blah-thing</code></p>
+<h2 id="cargo-asm-to-see-what-assembly-language-is-generated"><a href="https://github.com/gnzlbg/cargo-asm">cargo-asm</a> to see what assembly language is generated</h2>
+<p><code>cargo new helloworld &amp;&amp; cd helloworld</code></p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">$</span><span style="color:#61676c;"> cargo asm helloworld::main</span><span style="color:#ff8f40;"> --rust
+ </span><span style="color:#f29718;">fn</span><span style="color:#61676c;"> main() {
+ </span><span style="color:#f29718;">push</span><span style="color:#61676c;">    rbp
+ </span><span style="color:#f29718;">mov</span><span style="color:#61676c;">     rbp, rsp
+ </span><span style="color:#f29718;">sub</span><span style="color:#61676c;">     rsp, 48
+     </span><span style="color:#f29718;">lea</span><span style="color:#61676c;">     rax, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rip, +, l___unnamed_2</span><span style="color:#fa6e32;">]
+     </span><span style="color:#f29718;">mov</span><span style="color:#61676c;">     qword, ptr, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rbp, </span><span style="color:#fa6e32;">-</span><span style="color:#61676c;">, 48</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;">, rax
+     </span><span style="color:#f29718;">mov</span><span style="color:#61676c;">     qword, ptr, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rbp, </span><span style="color:#fa6e32;">-</span><span style="color:#61676c;">, 40</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;">, 1
+     </span><span style="color:#f29718;">mov</span><span style="color:#61676c;">     qword, ptr, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rbp, </span><span style="color:#fa6e32;">-</span><span style="color:#61676c;">, 32</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;">, 0
+     </span><span style="color:#f29718;">lea</span><span style="color:#61676c;">     rax, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rip, +, l___unnamed_3</span><span style="color:#fa6e32;">]
+     </span><span style="color:#f29718;">mov</span><span style="color:#61676c;">     qword, ptr, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rbp, </span><span style="color:#fa6e32;">-</span><span style="color:#61676c;">, 16</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;">, rax
+     </span><span style="color:#f29718;">mov</span><span style="color:#61676c;">     qword, ptr, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rbp, </span><span style="color:#fa6e32;">-</span><span style="color:#61676c;">, 8</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;">, 0
+     </span><span style="color:#f29718;">lea</span><span style="color:#61676c;">     rdi, </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">rbp, </span><span style="color:#fa6e32;">-</span><span style="color:#61676c;">, 48</span><span style="color:#fa6e32;">]
+ </span><span style="color:#f29718;">println!</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;Hello, world!&quot;</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">;
+ </span><span style="color:#f29718;">call</span><span style="color:#61676c;">    std::io::stdio::_print
+ }
+ </span><span style="color:#f29718;">add</span><span style="color:#61676c;">     rsp, 48
+ </span><span style="color:#f29718;">pop</span><span style="color:#61676c;">     rbp
+ </span><span style="color:#f29718;">ret
+</span></pre><h2 id="cargo-expand-to-expand-macros-to-the-console-so-you-can-see-what-you-re-generating"><a href="https://github.com/dtolnay/cargo-expand">cargo-expand</a> to expand macros to the console so you can see what you're generating.</h2>
+<p>You may have seen by now you can implement Debug on a type for free if underlying types support it by using the <code>#[derive(Debug)]</code> attribute macro. Using cargo expand we can see what that did for us:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676ccc;">#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">derive</span><span style="color:#61676c;">(Debug)]
+</span><span style="color:#fa6e32;">struct </span><span style="color:#399ee6;">S</span><span style="color:#61676ccc;">;
+
+</span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">main</span><span style="color:#61676c;">() {
+}
+</span></pre><pre style="background-color:#fafafa;">
+<span style="color:#61676ccc;">#!</span><span style="color:#61676c;">[</span><span style="color:#f29718;">feature</span><span style="color:#61676c;">(prelude_import)]
+</span><span style="color:#61676ccc;">#!</span><span style="color:#61676c;">[</span><span style="color:#f29718;">no_std</span><span style="color:#61676c;">]
+</span><span style="color:#61676ccc;">#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">prelude_import</span><span style="color:#61676c;">]
+</span><span style="color:#fa6e32;">use </span><span style="color:#ed9366;">::</span><span style="color:#61676c;">std</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">prelude</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">v1</span><span style="color:#ed9366;">::*</span><span style="color:#61676ccc;">;
+#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">macro_use</span><span style="color:#61676c;">]
+</span><span style="color:#fa6e32;">extern crate</span><span style="color:#61676c;"> std </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> std</span><span style="color:#61676ccc;">;
+</span><span style="color:#fa6e32;">struct </span><span style="color:#399ee6;">S</span><span style="color:#61676ccc;">;
+#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">automatically_derived</span><span style="color:#61676c;">]
+</span><span style="color:#61676ccc;">#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">allow</span><span style="color:#61676c;">(unused_qualifications)]
+</span><span style="color:#fa6e32;">impl </span><span style="color:#ed9366;">::</span><span style="color:#61676c;">core</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">fmt</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Debug </span><span style="color:#fa6e32;">for </span><span style="color:#399ee6;">S </span><span style="color:#61676c;">{
+    </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">fmt</span><span style="color:#61676c;">(</span><span style="color:#ed9366;">&amp;</span><span style="color:#ff8f40;">self</span><span style="color:#61676c;">, </span><span style="color:#ff8f40;">f</span><span style="color:#61676ccc;">: </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">mut </span><span style="color:#ed9366;">::</span><span style="color:#61676c;">core</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">fmt</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Formatter) </span><span style="color:#61676ccc;">-&gt; </span><span style="color:#ed9366;">::</span><span style="color:#61676c;">core</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">fmt</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Result {
+        </span><span style="color:#fa6e32;">match </span><span style="color:#ed9366;">*</span><span style="font-style:italic;color:#55b4d4;">self </span><span style="color:#61676c;">{
+            S </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">{
+                </span><span style="color:#fa6e32;">let mut</span><span style="color:#61676c;"> debug_trait_builder </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> f</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">debug_tuple</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;S&quot;</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+                debug_trait_builder</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">finish</span><span style="color:#61676c;">()
+            }
+        }
+    }
+}
+
+</span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">main</span><span style="color:#61676c;">() { }
+</span></pre><h2 id="cargo-clippy-for-more-help-after-it-compiles"><a href="https://github.com/rust-lang/rust-clippy">cargo clippy</a> for more help after it compiles</h2>
+<p>The compiler makes sure things compile, clippy tries to tell you there might be a better way to do things. You can replace 'check' in your ide with 'clippy' or run it on the command line.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">$</span><span style="color:#61676c;"> cargo clippy
+</span><span style="color:#f29718;">warning:</span><span style="color:#61676c;"> casting u32 to f64 may become silently lossy if you later change the type
+   </span><span style="color:#f29718;">--</span><span style="color:#ed9366;">&gt;</span><span style="color:#61676c;"> src/bin.rs:166:51
+    </span><span style="color:#ed9366;">|
+</span><span style="color:#f29718;">166 </span><span style="color:#ed9366;">|     </span><span style="color:#f07171;">let</span><span style="color:#61676c;"> padded_num_pages </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">(binary.len() as f64 </span><span style="color:#ed9366;">/</span><span style="color:#61676c;"> bininfo.flash_page_size as f64).ceil() as u32</span><span style="color:#61676ccc;">;
+    </span><span style="color:#ed9366;">|                                                   </span><span style="color:#f29718;">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><span style="color:#61676c;"> help: try: `</span><span style="color:#f29718;">f64::from</span><span style="color:#61676c;">(bininfo.flash_page_size)`
+    </span><span style="color:#ed9366;">|
+    = </span><span style="color:#f29718;">note: </span><span style="color:#61676c;">`</span><span style="color:#f29718;">#[warn</span><span style="color:#61676c;">(clippy::cast_lossless)</span><span style="color:#f29718;">]</span><span style="color:#61676c;">` on by default
+    </span><span style="color:#ed9366;">= </span><span style="color:#f29718;">help:</span><span style="color:#61676c;"> for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#cast_lossless
+
+    </span><span style="color:#f29718;">Finished</span><span style="color:#61676c;"> dev </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">unoptimized + debuginfo</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;"> target(s) </span><span style="color:#f29718;">in</span><span style="color:#61676c;"> 12.93s
+</span><span style="color:#f29718;">$
+</span></pre>
+<p>Note you have it installed on nightly, it can also apply the suggestion automatically.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f29718;">$</span><span style="color:#61676c;"> cargo +nightly fix</span><span style="color:#ff8f40;"> -Z</span><span style="color:#61676c;"> unstable-options</span><span style="color:#ff8f40;"> --clippy
+</span><span style="color:#f29718;">$</span><span style="color:#61676c;"> cargo clippy
+    </span><span style="color:#f29718;">Finished</span><span style="color:#61676c;"> dev </span><span style="color:#fa6e32;">[</span><span style="color:#61676c;">unoptimized + debuginfo</span><span style="color:#fa6e32;">]</span><span style="color:#61676c;"> target(s) </span><span style="color:#f29718;">in</span><span style="color:#61676c;"> 0.57s
+</span><span style="color:#f29718;">$
+</span></pre>
+<p>There is <a href="https://rust-lang.github.io/rust-clippy/master/">a list of ALL the Clippy Lints</a> which shows you all the rules in one place.</p>
+<h1 id="cli-apps-with-clap-rs-via-danielbank">CLI Apps with <a href="https://clap.rs/">clap.rs</a> via <a href="https://github.com/danielbank">@danielbank</a></h1>
+<h2 id="demo-repo">Demo Repo</h2>
+<p><a href="https://github.com/danielbank/next-prime-rs">https://github.com/danielbank/next-prime-rs</a></p>
+<h2 id="builder-pattern-for-making-a-cli">Builder Pattern for Making a CLI</h2>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> matches </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">App</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">new(</span><span style="color:#86b300;">&quot;next-prime&quot;</span><span style="color:#61676c;">)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">version</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;1.0&quot;</span><span style="color:#61676c;">)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">about</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;Calculate the next prime after a given integer&quot;</span><span style="color:#61676c;">)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">author</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;Daniel Bank&quot;</span><span style="color:#61676c;">)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">arg</span><span style="color:#61676c;">(
+            Arg</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">with_name(</span><span style="color:#86b300;">&quot;number&quot;</span><span style="color:#61676c;">)
+                </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">help</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;a number after which the next prime will occur&quot;</span><span style="color:#61676c;">)
+                </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">index</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">1</span><span style="color:#61676c;">)
+                </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">required</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">true</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">,
+        </span><span style="color:#61676c;">)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">get_matches</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
+</span></pre><h2 id="crates-you-should-know">Crates You Should Know</h2>
+<ul>
+<li>
+<p><a href="https://crates.io/crates/clap">Clap</a> - Command Line Argument Parser for Rust</p>
+</li>
+<li>
+<p><a href="https://crates.io/crates/primes">Primes</a> - A prime generator for Rust.</p>
+</li>
+</ul>
+<h2 id="learnings">Learnings</h2>
+<h3 id="return-values">Return Values</h3>
+<ul>
+<li>
+<p>Forgot the return type (<code>-&gt; u64</code>)</p>
+</li>
+<li>
+<p>I was trying to return using a statement: <code>n;</code> vs an expression: <code>n</code></p>
+</li>
+</ul>
+<blockquote>
+<p>Statements are instructions that perform some action and do not return a value. Expressions evaluate to a resulting value.</p>
+</blockquote>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">error[E0308]: mismatched types
+ --&gt; src/main.rs:4:26
+  |
+4 | fn next_prime(x: u64) -&gt; u64 {
+  |    ----------            ^^^ expected u64, found ()
+  |    |
+  |    implicitly returns `()` as its body has no tail or `return` expression
+...
+7 |     n;
+  |      - help: consider removing this semicolon
+  |
+  = note: expected type `u64`
+             found type `()`
+</span></pre>
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;cli&#x2F;">#CLI</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-09-25&#x2F;">‹ Web Assembly</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-01-22&#x2F;">Lightning Talks ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

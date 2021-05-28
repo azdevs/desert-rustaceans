@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Web Assembly</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-09-25/#tour-of-wasm-ecosystem-via-jacobrosenthal" class="toc-link">Tour of Wasm ecosystem via @jacobrosenthal</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-09-25/#most-basic-example" class="toc-link">Most basic example</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-09-25/#digging-deeper-for-the-nerds" class="toc-link">Digging deeper for the nerds</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-09-25/#rust-to-npm-workflow" class="toc-link">Rust to npm workflow</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-09-25/#digressions" class="toc-link">Digressions</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-09-25/#conclusion" class="toc-link">Conclusion</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-09-25/#wasm-for-serverless-via-monteslu" class="toc-link">Wasm for serverless via @monteslu</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-09-25/#crates-you-should-know-via-bitmage" class="toc-link">Crates you should know via @bitmage</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-09-25&#x2F;">Web Assembly</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-09-25</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Join us at HeatSync Labs for a tour of web assembly from Rust. Last months web talks left more questions than answers so we dig deeper into Wasm.</p>
+<p>Come help us knock out some topics like:</p>
+<ul>
+<li>Exporting Rust crates to NPM</li>
+<li>Serverless with Cloudflare and Amazon</li>
+<li>A continuation of our frontend web talk</li>
+<li>The future of wasm outside of the browsers as scripting languages, on desktops, and even microcontrollers</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="tour-of-wasm-ecosystem-via-jacobrosenthal">Tour of Wasm ecosystem via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<ul>
+<li>tight event loop, games, fluid interfaces</li>
+<li>math transformations (not offerd native by the os or browser, like ml commonly is now) audio, video. Basically before you had to hope your browser vendor shipped an api for mathy stuff, now you can build your own and ship it yourself.</li>
+<li>sandboxed, safe to deal with user input or extend your existing environment for game scripting, plugins, etc</li>
+</ul>
+<h2 id="most-basic-example">Most basic example</h2>
+<p>first thing make sure <a href="https://rustup.rs">rust is installed</a></p>
+<p>Well need a one more tool to start, the 'target' were actually cross compiling here <code>rustup target add wasm32-unknown-unknown</code>
+Then crate a new library we can link with <code>cargo new --lib add1</code> <code>cd add1</code></p>
+<p>Next, we need to specify a special kind of library by adding this to this to the Cargo.toml</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">[lib]
+crate-type = [&quot;cdylib&quot;]
+</span></pre>
+<p>Then add this to our lib.rs a simple function that we can call from javascript</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">#[no_mangle]
+pub extern &quot;C&quot; fn add_one(x: i32) -&gt; i32 {
+	x+1
+}
+</span></pre>
+<p><code>cargo build --release --target=wasm32-unknown-unknown</code> and now weve got a wasm file at target/wasm32-unknown-unknown/release/add1.wasm</p>
+<p>Lets make some terrible index.html</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#55b4d490;">&lt;!</span><span style="color:#399ee6;">DOCTYPE</span><span style="color:#55b4d4;"> html</span><span style="color:#55b4d490;">&gt;
+&lt;</span><span style="color:#399ee6;">html</span><span style="color:#55b4d490;">&gt;
+	&lt;</span><span style="color:#399ee6;">head</span><span style="color:#55b4d490;">&gt;
+		&lt;</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
+			</span><span style="color:#f29718;">fetch</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&#39;./target/wasm32-unknown-unknown/release/add1.wasm&#39;</span><span style="color:#61676c;">)
+				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">response</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="color:#61676c;">response</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">arrayBuffer</span><span style="color:#61676c;">())
+				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">bytes</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="font-style:italic;color:#55b4d4;">WebAssembly</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">instantiate</span><span style="color:#61676c;">(bytes))
+				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">results</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="color:#61676c;">{
+					instance </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">results</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">instance</span><span style="color:#61676ccc;">;
+					</span><span style="font-style:italic;color:#55b4d4;">document</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">getElementById</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&#39;demo&#39;</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">innerText </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">instance</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">exports</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">add_one</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">41</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;
+				</span><span style="color:#61676c;">})
+				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">catch</span><span style="color:#61676c;">(</span><span style="font-style:italic;color:#55b4d4;">console</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">error</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;
+		</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
+	&lt;/</span><span style="color:#399ee6;">head</span><span style="color:#55b4d490;">&gt;
+	&lt;</span><span style="color:#399ee6;">body</span><span style="color:#55b4d490;">&gt;
+		&lt;</span><span style="color:#399ee6;">h1</span><span style="color:#55b4d490;">&gt;</span><span style="color:#61676c;">Wasm Demo</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">h1</span><span style="color:#55b4d490;">&gt;
+		&lt;</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;</span><span style="color:#61676c;">1 + 41 equals</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;
+		&lt;</span><span style="color:#399ee6;">p </span><span style="color:#f29718;">id</span><span style="color:#61676ccc;">=</span><span style="color:#86b300;">&quot;demo&quot;</span><span style="color:#55b4d490;">&gt;&lt;/</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;
+	&lt;/</span><span style="color:#399ee6;">body</span><span style="color:#55b4d490;">&gt;
+&lt;/</span><span style="color:#399ee6;">html</span><span style="color:#55b4d490;">&gt;
+</span></pre>
+<p>and run a server to view it <code>python -m SimpleHTTPServer 8000</code></p>
+<h2 id="digging-deeper-for-the-nerds">Digging deeper for the nerds</h2>
+<p>so lets get complicated for a minute, feel free to ignore this,just to get your familiar</p>
+<p>some tools IM going to use you dont need these I just want to show you under the hood</p>
+<ul>
+<li>https://github.com/WebAssembly/wabt <code>brew install wabt</code></li>
+<li>https://github.com/WebAssembly/binaryen <code>brew install binaryen</code></li>
+</ul>
+<p>The wasm language actually instantiated in a .wat file, and you can write it yourself, though you really shouldnt.
+The idea is you could write in any language, and then 'target' wasm(wat) which would then be compiled to .wasm and shipped around for delivery, the same way that typescript wrote some higher level language (js plus types) and the compiled down to regular javascript</p>
+<p>Lets try
+<code>touch add1.wat</code>
+and all all this to it</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">(module
+  (func $add_one (param $lhs i32) (result i32)
+    local.get $lhs
+    i32.const 1
+    i32.add)
+  (export &quot;add_one&quot; (func $add_one))
+)
+</span></pre>
+<p><code>wat2wasm add1.wat -o add1.wasm</code></p>
+<p>We can look inside our wasm file to see a ton of stuff including what functions it exports
+<code>wasm-objdump -x target/wasm32-unknown-unknown/release/add1.wasm</code></p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">...
+Custom:
+ - name: &quot;name&quot;
+ - func[0] &lt;__wasm_call_ctors&gt;
+ - func[1] &lt;add_one&gt;
+...
+</span></pre>
+<p>Now edit our html file and pull this wasm file instead of our rust generated one and Run our server again <code>python -m SimpleHTTPServer 8000</code></p>
+<p>So we can see how we can hand craft wasm, or we can more commonly use a language like rust to target it.</p>
+<h2 id="rust-to-npm-workflow">Rust to npm workflow</h2>
+<p>We could start hooking more stuff up to our bare skeleton from before, but theres a template tool called <a href="https://rustwasm.github.io/wasm-pack/">wasm-pack</a> thatll get us further faster</p>
+<ul>
+<li><code>cargo install wasm-pack</code></li>
+<li><code>npm init rust-webpack my-app</code></li>
+<li><code>cd my-app</code></li>
+</ul>
+<p>Note this is just your normal npm and webpack skelton, but with a crate stuck in the mix. Take a look at src/lib.rs theres a bit more boilerplate
+and we have a package.json and a build and start alias which will call wasm-pack for you with, so we can just call the familiar <code>npm run start</code> and when the browser opens well find our hello world in the console.</p>
+<p>Note its bringing in a new project
+<a href="https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys">web-sys</a> autogenerated bindings to all the <a href="https://developer.mozilla.org/en-US/docs/Web/API">web api</a>. Almost everything <a href="https://github.com/rustwasm/wasm-bindgen/blob/master/crates/web-sys/Cargo.toml#L46">gated by features</a>, need to turn stuff on to get small code size</p>
+<p>Theres also <a href="https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys">js-sys</a> autogenerated JavaScript APIs that are guaranteed to exist in all standards-compliant ECMAScript environments, such as Array, Date, and eval. This is only if you need to generate one of these structures to pass back to a javascript function of some kind</p>
+<p>Maybe youd like to <a href="https://rustwasm.github.io/docs/wasm-bindgen/examples/import-js.html">import a function from your existing js</a> code?</p>
+<p>There are more examples which dig way deeper at the <a href="https://rustwasm.github.io/docs/wasm-bindgen">wasm-bindgen book</a></p>
+<h2 id="digressions">Digressions</h2>
+<h3 id="debugging">debugging</h3>
+<p><a href="https://hacks.mozilla.org/2019/09/debugging-webassembly-outside-of-the-browser/">But can you debug this? Yep</a></p>
+<h3 id="native">native</h3>
+<p>Just like node packaged the v8 runtime so you can run your js code on your laptop and server, wasm is doing the same with the wasi standard. wasi is wasm but with libc syscalls mapped to your native environment, so it can get access to do things like read input and output, spawn threads, networking etc. So you can see a future where instead of say snap packages or installers with well ship wasm applications with excellent cross platform support.</p>
+<p>Lets try the wasmtime interpreter.</p>
+<ul>
+<li><code>cargo install wasmtime</code></li>
+<li><code>rustup target add wasm32-wasi</code></li>
+<li><code>cargo new helloworld</code></li>
+<li><code>cd helloworld</code></li>
+</ul>
+<p>notice this is a binary not a library, and notice no annotations or anything like before!</p>
+<p>Lets add something that uses a syscall to main.rs to read text from the command line and write it back out</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">use std::io::{self, BufRead};
+
+fn main() {
+    let stdin = io::stdin();
+    let mut iterator = stdin.lock().lines();
+
+    println!(&quot;type your name&quot;);
+
+    let name = iterator.next().unwrap().unwrap();
+
+    println!(&quot;hi {}!&quot;, name);
+}
+</span></pre>
+<p><code>cargo build --target wasm32-wasi</code>
+And run it with the local cli interpreter
+<code>wasmtime target/wasm32-wasi/debug/helloworld.wasm</code></p>
+<p>Now you could ship this same .wasm to another laptop that has wasmtime installed but is a different architecture or os and it will run there too. It could run on another desktop, mac, linux, windows. Eventually it will work on raspberry pi and arm devices and mobile, but much of that isnt ready yet sadly.</p>
+<p>Eventually these wasi things will run on the web without javascript annotations we did before. In fact theres a <a href="https://wasi.dev/polyfill/">js polyfill</a> but its just proof of concept and doesnt support std::io or anything interesting atm. Keep an eye on it.</p>
+<h3 id="wasm-as-container-technology">Wasm as Container Technology</h3>
+<p>BUT WAIT THERS MORE
+The security capabilites opt in and sandbox means its far more modern take than other interpreted byte code languages. This makes it more like Docker than node.</p>
+<blockquote>
+<p>&quot;If WASM+WASI existed in 2008, we wouldn't have needed to created Docker. That's how important it is. Webassembly on the server is the future of computing. A standardized system interface was the missing link. Let's hope WASI is up to the task!&quot; - <a href="https://twitter.com/solomonstre/status/1111004913222324225?lang=en">Cofounder of Docker</a></p>
+</blockquote>
+<p>To that end, theres starting to be research on running in along side your os instead of on top, ring0 in projects like <a href="https://medium.com/wasmer/running-webassembly-on-the-kernel-8e04761f1d8e">wasm-kernel</a></p>
+<h3 id="wasm-for-constrained-devices">Wasm for constrained devices</h3>
+<p>BUT WAIT
+Why stop at computers with tons of ram. micropython or jerryscript are running byte code of high level languages on constrained devices. Yes. wasm is the future here too. Sadly its a C project not Rust, but theres <a href="https://github.com/intel/wasm-micro-runtime">an interpreter for constrained devices like microcontrollers from Intel</a></p>
+<h3 id="wasm-as-plugin-scripting">Wasm as plugin scripting</h3>
+<p>BUT WAIT THERES MORE
+Scripting languages in games, photoshop plugins, etc already do a lot of scripting. Youve probably been excited to find out some program or game allows you to script it but then found out its only in Python or Lua. This space is for wasm too. That way you can have scripting in your app but support whaever langauge the likes, and get better sandboxing and security for free.</p>
+<p>BUT WAIT
+It will be embedded in even more lower level stuff. <a href="https://medium.com/wasmer/announcing-the-first-postgres-extension-to-run-webassembly-561af2cfcb1">postgres is talking about</a> using wasm to ship some peice of code you want to run your results against right on the server.</p>
+<p>Its designed to be THE common target, thats especially good at user input because of the sandboxing</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Think of wasm like any other interpreted language, ruby, javascript</p>
+<p>We could ship the ascii text human readable script, like a .js across the web
+and it will run anywhere because you already previously downloaded a native interpreter for your systems (Chrome or node or ruby in this case). The interpreter will tokenize the ascii line by line and compile it and run it</p>
+<p>And modern interpreters like v8 for javascript will also in the backgroup compile it to byte code, so it doesnt have to recompile it, but that takes time so they just start the interpreter and swap them out when its ready and you never notice the different..</p>
+<p>Thats wasm, except lets have a singular language all the other languages can target so you can bring your favorite programming langauge with you and embed the result from websites to native to serverless to games and plugins to microcontrollers.</p>
+<p>Resources:</p>
+<ul>
+<li>https://wasmbyexample.dev</li>
+<li>https://rustwasm.github.io/book/</li>
+<li>Programming WebAssembly with Rust https://pragprog.com/book/khrust/programming-webassembly-with-rust</li>
+<li>Main book that links to the wasm bindgen and wasm pack books https://rustwasm.github.io/docs/book/introduction.html</li>
+</ul>
+<h1 id="wasm-for-serverless-via-monteslu">Wasm for serverless via <a href="https://github.com/monteslu">@monteslu</a></h1>
+<p>Walkthrough and demo of the Wrangler tool from Cloudflare</p>
+<ul>
+<li>https://blog.cloudflare.com/introducing-wrangler-cli/</li>
+<li>https://developers.cloudflare.com/workers/templates/boilerplates/rustwasm/</li>
+</ul>
+<h1 id="crates-you-should-know-via-bitmage">Crates you should know via <a href="https://github.com/bitmage">@bitmage</a></h1>
+<ul>
+<li><a href="https://crates.io/crates/flatbuffers">flatbuffer</a></li>
+<li><a href="https://crates.io/crates/rocksdb">rocksdb</a></li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;wasm&#x2F;">#WASM</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-08-28&#x2F;">‹ Frontend Web</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-10-24&#x2F;">uf2 Binary Serialization and Cargo Subcommands ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

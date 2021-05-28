@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-05-26/#wheel-of-names-with-bevy-via-danielpbank" class="toc-link">Wheel of Names with Bevy via @DanielPBank</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-05-26/#make-a-wheel" class="toc-link">Make a Wheel</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-05-26/#make-the-wheel-spin" class="toc-link">Make the Wheel Spin</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-05-26/#caveat-about-getting-past-an-initial-wgpu-validation-error" class="toc-link">Caveat about Getting Past an Initial wgpu Validation Error</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-05-26/#embedded-graphics-updates-via-jacobrosenthal" class="toc-link">Embedded Graphics Updates via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-05-26/#enforcing-api-specs-with-traits-via-jesusguzmanjr" class="toc-link">Enforcing Api Specs with Traits via @JesusGuzmanJr</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-05-26/#motivation" class="toc-link">Motivation</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-05-26/#summary" class="toc-link">Summary</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-05-26/#making-a-tiny-game-with-raylib-via-mysteriouspants" class="toc-link">Making a Tiny Game with Raylib via @mysteriouspants</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-05-26/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-05-26&#x2F;">Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-05-26</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Wheel of Names with Bevy via <a href="https://github.com/danielbank">@DanielPBank</a></li>
+<li>Embedded Graphics Updates via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+<li>Making a Tiny Game with Raylib via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>Enforcing Api Specs with Traits <a href="https://github.com/JesusGuzmanJr">@JesusGuzmanJr</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="wheel-of-names-with-bevy-via-danielpbank">Wheel of Names with Bevy via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
+<p>Repo: <a href="https://github.com/danielbank/ferris-wheel">https://github.com/danielbank/ferris-wheel</a></p>
+<p>I'm attempting to build a Rust port of the <a href="https://wheelofnames.com/">Wheel of Names JS App</a> using <a href="https://bevyengine.org/">Bevy Game Engine</a>. Currently, Bevy does not support drawing custom shapes in an easy way. Fortunately, there is a Bevy plugin called, <a href="https://github.com/Nilirad/bevy_prototype_lyon">bevy_prototype_lyon</a> which provides this functionality using <a href="https://crates.io/crates/lyon">lyon</a>, which implements 2D Graphics rendering on the GPU using tessellation.</p>
+<h2 id="make-a-wheel">Make a Wheel</h2>
+<p>I started with the <a href="https://github.com/Nilirad/bevy_prototype_lyon/blob/master/examples/readme_example.rs">bevy_prototype_lyon example code</a> and made a circle. The code for this is straightforward</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">let</span><span style="color:#61676c;"> wheel </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">shapes</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Circle {
+    radius</span><span style="color:#61676ccc;">: </span><span style="color:#ff8f40;">200.0</span><span style="color:#61676ccc;">,
+    </span><span style="color:#ed9366;">..</span><span style="color:#61676c;">shapes</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Circle</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">default()
+}</span><span style="color:#61676ccc;">;</span><span style="color:#61676c;">
+
+commands</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">spawn_bundle</span><span style="color:#61676c;">(GeometryBuilder</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">build_as(
+    </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">wheel</span><span style="color:#61676ccc;">,
+    </span><span style="color:#61676c;">ShapeColors</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">outlined(Color</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">TOMATO</span><span style="color:#61676ccc;">, </span><span style="color:#61676c;">Color</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">BLACK</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">,
+    </span><span style="color:#61676c;">DrawMode</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Outlined {
+        fill_options</span><span style="color:#61676ccc;">: </span><span style="color:#61676c;">FillOptions</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">default()</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;">
+        outline_options</span><span style="color:#61676ccc;">: </span><span style="color:#61676c;">StrokeOptions</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">default()</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">with_line_width</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">10.0</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">,
+    </span><span style="color:#61676c;">}</span><span style="color:#61676ccc;">,
+    </span><span style="color:#61676c;">Transform</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">default()</span><span style="color:#61676ccc;">,
+</span><span style="color:#61676c;">))</span><span style="color:#61676ccc;">;
+</span></pre><h2 id="make-the-wheel-spin">Make the Wheel Spin</h2>
+<p>To figure out how to do motion, I copied from the <a href="https://github.com/bevyengine/bevy/blob/latest/examples/game/breakout.rs">Bevy Breakout Game example</a>, here I learned some things that surprised me.</p>
+<h3 id="query-components-not-entities">Query Components Not Entities</h3>
+<p>Bevy follows the <a href="https://bevyengine.org/learn/book/getting-started/ecs/">Entity Component System paradigm</a> so we need to understand a little bit about that in order to move things. Specifically to move an entity, we need to first query for a component of that specific entity before applying transformations:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">if let Ok((ball, mut transform)) = ball_query.single_mut() {
+    transform.translation += ball.velocity * delta_seconds;
+}
+</span></pre>
+<p>Naively, we may want to try to do something with the Shapes (e.g. <code>wheel = shapes::Circle { ... }</code>) or the ShapeBundles (e.g. <code>GeometryBuilder::build_as( ... )</code>) to get them to move. However, <a href="https://bevy-cheatbook.github.io/programming/queries.html">Bevy wants us to interact with Components</a> which are structs attached to Entities. We attach these components to entities by calling <code>.insert()</code> on the ShapeBundle we get back from <code>GeometryBuilder::build_as( ... )</code>.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">commands
+    .spawn_bundle(GeometryBuilder::build_as( ... )
+    .insert(Component {});
+</span></pre>
+<p>The components could even be an empty structs, we simply need something to get a handle on when we query the system for things to transform.</p>
+<p>Since I wanted to apply my rotation movement to all the Entities in my app, I didn't use <code>single_mut()</code>, which matches a single entity, and instead iterated over:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">particles_query
+  .iter_mut()
+  .for_each(|(particle, mut transform)| {
+      transform.rotate(Quat::from_rotation_z(FRAC_PI_2));
+  });
+</span></pre><h2 id="caveat-about-getting-past-an-initial-wgpu-validation-error">Caveat about Getting Past an Initial wgpu Validation Error</h2>
+<p>When I first tried running the <a href="https://github.com/Nilirad/bevy_prototype_lyon/blob/master/examples/readme_example.rs">bevy_prototype_lyon example code</a>, I was getting the following error:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">wgpu error: Validation Error
+
+Caused by:
+    In a RenderPass
+      note: encoder = `&lt;CommandBuffer-(1, 2, Metal)&gt;`
+    In a pass parameter
+      note: command buffer = `&lt;CommandBuffer-(1, 2, Metal)&gt;`
+    attachment&#39;s sample count 8 is invalid
+</span></pre>
+<p>I fixed this issue by changing the <code>Msaa { samples: 8 }</code> to <code>Msaa { samples: 4 }</code>. Some light reading on <a href="https://en.wikipedia.org/wiki/Multisample_anti-aliasing#Sample_patterns">Multisample anti-aliasing</a> revealed that most modern GPUs support 2×, 4×, and 8× MSAA samples. It looks like my 2015 MacBook Pro is starting to show its age.</p>
+<h1 id="embedded-graphics-updates-via-jacobrosenthal">Embedded Graphics Updates via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>The <a href="https://crates.io/crates/embedded-graphics">embedded-graphics</a> crate is getting close to a 0.7.0 release and lots of cool stuff is now possible.</p>
+<ul>
+<li>
+<p><a href="https://github.com/embedded-graphics/simulator">Embedded Graphics Simulator</a>: You don't have to run on a device to test your graphics, you can run in the simulator which opens an SDL2 window for previewing. Here is <a href="https://twitter.com/jam_waffles/status/1397284559310499845">a tweet demo'ing compound animations</a> (made using the simulator).</p>
+</li>
+<li>
+<p><a href="https://github.com/bugadani/embedded-gui">Embedded Graphics GUI</a>: Building upon the low-level code of the embedded-graphics crate, there is work going into building a composable UI framework which allows building more complex UI. Here is <a href="https://twitter.com/bugadani/status/1393688049322807310?s=20">a tweet demo'ing of the new UI framework in action</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/embedded-graphics/embedded-text">Embedded Text</a>: Provides TextBox functionality (how do you flow text into a box, align the text, prevent it from overflowing, etc.) Here is a demo of a <a href="https://matrix-client.matrix.org/_matrix/media/r0/download/matrix.org/kZCiAfZHziMLAOCFuekUkgsk">typing animation</a>.</p>
+</li>
+<li>
+<p>Here are <a href="https://github.com/embedded-graphics/examples/tree/main/eg-next">Even More Embedded Graphics Examples</a></p>
+</li>
+</ul>
+<p>The <a href="https://github.com/atsamd-rs/atsamd/tree/master/boards/pygamer">Pygamer Board Support Crate</a> already uses (an older version of) embedded-graphics, so a lot of these recent advancements can hopefully be made available in it soon.</p>
+<h1 id="enforcing-api-specs-with-traits-via-jesusguzmanjr">Enforcing Api Specs with Traits via <a href="https://github.com/JesusGuzmanJr">@JesusGuzmanJr</a></h1>
+<p>Jesus demonstrates how to use traits to enforce restful apis.</p>
+<h3 id="motivation">Motivation</h3>
+<p>I've been experimenting with Rust to gauge its suitability as a fullstack programming language for web dev shops. How can Rust help a team of developers write code that is easy to maintain and less buggy?</p>
+<p>One way to do this is by leveraging Rust's type system.</p>
+<p>This tutorial assumes that you have familiarity with an http web framework like <code>flask</code>, <code>Django</code>, <code>Spring</code>, <code>Vertx</code>, <code>gin</code> etc.</p>
+<p><em>Aside</em>: please excuse the mal-formamted code. I attempted condensed the line width to make it more legible on narrower screens.</p>
+<p>Say I have a fullstack webapp composed of 3 crates:</p>
+<ul>
+<li><code>common</code> - common code that's shared by other crates</li>
+<li><code>webapp</code> - webapp code that runs in browser</li>
+<li><code>server</code> - server code that runs on cloud</li>
+</ul>
+<p>First I defined a <code>Fetch</code> trait. When a type implements <code>Fetch</code>, that means it can be fetched from my server. In <code>common/src/fetch.rs</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">pub trait </span><span style="color:#399ee6;">Fetch </span><span style="color:#61676c;">{ </span><span style="font-style:italic;color:#abb0b6;">// implement for a Response type
+    </span><span style="color:#fa6e32;">type </span><span style="color:#399ee6;">Request</span><span style="color:#61676ccc;">; </span><span style="font-style:italic;color:#abb0b6;">// the associated Request type
+    </span><span style="color:#fa6e32;">const </span><span style="color:#ff8f40;">RATE_LIMIT_SEC</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">usize</span><span style="color:#61676ccc;">;
+    </span><span style="color:#fa6e32;">const </span><span style="color:#ff8f40;">ENABLE_ANTICSRF_PROTECTION</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">bool</span><span style="color:#61676ccc;">;
+    </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">path</span><span style="color:#61676c;">() </span><span style="color:#61676ccc;">-&gt;</span><span style="color:#61676c;"> Path</span><span style="color:#61676ccc;">;
+</span><span style="color:#61676c;">}
+</span></pre>
+<p>Now I can define the types for a particular endpoint of my api. In <code>common/src/api/user.rs</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">pub struct </span><span style="color:#399ee6;">Request </span><span style="color:#61676c;">{ </span><span style="font-style:italic;color:#abb0b6;">// (1)
+    </span><span style="color:#fa6e32;">pub </span><span style="color:#61676c;">username</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> Username,
+    </span><span style="color:#fa6e32;">pub </span><span style="color:#61676c;">email</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> Email,
+    </span><span style="color:#fa6e32;">pub </span><span style="color:#61676c;">password</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> Password,
+}
+
+</span><span style="color:#fa6e32;">pub enum </span><span style="color:#399ee6;">Response </span><span style="color:#61676c;">{
+    Created(User)</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;">
+    UsernameUnavailable</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;">
+    EmailUnavailable</span><span style="color:#61676ccc;">,
+</span><span style="color:#61676c;">}
+
+</span><span style="color:#fa6e32;">impl </span><span style="color:#61676c;">Fetch </span><span style="color:#fa6e32;">for </span><span style="color:#399ee6;">Response </span><span style="color:#61676c;">{
+    </span><span style="font-style:italic;color:#abb0b6;">// the associated Request type is Request (1)
+    </span><span style="color:#fa6e32;">type </span><span style="color:#399ee6;">Request </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> Request</span><span style="color:#61676ccc;">;
+    </span><span style="color:#fa6e32;">const </span><span style="color:#ff8f40;">ENABLE_ANTICSRF_PROTECTION</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">bool </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">true</span><span style="color:#61676ccc;">;
+    </span><span style="color:#fa6e32;">const </span><span style="color:#ff8f40;">RATE_LIMIT_SEC</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">usize </span><span style="color:#ed9366;">= </span><span style="color:#ff8f40;">3</span><span style="color:#61676ccc;">;
+
+    </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">path</span><span style="color:#61676c;">() </span><span style="color:#61676ccc;">-&gt;</span><span style="color:#61676c;"> Path {
+        Path</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">CreateUser
+    }
+}
+
+</span></pre>
+<p>Now that we have a <code>Fetch</code> type, we need to define a fetch function to use <code>Fetch</code> types. Let's jump to our webapp. In <code>webapp/src/request</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">pub</span><span style="color:#61676c;"> async </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">fetch</span><span style="color:#61676c;">&lt;Req, Res&gt;(</span><span style="color:#ff8f40;">request</span><span style="color:#61676ccc;">: </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">Req) </span><span style="color:#61676ccc;">-&gt; </span><span style="color:#61676c;">Result&lt;Res, Error&gt;
+</span><span style="color:#fa6e32;">where</span><span style="color:#61676c;">
+    Req</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> Serialize, </span><span style="font-style:italic;color:#abb0b6;">// (1)
+
+              // (2)     (3)
+</span><span style="color:#61676c;">    Res</span><span style="color:#61676ccc;">: </span><span style="color:#61676c;">Fetch&lt;Request = Req&gt; + DeserializeOwned,
+
+{
+    </span><span style="color:#fa6e32;">use </span><span style="color:#61676c;">seed</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">browser</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">fetch</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Request </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> HttpRequest</span><span style="color:#61676ccc;">;
+    </span><span style="color:#fa6e32;">let mut</span><span style="color:#61676c;"> request </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">HttpRequest</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">new(Res</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">path())
+        </span><span style="font-style:italic;color:#abb0b6;">// I use POST for all apis :P
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">method</span><span style="color:#61676c;">(Method</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Post)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">bytes</span><span style="color:#61676c;">(rmp_serde</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">to_vec(request)</span><span style="color:#ed9366;">?</span><span style="color:#61676c;">) </span><span style="font-style:italic;color:#abb0b6;">// (1) required here
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">header</span><span style="color:#61676c;">(</span><span style="color:#f07171;">build_message_pack_header</span><span style="color:#61676c;">())</span><span style="color:#61676ccc;">;
+
+    </span><span style="font-style:italic;color:#abb0b6;">// Since `Res` is `Fetch`
+    // we can grab any of the associated items like
+    // associated types or
+    // associated constants
+    // from the `Fetch` trait
+
+    // In this case we grab the associated boolean constant
+    </span><span style="color:#fa6e32;">if </span><span style="color:#61676c;">Res</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">ENABLE_ANTICSRF_PROTECTION </span><span style="color:#61676c;">{
+        </span><span style="font-style:italic;color:#abb0b6;">// add the anti-cross-site-request-forgery header
+    </span><span style="color:#61676c;">}
+
+    </span><span style="font-style:italic;color:#abb0b6;">// the request function comes from Seed-rs
+    </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> bytes </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> request
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">fetch</span><span style="color:#61676c;">()
+        </span><span style="color:#ed9366;">.</span><span style="color:#61676c;">await</span><span style="color:#ed9366;">?
+        </span><span style="font-style:italic;color:#abb0b6;">// I use 200 OK for apis :P
+        </span><span style="color:#ed9366;">.</span><span style="color:#f07171;">check_status</span><span style="color:#61676c;">()</span><span style="color:#ed9366;">?
+        .</span><span style="color:#f07171;">bytes</span><span style="color:#61676c;">()
+        </span><span style="color:#ed9366;">.</span><span style="color:#61676c;">await</span><span style="color:#ed9366;">?
+        .</span><span style="color:#f07171;">as_slice</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
+
+    </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> response </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">rmp_serde</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">from_read_ref(bytes)</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">;
+
+    </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(response)
+}
+</span></pre>
+<ol>
+<li>Notice how <code>fetch&lt;Req, Res&gt;(_: &amp;Req) -&gt; Result&lt;Res, Error&gt; where ...</code> is generic over both a request and respond type. The only constraint on the request parameter is that it must be serializable (1)</li>
+<li>The constraint of the response type is that is must be <code>Fetch</code> and its associated Request type (3) must be the same type as the input parameter (4)</li>
+</ol>
+<p>Let's learn how to call this fetch function to make http requests from our webapp to our server.
+In <code>webapp/srs/pages/signup.rs</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="font-style:italic;color:#abb0b6;">// create our request object
+</span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> request </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">api</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">user</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Request {
+    </span><span style="font-style:italic;color:#abb0b6;">// ~snip~
+</span><span style="color:#61676c;">}</span><span style="color:#61676ccc;">;
+
+</span><span style="font-style:italic;color:#abb0b6;">// and just fetch it!
+</span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> response </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">request</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">fetch(</span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">request)</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">await</span><span style="color:#61676ccc;">;
+
+</span><span style="font-style:italic;color:#abb0b6;">// make some matcha while we&#39;re at it!
+</span><span style="color:#fa6e32;">match</span><span style="color:#61676c;"> response {
+    </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(error) </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">{
+        seed</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">log(error)</span><span style="color:#61676ccc;">; </span><span style="font-style:italic;color:#abb0b6;">// log to browser console :(
+    </span><span style="color:#61676c;">}
+    </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(Response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Created(_newborn_user)) </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">()
+    </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(Response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">UsernameUnavailable) </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">()
+    </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(Response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">EmailUnavailable) </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">()
+}
+</span></pre>
+<p>Now let's take a look at our server. In <code>server/src/responder.rs</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676ccc;">#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">async_trait</span><span style="color:#61676c;">::</span><span style="color:#f29718;">async_trait</span><span style="color:#61676c;">]
+</span><span style="color:#fa6e32;">pub trait </span><span style="color:#399ee6;">FetchResponder</span><span style="color:#61676c;">: Fetch + Sized { </span><span style="font-style:italic;color:#abb0b6;">// (1)
+</span><span style="color:#61676c;">    async </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">respond</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">request</span><span style="color:#61676ccc;">: </span><span style="color:#fa6e32;">Self</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Request) </span><span style="color:#61676ccc;">-&gt; </span><span style="color:#61676c;">Result&lt;</span><span style="color:#fa6e32;">Self</span><span style="color:#61676c;">, Error&gt;</span><span style="color:#61676ccc;">;
+</span><span style="color:#61676c;">}
+</span></pre>
+<p>We define a new trait called <code>FetchResponder</code>. Any type that is <code>FetchResponder</code> can be responded with as the payload of an http response.</p>
+<ol>
+<li>Also notice that <code>FetchResponder</code> can only be implemented on types that are <code>Fetch</code> (1). That means that a type that is <code>FetchResponder</code> is also <code>Fetch</code>.</li>
+</ol>
+<p>Recall that we would normally create an http request handler for each of our api items. While this process is not difficult, it is tedious and requires manual work. (E.g. read the api doc and construct the proper http response to send back)</p>
+<p>To improve upon this situation, we'll define a generic request handler that implements the http, non-variable parts or our api while leaving generic the variable, api types.</p>
+<pre style="background-color:#fafafa;">
+<span style="font-style:italic;color:#abb0b6;">//                  (1)
+</span><span style="color:#fa6e32;">pub</span><span style="color:#61676c;"> async </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">respond</span><span style="color:#61676c;">&lt;F&gt;(</span><span style="color:#ff8f40;">request</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> HttpRequest, </span><span style="color:#ff8f40;">bytes</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> Bytes) </span><span style="color:#61676ccc;">-&gt; </span><span style="color:#61676c;">Result&lt;HttpResponse, Error&gt;
+</span><span style="color:#fa6e32;">where</span><span style="color:#61676c;">
+    F</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> FetchResponder + Serialize, </span><span style="font-style:italic;color:#abb0b6;">// (1)
+
+    </span><span style="color:#61676c;">&lt;F </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Fetch&gt;</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Request</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> DeserializeOwned + Validate, </span><span style="font-style:italic;color:#abb0b6;">// (2)
+
+    </span><span style="color:#61676c;">&lt;&lt;F </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Fetch&gt;</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Request </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Validate&gt;</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Invalidity</span><span style="color:#61676ccc;">:</span><span style="color:#61676c;"> Serialize, </span><span style="font-style:italic;color:#abb0b6;">// (3)
+</span><span style="color:#61676c;">{
+    </span><span style="color:#fa6e32;">if </span><span style="color:#ed9366;">&lt;</span><span style="color:#61676c;">F </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Fetch</span><span style="color:#ed9366;">&gt;::</span><span style="color:#ff8f40;">ENABLE_ANTICSRF_PROTECTION </span><span style="color:#61676c;">{
+        </span><span style="font-style:italic;color:#abb0b6;">// perform anti-cross-site-request forgery checks
+        // ~snip~
+    </span><span style="color:#61676c;">}
+
+    </span><span style="font-style:italic;color:#abb0b6;">// (4)
+    </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> rate_limit_sec </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">&lt;F </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Fetch&gt;</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">RATE_LIMIT_SEC</span><span style="color:#61676ccc;">;
+
+    </span><span style="font-style:italic;color:#abb0b6;">// perform rate limiting
+    // ~snip~
+
+    // my server can handle payloads of various content types :P
+    </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> format </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">Format</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">from(</span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">request)</span><span style="color:#61676ccc;">;
+
+    </span><span style="font-style:italic;color:#abb0b6;">//                                            (5)
+    </span><span style="color:#fa6e32;">match </span><span style="color:#61676c;">deserialize</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">deserialize</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">&lt;&lt;F </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Fetch&gt;</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Request&gt;(</span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">bytes</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;"> format) {
+        </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(error) </span><span style="color:#ed9366;">=&gt; </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(
+            response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Builder</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">error(
+                StatusCode</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">BAD_REQUEST</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;"> error
+            )
+        )</span><span style="color:#61676ccc;">,
+
+        </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(request) </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">{
+            </span><span style="font-style:italic;color:#abb0b6;">//                         `Validate` required here
+            //                                                |
+            //                                                v
+            </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> response </span><span style="color:#ed9366;">= </span><span style="color:#fa6e32;">if let </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(invalidities) </span><span style="color:#ed9366;">=</span><span style="color:#61676c;"> request</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">validate</span><span style="color:#61676c;">() {
+                response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Builder</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">error(
+                    StatusCode</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">BAD_REQUEST</span><span style="color:#61676ccc;">, </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">invalidities
+                )
+            } </span><span style="color:#fa6e32;">else </span><span style="color:#61676c;">{
+</span><span style="font-style:italic;color:#abb0b6;">//  `Invalidity: Serialize` required here
+//                                      |
+//                                      v
+                </span><span style="color:#61676c;">response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Builder</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">ok()</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">serialize</span><span style="color:#61676c;">(
+                    </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">F</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">respond(request)</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">await</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;"> format </span><span style="font-style:italic;color:#abb0b6;">// (5)
+                </span><span style="color:#61676c;">)</span><span style="color:#ed9366;">?
+            </span><span style="color:#61676c;">}</span><span style="color:#61676ccc;">;
+            </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(response)
+        }
+    }
+}
+
+</span></pre>
+<ol>
+<li>
+<p>Notice how <code>respond&lt;F&gt;(_: HttpRequest, _: Bytes) -&gt; Result&lt;HttpResponse, Error&gt; where ...</code> is generic over <code>F</code> yet <code>F</code> is neither found as a parameter nor return type! When I first saw this, I thought it was black-magic! But it's not. In the <code>where</code> clause we state the trait bound: <code>F</code> must be <code>FetchResponder</code> and <code>Serialize</code>.</p>
+</li>
+<li>
+<p>This is where it gets interesting. The type <code>F</code> is <code>FetchResponder</code>, but recall the definition of <code>FetchResponder</code>. Any type that is <code>FetchResponder</code> is also <code>Fetch</code>! The generic type <code>F</code> that we use in this function call must implement both traits. Because of this, we can cast <code>F</code> into the supertrait <code>Fetch</code> and grab an associated item. In this case we are constraining the associated type <code>Request</code> of the trait <code>Fetch</code> of the subtrait <code>FetchResponder</code> of the generic type <code>F</code> to be both <code>DeserializeOwned</code> and <code>Validate</code>.</p>
+<p>Note that <code>Validate</code> is a trait I created that is outside the scope of this discussion. The trait bound is required so I can validate the request payload.</p>
+</li>
+<li>
+<p>Also outside the scope of this discussion. Here I'm bounding the <code>Invalidity</code> type of the <code>Request</code> type to be <code>Serialize</code>.</p>
+</li>
+<li>
+<p>We get the associated constant <code>RATE_LIMIT_SEC</code> from the <code>Fetch</code> trait.</p>
+</li>
+</ol>
+<p>Now that we have defined <code>FetchResponder</code> and shown how it is used, lets implement it on our <code>Response</code> type. Recall that <code>Response</code> as defined in <code>common/src/api/user.rs</code> looks like:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#fa6e32;">pub enum </span><span style="color:#399ee6;">Response </span><span style="color:#61676c;">{
+    Created(User)</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;">
+    UsernameUnavailable</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;">
+    EmailUnavailable</span><span style="color:#61676ccc;">,
+</span><span style="color:#61676c;">}
+</span></pre>
+<p>Now back to our server in <code>server/src/route/user.rs</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676ccc;">#</span><span style="color:#61676c;">[</span><span style="color:#f29718;">async_trait</span><span style="color:#61676c;">::</span><span style="color:#f29718;">async_trait</span><span style="color:#61676c;">]
+</span><span style="color:#fa6e32;">impl </span><span style="color:#61676c;">FetchResponder </span><span style="color:#fa6e32;">for </span><span style="color:#399ee6;">Response </span><span style="color:#61676c;">{
+
+    async </span><span style="color:#fa6e32;">fn </span><span style="color:#f29718;">respond</span><span style="color:#61676c;">(
+
+        Request {
+            name,
+            username,
+            email,
+            password,
+            language,
+        }: Request,
+
+    ) </span><span style="color:#61676ccc;">-&gt; </span><span style="color:#61676c;">Result&lt;Response, Error&gt; {
+
+        </span><span style="color:#fa6e32;">type </span><span style="color:#399ee6;">PgError </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">persistance</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">postgres</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Error</span><span style="color:#61676ccc;">;
+        </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> hashed_password </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">security</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">hash</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">hash_password(</span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">password)</span><span style="color:#ed9366;">?</span><span style="color:#61676ccc;">;
+
+        </span><span style="color:#fa6e32;">match </span><span style="color:#61676c;">persistance</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">user</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">create(
+                </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">name</span><span style="color:#61676ccc;">,
+                </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">username</span><span style="color:#61676ccc;">,
+                </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">email</span><span style="color:#61676ccc;">,
+                </span><span style="color:#ed9366;">&amp;</span><span style="color:#61676c;">hashed_password</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;">
+                language
+            )</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">await
+        {
+            </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(
+                persistance</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Error</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">PostgresError(
+                        PgError</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">UniqueViolation(violation)
+                    )
+                )
+                </span><span style="color:#fa6e32;">if</span><span style="color:#61676c;"> violation</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">constraint</span><span style="color:#61676c;">() </span><span style="color:#ed9366;">== </span><span style="font-style:italic;color:#55b4d4;">Some</span><span style="color:#61676c;">(
+                    persistance</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">user</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">USERNAME_CONTRAINT
+                </span><span style="color:#61676c;">) </span><span style="color:#ed9366;">=&gt;
+            </span><span style="color:#61676c;">{
+                </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(Response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">UsernameUnavailable)
+            }
+
+
+            </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(
+                persistance</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Error</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">PostgresError(
+                        PgError</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">UniqueViolation(violation)
+                    )
+                )
+                </span><span style="color:#fa6e32;">if</span><span style="color:#61676c;"> violation</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">constraint</span><span style="color:#61676c;">() </span><span style="color:#ed9366;">== </span><span style="font-style:italic;color:#55b4d4;">Some</span><span style="color:#61676c;">(
+                    persistance</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">user</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">EMAIL_CONTRAINT
+                </span><span style="color:#61676c;">) </span><span style="color:#ed9366;">=&gt;
+            </span><span style="color:#61676c;">{
+                </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(Response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">EmailUnavailable)
+            }
+
+            </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(error) </span><span style="color:#ed9366;">=&gt; </span><span style="font-style:italic;color:#55b4d4;">Err</span><span style="color:#61676c;">(error</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">into</span><span style="color:#61676c;">())</span><span style="color:#61676ccc;">,
+
+            </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">((user</span><span style="color:#61676ccc;">,</span><span style="color:#61676c;"> _credentials)) </span><span style="color:#ed9366;">=&gt; </span><span style="font-style:italic;color:#55b4d4;">Ok</span><span style="color:#61676c;">(Response</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Created(user))</span><span style="color:#61676ccc;">,
+        </span><span style="color:#61676c;">}
+    }
+}
+</span></pre>
+<p>Notice the lack of http types. E.g. We don't have to worry abut http status codes. No json, nada of the sort. Instead we focus on calling our database and doing some matching to figure out what the db is saying.</p>
+<p>The last part is to register our http handler with actix_web, my web framework of choice. In <code>server/src/route.rs</code>:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#f07171;">macro_rules! </span><span style="color:#399ee6;">fetch_responder </span><span style="color:#61676c;">{
+    (</span><span style="color:#ff8f40;">$config</span><span style="color:#61676ccc;">:</span><span style="color:#fa6e32;">ident</span><span style="color:#61676c;">, </span><span style="color:#ff8f40;">$fetch</span><span style="color:#61676ccc;">:</span><span style="color:#fa6e32;">ty</span><span style="color:#61676c;">) </span><span style="color:#ed9366;">=&gt; </span><span style="color:#61676c;">{
+        </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> path </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">&lt;$fetch </span><span style="color:#ed9366;">as</span><span style="color:#61676c;"> Fetch&gt;</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">path()</span><span style="color:#61676ccc;">; </span><span style="font-style:italic;color:#abb0b6;">// (2)
+        </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> resource </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">Resource</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">new(path)</span><span style="color:#61676ccc;">;
+        </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> responder </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">responder</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">respond</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">&lt;$fetch&gt;</span><span style="color:#61676ccc;">; </span><span style="font-style:italic;color:#abb0b6;">// (3)
+
+        // I use POST methods for all apis :P
+        </span><span style="color:#fa6e32;">let</span><span style="color:#61676c;"> route </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">Route</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">new()</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">method</span><span style="color:#61676c;">(Method</span><span style="color:#ed9366;">::</span><span style="color:#ff8f40;">POST</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">to</span><span style="color:#61676c;">(responder)</span><span style="color:#61676ccc;">;
+        </span><span style="color:#61676c;">$config</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">service</span><span style="color:#61676c;">(resource</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">route</span><span style="color:#61676c;">(route))</span><span style="color:#61676ccc;">;
+    </span><span style="color:#61676c;">};
+}
+
+</span><span style="color:#fa6e32;">pub fn </span><span style="color:#f29718;">routes</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">config</span><span style="color:#61676ccc;">: </span><span style="color:#ed9366;">&amp;</span><span style="color:#fa6e32;">mut</span><span style="color:#61676c;"> use actix_web</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">web</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">ServiceConfig) {
+    </span><span style="font-style:italic;color:#abb0b6;">// ~snip~
+    </span><span style="color:#f07171;">fetch_responder!</span><span style="color:#61676c;">(config</span><span style="color:#61676ccc;">, </span><span style="color:#61676c;">api</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">user</span><span style="color:#ed9366;">::</span><span style="color:#61676c;">Response)</span><span style="color:#61676ccc;">; </span><span style="font-style:italic;color:#abb0b6;">// (1)
+    // ~snip~
+</span><span style="color:#61676c;">}
+</span></pre>
+<ol>
+<li>Recall that <code>Response</code> is <code>FetchResponder</code> and <code>Fetch</code>. We pass this api type into our macro.</li>
+<li>We cast the <code>Response</code> type as <code>Fetch</code> and call the trait's <code>path()</code> function to get the url path. Because this method was implemented in our common crate where our api lives, any change to our api, will automatically propagate here like magic!</li>
+<li>Here is where our <code>respond&lt;F&gt;(...)</code> function gets specialized. The generic <code>F</code> now becomes <code>Response</code>. Actix will call the <code>responder</code> whenever an http request hits our path!</li>
+</ol>
+<p>That's it folks!</p>
+<h3 id="summary">Summary</h3>
+<p>We used traits to create required items (functions, types and constants) on elements of our api that vary per api endpoint. We then proceeded to abstract away the non-variable api aspects (e.g. the response code, http method, payload content type) to let our request handlers focus singularly on the aspect of the api they care about (in our case it was writing to the db).</p>
+<p>By leveraging Rust's type system, we can build a full-stack app that is amenable to changing business requirements and easily maintainable by newbies like me or Rusty gurus like you.</p>
+<p>Cheers!</p>
+<p>Jesus</p>
+<h1 id="making-a-tiny-game-with-raylib-via-mysteriouspants">Making a Tiny Game with Raylib via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<p>Chris is participating in the <a href="https://itch.io/jam/4mb">4MB Game Jam</a> this month. As per the name, game submissions need to be smaller than 4mb. Chris is making his game with Rust using the <a href="https://crates.io/crates/raylib">raylib</a> crate, which provides Rust bindings for <a href="https://www.raylib.com/">raylib</a>, a C library for making video games. Part of the fun is optimizations, including trimming down raylib to not include modules that he isn't using. The full raylib library is around 1MB in size, but by trimming out what he isn't using, Chris can get the final dependency to only 40KB!</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/lyon">lyon</a>: 2D Graphics rendering on the GPU using tessellation</li>
+<li><a href="https://crates.io/crates/bevy_prototype_lyon">bevy_prototype_lyon</a>: Draw 2D shapes and paths in the Bevy game engine</li>
+<li><a href="https://crates.io/crates/raylib">raylib</a>: Safe Rust bindings for Raylib</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;games&#x2F;">#Games</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;embedded&#x2F;">#Embedded</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-04-28&#x2F;">‹ Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</a>
+                    
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

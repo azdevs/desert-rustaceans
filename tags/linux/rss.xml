@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/linux/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</title>
+                <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-04-28/</link>
+                <guid>https%3A//rust.azdevs.org/2021-04-28/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Minimal Dockerfile for Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Mocking in Rust and Rust in the Linux Kernel via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Conversations around WebAssembly via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;, and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Some Blockchain Stuff via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

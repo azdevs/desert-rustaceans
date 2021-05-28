@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/data-structures/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>LRU Cache, Const Generics, and Embedded Stuff</title>
+                <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-02-24/</link>
+                <guid>https%3A//rust.azdevs.org/2021-02-24/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building an LRU Cache via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Const Generics via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Float Stuff Also Const Generics via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Debugging on AMG8833 Grid-EYE with Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;VSCode Rust-analyzer Tips via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;craigjb&quot;&gt;@craig_jbishop&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

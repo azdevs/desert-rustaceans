@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-09-30/#rants-via-nelsonchen-and-blainebublitz" class="toc-link">Rants via @NelsonChen and @BlaineBublitz</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#too-many-similar-crates-no-official-one" class="toc-link">Too Many Similar Crates, No Official One</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#macros-are-a-crutch" class="toc-link">Macros are a Crutch</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-09-30/#linking-with-c-libraries-via-christophersebastian" class="toc-link">Linking with C Libraries via @ChristopherSebastian</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#use-an-archiver-to-make-a-library-rust-can-use" class="toc-link">Use an Archiver to Make a Library Rust Can Use</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#cross-compile-for-windows-using-a-dll-that-exports-a-simple-api" class="toc-link">Cross Compile for Windows using a DLL that Exports a Simple API</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#code-summary" class="toc-link">Code Summary</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-09-30/#an-async-rocket-server-with-oauth-cookies-diesel-and-templates-via-mysteriouspants" class="toc-link">An Async Rocket Server with OAuth, Cookies, Diesel, and Templates via @mysteriouspants</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#github-oauth-authentication" class="toc-link">GitHub OAuth Authentication</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#diesel-orm-for-sql" class="toc-link">Diesel ORM for SQL</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#async-rocket" class="toc-link">Async Rocket</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#templating" class="toc-link">Templating</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-09-30/#dark-forest-game-via-jacobrosenthal-and-blainebublitz" class="toc-link">Dark Forest Game via @jacobrosenthal and @BlaineBublitz</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#mining" class="toc-link">Mining</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#optimizing-the-miner" class="toc-link">Optimizing the Miner</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2020-09-30/#miner-manager-with-native-node-modules-in-rust" class="toc-link">Miner Manager with Native Node Modules in Rust</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2020-09-30/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-09-30&#x2F;">Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-09-30</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Rants via <a href="https://github.com/nelsonjchen">@NelsonChen</a> and <a href="https://github.com/phated">@BlaineBublitz</a></li>
+<li>Linking with C Libraries via <a href="https://github.com/likebike">@ChristopherSebastian</a></li>
+<li>An Async Rocket Server with OAuth, Cookies, Diesel, and Templates via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>Dark Forest Game via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a> and <a href="https://github.com/phated">@BlaineBublitz</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="rants-via-nelsonchen-and-blainebublitz">Rants via <a href="https://github.com/nelsonjchen">@NelsonChen</a> and <a href="https://github.com/phated">@BlaineBublitz</a></h1>
+<h2 id="too-many-similar-crates-no-official-one">Too Many Similar Crates, No Official One</h2>
+<p>Nelson rants that there are too many wrapper crates for the Windows API, all of them are subtely different, and none of which providing everything he needs. The closest one is <a href="https://crates.io/crates/winapi">winapi</a>.</p>
+<p>Daniel asked what kind of support Microsoft might be providing, considering projects like <a href="https://github.com/microsoft/winrt-rs">WinRT</a>, Rust for the Windows Runtime. Here though, WinRT is wrapping the COM interfaces which is a higher level abstraction than the Windows API.</p>
+<h2 id="macros-are-a-crutch">Macros are a Crutch</h2>
+<p>Blaine rants that macros are a crutch used by Rust developers when they don't know how to make a good code API. Libraries like Diesel particularly seem run afoul of complicated macro hell.</p>
+<p>Jacob notes that the only ways to implement config are to either use a config struct or builder pattern. If your API doesn't make sense with either of these constructs, you are kind of screwed and macros are your only solution. This is something that Raph Levien mentioned in <a href="https://github.com/raphlinus/raphlinus.github.io/blob/b1ba35f7643381d0bfb1ab613043ff08ea7d8d88/_posts/2020-09-22-rust-2021.md#a-wishlist">his wishlist for Rust in 2021</a>:</p>
+<blockquote>
+<p>Fourth, if I could have one wishlist from the Rust language, it would be proper keyword arguments, as the builder pattern feels clunky, and the struct-with-default pattern is no better. But overall there's a lot to be said for the language itself basically being stable, and the primary focus being on implementation, tools, and ecosystem.</p>
+</blockquote>
+<h1 id="linking-with-c-libraries-via-christophersebastian">Linking with C Libraries via <a href="https://github.com/likebike">@ChristopherSebastian</a></h1>
+<p>Chris was having some major problems with Rust builds when trying to link against a (fairly complex) C library. Basically, the problem boiled down to the fact that the C library consists of a bunch of static libs (.a) files and they re-define common symbols. By default, Rust uses the &quot;--whole-archive&quot; linker option which causes these redefinitions to conflict. Also, the C libs have cyclical dependencies and they really need to be linked with &quot;--start-group&quot; but again Cargo gives no way to control this. Finally, the only way to communicate with Rust's linker is to use <code>cargo rustc linklib</code> which limits the ability to control how things are linked.</p>
+<p>It's actually easy to manually issue the right command and get the thing to build -- but if we are building a crate which needs to be easily usable from other Rust projects, we need to find a nice cargo-compatible build solution.</p>
+<p>Chris's solution consisted of two steps:</p>
+<h2 id="use-an-archiver-to-make-a-library-rust-can-use">Use an Archiver to Make a Library Rust Can Use</h2>
+<p>Chris finally ended up using the <a href="https://crates.io/crates/cc">cc</a> crate which figures out how to build C++ files into a static archive and the <a href="https://crates.io/crates/ar">ar</a> crate to convert the complex libary into a simpler, merged libary that is compatible with Cargo. One important note is that he needed to use a <strong>Thin Archive</strong>, as a Standard Archive will not work because it is too deeply nested.</p>
+<h2 id="cross-compile-for-windows-using-a-dll-that-exports-a-simple-api">Cross Compile for Windows using a DLL that Exports a Simple API</h2>
+<p>The build process has an extra step for supporting Windows. Since Windows uses <a href="https://docs.microsoft.com/en-us/cpp/build/reference/gs-buffer-security-check?view=vs-2019">/GS</a> for buffer security checks as well as some other flags that MinGW doesn't support, compiling produces unresolved symbols for things like security cookies, etc. To get MinGW to work, Chris made a DLL (compiled with Visual Studio) which understands the security checks and makes a simplified API that MinGW can use.</p>
+<p>While initially feeling like the Rust toolchain was not providing enough, Chris came to appreciate the level of abstraction that Rust provided. If they tried to do more, it would be too much. He didn't end up needing a fancy API after all.</p>
+<h2 id="code-summary">Code Summary</h2>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">// ==== build.rs ====
+// We manually run the &#39;cc&#39; compiler and &#39;ar&#39; archiver to convert our complex
+// C libraries into a simpler, merged library that is compatible with Cargo&#39;s limited
+// linker abilities.  Then we tell Cargo about the lib with the &quot;cargo:rustc-link-...&quot; prints.
+//
+// NOTE: The stdout of this script gets stored at target/debug/build/$name-$hash/output.
+
+use std::path::PathBuf;
+
+fn run&lt;S:AsRef&lt;str&gt;&gt;(cmd_str:S) -&gt; Result&lt;(), std::process::ExitStatus&gt; {
+    // Split &#39;cmd_str&#39; by spaces and create a Command object:
+    let mut pieces = cmd_str.as_ref().split(&#39; &#39;);
+    let mut cmd = std::process::Command::new(pieces.next().unwrap());
+    for piece in pieces {
+        if piece.len()==0 { continue; }
+        cmd.arg(piece);
+    }
+
+    // Run the Command and report the result:
+    let status = cmd.status().unwrap();
+    if status.success() {
+        Ok(())
+    } else {
+        Err(status)
+    }
+}
+
+fn main() {
+    // Helpful for debugging and understanding our context:
+    assert!(std::process::Command::new(&quot;env&quot;).status().unwrap().success());
+
+    let proj_dir : PathBuf = std::env::var(&quot;CARGO_MANIFEST_DIR&quot;).unwrap().into();
+    let out_dir  : PathBuf = std::env::var(&quot;OUT_DIR&quot;).unwrap().into();
+    let lib_dir            = proj_dir.join(&quot;x64_lsb-11.17.1.0_v6&quot;);
+
+    run(format!(&quot;cc -I{lib_dir} -c {proj_dir}/src/c_api.c -o {out_dir}/c_api.o&quot;,
+                proj_dir=proj_dir.to_str().unwrap(),
+                lib_dir=lib_dir.to_str().unwrap(),
+                out_dir=out_dir.to_str().unwrap(),
+               )).unwrap();
+
+    run(format!(&quot;cc -I{lib_dir} -c {lib_dir}/x64_lsb/lm_new.c -o {out_dir}/lm_new.o&quot;,
+                lib_dir=lib_dir.to_str().unwrap(),
+                out_dir=out_dir.to_str().unwrap(),
+               )).unwrap();
+
+    // Note that we are using a &quot;thin&quot; archive to bundle all libs together because Rust&#39;s linker controls are extremely limited and unable to handle this kind of circular-dependency + redundant-definitions structure:
+    run(format!(&quot;ar crT {out_dir}/libflexbundle.a {out_dir}/c_api.o {out_dir}/lm_new.o {lib_dir}/x64_lsb/liblmgr_pic.a {lib_dir}/x64_lsb/libcrvs_pic.a {lib_dir}/x64_lsb/libsb_pic.a {lib_dir}/x64_lsb/libFNPload_pic.a {lib_dir}/x64_lsb/liblmgr_dongle_pic.a&quot;,
+                lib_dir=lib_dir.to_str().unwrap(),
+                out_dir=out_dir.to_str().unwrap(),
+               )).unwrap();
+
+    println!(&quot;cargo:rustc-link-search={}&quot;, out_dir.to_str().unwrap());
+    println!(&quot;cargo:rustc-link-lib=flexbundle&quot;);
+}
+</span></pre><h1 id="an-async-rocket-server-with-oauth-cookies-diesel-and-templates-via-mysteriouspants">An Async Rocket Server with OAuth, Cookies, Diesel, and Templates via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<p>Repo: <a href="https://github.com/iDevGames/uDevGames.com">https://github.com/iDevGames/uDevGames.com</a></p>
+<p>Chris worked on an async Rocket server for a gaming community he is a part of. Some of the features of the server are:</p>
+<h2 id="github-oauth-authentication">GitHub OAuth Authentication</h2>
+<p>Chris rolled his own <a href="https://github.com/iDevGames/uDevGames.com/blob/mainline/src/gh_oauth.rs">OAuth client</a> instead of using the <a href="https://crates.io/crates/oauth2">oauth2</a> crate. GitHub's docs are so awesome that it is easy and fun to implement the OAuth dance yourself.</p>
+<h2 id="diesel-orm-for-sql">Diesel ORM for SQL</h2>
+<p>Chris didn't like <a href="https://crates.io/crates/sqlx">sqlx</a> because it seemed like it was doing too much with the preprocessor and proc_macros. So instead he used <a href="https://crates.io/crates/diesel">diesel</a> even though he had some issues with it's API. Specifically, Chris found it difficult to figure out what DSL to use or DSL type you get back from a function call. He thought they could learn a lot from the <a href="https://guides.rubyonrails.org/active_record_basics.html">active record pattern</a> from Ruby on Rails.</p>
+<p>One benefit of using diesel was the <a href="https://docs.rs/diesel/0.16.0/diesel/macro.embed_migrations.html">diesel::embed_migrations</a> which reads the migrations at compile time and puts them in the binary. This makes it easy to execute migrations on the remote server without needing to cart all the <code>.sql</code> files around. Simply <code>scp</code> up the server binary and run it with a migration command.</p>
+<h2 id="async-rocket">Async Rocket</h2>
+<p>Chris played with using <a href="http://rocket.rs/">rocket</a>'s async API. In his <a href="https://github.com/iDevGames/uDevGames.com/blob/mainline/src/main.rs#L29">main()</a>, he used the <code>rocket::main</code> macro, an alias for diesel is not async. Then the <a href="https://github.com/iDevGames/uDevGames.com/blob/mainline/src/gh_oauth.rs#L184">route handlers</a> could use async await commands:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">async fn get_user_detail(
+    gh_client: &amp;ReqwestClient, access_token: &amp;String
+) -&gt; Result&lt;UserResponse, GetUserDetailError&gt; {
+   let r = gh_client.get(&quot;https://api.github.com/user&quot;)
+        .header(&quot;Authorization&quot;, format!(&quot;token {}&quot;, access_token))
+        .header(&quot;Accept&quot;, &quot;application/json&quot;)
+        .send()
+        .await?
+        .json()
+        .await?;
+
+    Ok(r)
+}
+</span></pre><h2 id="templating">Templating</h2>
+<p>Chris used <a href="https://crates.io/crates/tera">tera</a> for a templating engine and <a href="https://api.rocket.rs/v0.4/rocket_contrib/templates/struct.Template.html">Rocket's template context</a>.</p>
+<h1 id="dark-forest-game-via-jacobrosenthal-and-blainebublitz">Dark Forest Game via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a> and <a href="https://github.com/phated">@BlaineBublitz</a></h1>
+<p>Repo: <a href="https://github.com/phated/sophon">https://github.com/phated/sophon</a></p>
+<p><a href="https://zkga.me/">Dark Forest</a>, named after <a href="https://en.wikipedia.org/wiki/The_Dark_Forest">the book with the same name</a>, is a serverless game based on <a href="https://github.com/darkforest-eth/eth">Ethereum smart contracts</a>. The game is similar to <a href="https://www.eveonline.com/">EVE Online</a>, where you are exploring and conquering planets in the universe.</p>
+<h2 id="mining">Mining</h2>
+<p>There is a fog of war around your planets and the visible area of the universe is initially tiny. You have a miner which you can place at any coordinates and it reveals what's there. It is called a miner because it is performing a similar function as mining Bitcoin, it computes hashes for a piece of data until it finds a signed hash where the first N bits begin with a <code>10000000...</code>. The hash result of the coordinates determine what is there (a planet, an asteroid field, etc). It can also give you other information...</p>
+<p>Moves made by players are communicated on the blockchain. This leaks meta- and actual data about the player. Once you have found computed the hash result for a given (x, y) coordinate, you can use it with this information to monitor the activity of other players (moving energy between planets, inactivity, etc).</p>
+<h2 id="optimizing-the-miner">Optimizing the Miner</h2>
+<p>The <a href="https://github.com/darkforest-eth/client">game's client</a> is open source and can be edited. There is no way to cheat with the miner code because all it does is move to a coordinate and compute a hash result. However, the code can be optimized to compute more hashes per second (a more efficient miner). There is even a <a href="https://github.com/agajews/mimc-fast">Rust-based miner</a> that is available on GitHub.</p>
+<p>The Rust miner is a Rocket server with an <a href="https://github.com/agajews/mimc-fast/blob/master/src/main.rs#L378">entry point</a> that is calling a <a href="https://github.com/agajews/mimc-fast/blob/master/src/main.rs#L317">main hash function</a>.</p>
+<p>Jacob was iterating on it and did some benchmarking to compare his code's performance (e.g. how much time is being wasted on the scheduler, how much is rayon taking, etc.). In addition to measuring results for different changes in the architecture, Jacob also measured results against different block_sizes for the hash function to see which block_size yielded the best results. Another way he analyzed performance was to use <a href="https://github.com/flamegraph-rs/flamegraph">flamegraph</a> to check which function calls were taking the most time.</p>
+<p>Chris mentioned that, for serious benchmarking, it is important to control the conditions under which the performance test is run. He provided the following commands he uses to control his cpu-scaling and frequency, in order to stabilize benchmarks:</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">cpu-show:
+        for P in /sys/devices/system/cpu/cpufreq/policy*; do echo $$P; echo scaling_governor=$$(cat $$P/scaling_governor) scaling_min_freq=$$(cat $$P/scaling_min_freq) scaling_max_freq=$$(cat $$P/scaling_max_freq
+) scaling_cur_freq=$$(cat $$P/scaling_cur_freq); done
+
+cpu-normal:
+        # Run with &#39;sudo&#39;.
+        for P in /sys/devices/system/cpu/cpufreq/policy*; do echo powersave &gt;$$P/scaling_governor; cp $$P/cpuinfo_min_freq $$P/scaling_min_freq; cp $$P/cpuinfo_max_freq $$P/scaling_max_freq; done
+cpu-fast:
+        # Run with &#39;sudo&#39;.
+        for P in /sys/devices/system/cpu/cpufreq/policy*; do echo performance &gt;$$P/scaling_governor; cp $$P/cpuinfo_max_freq $$P/scaling_max_freq; cp $$P/cpuinfo_max_freq $$P/scaling_min_freq; done
+cpu-slow:
+        # Run with &#39;sudo&#39;.
+        for P in /sys/devices/system/cpu/cpufreq/policy*; do echo powersave &gt;$$P/scaling_governor; cp $$P/cpuinfo_min_freq $$P/scaling_min_freq; cp $$P/cpuinfo_min_freq $$P/scaling_max_freq; done
+</span></pre><h2 id="miner-manager-with-native-node-modules-in-rust">Miner Manager with Native Node Modules in Rust</h2>
+<p>Blaine made a port of the game's Node.js server that runs the miner manager. He initially tried re-engineering it in Rust but quickly gave up because it was difficult to adapt the promise logic of Node.js to async paradigms in Rust.</p>
+<p>Instead, he used <a href="https://neon-bindings.com/">Neon</a> which provides automated Rust bindings for writing safe and fast native Node.js modules. This allowed him to use Rust for its typesafe for when performance mattered, and Node.js when he needed the cheap asynchronicity.</p>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/winapi">winapi</a>: FFI Bindings to all of the Windows API</li>
+<li><a href="https://crates.io/crates/cc">cc</a>: Library to compile C/C++/assembly into a Rust library</li>
+<li><a href="https://crates.io/crates/ar">ar</a>: Library for encoding / decoding Unix archives (.a) files</li>
+<li><a href="https://crates.io/crates/neon">neon</a>: Rust bindings for writing safe and fast native Node.js modules</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;ffi&#x2F;">#FFI</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;games&#x2F;">#Games</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;server&#x2F;">#Server</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;blockchain&#x2F;">#Blockchain</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-08-26&#x2F;">‹ Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2020-10-28&#x2F;">Gaming Discussion, More Dark Forest, and Async Rust ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

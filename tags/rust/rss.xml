@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/rust/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</title>
+                <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-04-28/</link>
+                <guid>https%3A//rust.azdevs.org/2021-04-28/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Minimal Dockerfile for Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Mocking in Rust and Rust in the Linux Kernel via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Conversations around WebAssembly via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;, and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Some Blockchain Stuff via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Links for Learning Rust</title>
+                <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-03-31/</link>
+                <guid>https%3A//rust.azdevs.org/2021-03-31/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rust Search Extension via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Links for Learning Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Links for Learning Embedded Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>LRU Cache, Const Generics, and Embedded Stuff</title>
+                <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-02-24/</link>
+                <guid>https%3A//rust.azdevs.org/2021-02-24/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building an LRU Cache via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Const Generics via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Float Stuff Also Const Generics via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Debugging on AMG8833 Grid-EYE with Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;VSCode Rust-analyzer Tips via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;craigjb&quot;&gt;@craig_jbishop&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Gaming Discussion, More Dark Forest, and Async Rust</title>
+                <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-10-28/</link>
+                <guid>https%3A//rust.azdevs.org/2020-10-28/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Discussion about Game Development&lt;&#x2F;li&gt;
+&lt;li&gt;More Dark Forest Game via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Learning Async Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;likebike&quot;&gt;@ChristopherSebastian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Options or Results and_then Combinators</title>
+                <pubDate>Wed, 24 Apr 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-04-24/</link>
+                <guid>https%3A//rust.azdevs.org/2019-04-24/</guid>
+                <description>&lt;p&gt;Jacob Rosenthal brings you on a journey through options and results and when to use each, and to combine and chain them.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>2018 Edition Release</title>
+                <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2018-12-06/</link>
+                <guid>https%3A//rust.azdevs.org/2018-12-06/</guid>
+                <description>&lt;p&gt;We&#x27;ll talk about features we&#x27;re excited about, what didn&#x27;t make it in, how Rust is moving into new domains like Network services, CLIs, WebAssembly, and Embedded Devices, and why maybe now is the time to start or get back into Rust.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/embedded/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</title>
+                <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-05-26/</link>
+                <guid>https%3A//rust.azdevs.org/2021-05-26/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wheel of Names with Bevy via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Embedded Graphics Updates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Making a Tiny Game with Raylib via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Enforcing Api Specs with Traits &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Links for Learning Rust</title>
+                <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-03-31/</link>
+                <guid>https%3A//rust.azdevs.org/2021-03-31/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rust Search Extension via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Links for Learning Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Links for Learning Embedded Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>LRU Cache, Const Generics, and Embedded Stuff</title>
+                <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-02-24/</link>
+                <guid>https%3A//rust.azdevs.org/2021-02-24/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Building an LRU Cache via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Const Generics via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Float Stuff Also Const Generics via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Debugging on AMG8833 Grid-EYE with Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;VSCode Rust-analyzer Tips via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;craigjb&quot;&gt;@craig_jbishop&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Discord Bots, Digital Signal Processing, and TensorFlow Lite</title>
+                <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-07-29/</link>
+                <guid>https%3A//rust.azdevs.org/2020-07-29/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discord Bots via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Digital Signal Processing via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Managing Game State via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Embedded and Performance</title>
+                <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-02-26/</link>
+                <guid>https%3A//rust.azdevs.org/2020-02-26/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Intro to Embedded via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;craigjb&quot;&gt;@craig_jbishop&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;More Rust Embedded via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;How To Write Fast Rust Code via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;likebike&quot;&gt;@ChristopherSebastian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Recognizing &amp;quot;Hand-Drawn&amp;quot; Numbers on PyGamer via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Cross Compiling Rust to Your Pi</title>
+                <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-07-24/</link>
+                <guid>https%3A//rust.azdevs.org/2019-07-24/</guid>
+                <description>&lt;p&gt;Daniel Bank has been working with Snips offline machine learning stack and explains the ins and outs of cross compiling for a different architecture than you&#x27;re machine.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Embedded</title>
+                <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-02-27/</link>
+                <guid>https%3A//rust.azdevs.org/2019-02-27/</guid>
+                <description>&lt;p&gt;I know there are folks in our community already making drones, stepper drivers, robots, and more so well have plenty to talk about.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

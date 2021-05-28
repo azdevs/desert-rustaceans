@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Frontend Web</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-08-28/#tour-of-front-end-web-via-jacobrosenthal" class="toc-link">Tour of Front End Web via @jacobRosenthal</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-08-28/#static-sites" class="toc-link">Static sites</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-08-28/#frontend-web-is-actually-wasm" class="toc-link">Frontend web is actually Wasm</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-08-28/#why-not-pure-rust" class="toc-link">Why not pure Rust</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-08-28/#why-pure-rust-for-web" class="toc-link">Why pure Rust for web?</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-08-28/#ecosystem" class="toc-link">Ecosystem</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2019-08-28/#soo" class="toc-link">Soo..</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2019-08-28/#crates-you-should-know" class="toc-link">Crates you should know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-08-28&#x2F;">Frontend Web</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2019-08-28</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Join us at HeatSync Labs for a tour of front end web work in Rust. Yep, were doing front end in Rust, too. Theres a lot to talk about so help us by knocking off some of these topics:</p>
+<ul>
+<li>static site generators</li>
+<li>single-page application (SPA) and web apps</li>
+<li>isomorphic web apps</li>
+<li>elm inspired frameworks</li>
+<li>virtual dom libraries</li>
+<li>jsx style templating</li>
+<li>and of course web assembly</li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h2 id="tour-of-front-end-web-via-jacobrosenthal">Tour of Front End Web via <a href="https://github.com/jacobRosenthal">@jacobRosenthal</a></h2>
+<h3 id="static-sites">Static sites</h3>
+<p>Cheating a bit I know, but static site generators belong here somewhere. You can write your web content in some kind of template form, generally markdown, and just apply some theme to it and have it spit out a site. This is common in Golang via <a href="https://gohugo.io">Hugo</a> and very much available in Rust too. Our big one is <a href="https://github.com/getzola/zola">Zola (né Gutenberg)</a> I built our <a href="https://rust.azdevs.org">rust.azdevs.org</a> in zola.</p>
+<p>And then mdbook tool, what the Rust Book is made with. All the code snippets are by default tested be tested with mdbook test and as a result prs can be tested.</p>
+<h3 id="frontend-web-is-actually-wasm">Frontend web is actually Wasm</h3>
+<p>Pure for the web is actually a story of Wasm.</p>
+<p>So were not arguing here if you're going to be utilizing Rust in your future web development. You will be and may already be. Tools like wasm-pack are already spitting out and publishing Rust crates as Wasm to the NPM registry.</p>
+<p>Rust compiled to wasm is better at performant code you previously would have to hope your browser or os gave you as an api call:</p>
+<ul>
+<li>tight event loop, games, fluid interfaces</li>
+<li>math transformations (not offered native by the os or browser, like ml commonly is now) audio, video</li>
+</ul>
+<p>For projects where these are a minor part of your web feel free to continue consuming Rust in small quantities. Tightening up this process is the current focus of the Rust Web working group so you're in good hands.</p>
+<p>But some amongst us want to go further, to Pure Rust Frontend Web.</p>
+<h3 id="why-not-pure-rust">Why not pure Rust</h3>
+<p>Because Rust Web Working Group daddy told you not to</p>
+<blockquote>
+<p>&quot;Additionally, full Web apps are not a unique advantage for Rust&quot;
+&quot;Our hope with the toolkit is that a rising tide will lift all boats, regardless where your project lands on that spectrum&quot;
+<a href="https://rustwasm.github.io/rfcs/007-2019-roadmap.html#a-focus-only-on-pure-rust-web-applications">Rust web working group's 2019 official statement</a></p>
+</blockquote>
+<p>Wasm calls with arguments for anything other than primitives like i32 f64 still need a bit of js glue code and are going to perform worse than js calls for the near future. Were waiting on <a href="https://github.com/WebAssembly/interface-types/blob/master/proposals/interface-types/Explainer.md">interface-types</a> and <a href="https://github.com/WebAssembly/reference-types/blob/master/proposals/reference-types/Overview.md">reference-types</a> to put Wasm calls at an advantage over js calls as they can be statically validated once rather than dynamically checked every time. This was well laid out by this <a href="https://hacks.mozilla.org/2019/08/webassembly-interface-types/">recent Mozilla blog from Lin Clark</a></p>
+<p>Because {your favorite language here} will have an article on hackernews about their pure Wasm frontend framework in the next few years. If you're thinking ahead you're realizing Wasm is going to increasingly be a target for most languages. If you hang out long enough golang and even typescript will be offering some frontend web thing compiled to Wasm. Theyre not anywhere near though. They need a garbage collector and <a href="https://github.com/WebAssembly/proposals">GC proposal</a> isn't moving fast.</p>
+<h3 id="why-pure-rust-for-web">Why pure Rust for web?</h3>
+<ul>
+<li>
+<p>You want to write more Rust or less JS</p>
+</li>
+<li>
+<p>You're doing something performant (audio/video/game/ui)
+Moores law is dead. The lie that we can sacrifice performance is over and if were going to compete on performance you want to be on the side of Rust. And what comes for free with this performance and size optimization is embedded and iot applications. No more half ass poorly featured web standard stuff on your 8bit arduino in C++ you can't figure out how to patch.</p>
+</li>
+<li>
+<p>You want to use A LOT of Rust(Wasm) crates. Why glue them together in js land? Especially when someday soon(ish) Wasm api calls will be faster than js calls</p>
+</li>
+<li>
+<p>Concurrency is what Rust was built for and threading is coming
+Next and more important, <a href="https://github.com/WebAssembly/threads">Wasm threads</a> are coming. Web Workers already allow concurrency but they provide very limited ability to share resources between threads. Yew is offering an actor model based on today's capabilites, but you can only message pass with postMessage and it requires all resources to be Clone so its not terribly performant. Its generally used for kicking off a single costly process. Soon with SharedArrayBuffer you'll be able to share memory between threads. But it seemed to get pushed back post Spectre and only Chrome has reenabled it since then. This <a href="https://rustwasm.github.io/2018/10/24/multithreading-rust-and-wasm.html">wasm multithreading concurrency</a> post from last year lays the roadmap out.</p>
+</li>
+</ul>
+<h3 id="ecosystem">Ecosystem</h3>
+<p>The <a href="https://github.com/rustwasm/team">web working</a> group is actually the Wasm group. As always in Rust, <a href="https://rustwasm.github.io/docs/wasm-bindgen/examples/index.html">the Wasm Book</a> is really good and should be your starting place.</p>
+<p>The smallest spa you could start with is a little Wasm app that mutates the DOM compiled to Wasm and loaded as a script. This shouldn't sound as odd as you might think, as this is what React and all the rest have been doing for years now.</p>
+<p>In src/lib.rs should look pretty familiar. We're leaning on the <a href="https://github.com/rustwasm/wasm-bindgen/tree/master/crates/web-sys">web-sys</a> another wasm wg joint. These are autogenerated bindings to all the <a href="https://developer.mozilla.org/en-US/docs/Web/API">web api</a>.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">    let window = web_sys::window().expect(&quot;no global `window` exists&quot;);
+    let document = window.document().expect(&quot;should have a document on window&quot;);
+    let body = document.body().expect(&quot;document should have a body&quot;);
+
+    // Manufacture the element we&#39;re gonna append
+    let val = document.create_element(&quot;p&quot;)?;
+    val.set_inner_html(&quot;Hello from Rust!&quot;);
+
+    body.append_child(&amp;val)?;
+
+    Ok(())
+</span></pre>
+<blockquote>
+<p>Note, almost everything <a href="https://github.com/rustwasm/wasm-bindgen/blob/master/crates/web-sys/Cargo.toml#L46">gated by features</a> in order to maintain get small code size, so if you get an error saying a dom element type wasn't found remember you need to manually enable features one by one in the Cargo.toml</p>
+</blockquote>
+<p>Then <code>wasm-pack</code> tool which drives Cargo will generate our wasm output.</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">$ cargo install wasm-pack
+$ wasm-pack build --target web
+$ ls pkg/
+README.md               without_a_bundler.d.ts      without_a_bundler_bg.d.ts
+package.json            without_a_bundler.js        without_a_bundler_bg.wasm
+</span></pre>
+<p>So well need to load our 'script'. Theres one issue with Wasm, we need to manually init</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#55b4d490;">&lt;</span><span style="color:#399ee6;">script </span><span style="color:#f29718;">type</span><span style="color:#61676ccc;">=</span><span style="color:#86b300;">&quot;module&quot;</span><span style="color:#55b4d490;">&gt;
+	</span><span style="color:#fa6e32;">import </span><span style="color:#61676c;">init</span><span style="color:#61676ccc;">, </span><span style="color:#61676c;">{ add } </span><span style="color:#fa6e32;">from </span><span style="color:#86b300;">&#39;./pkg/without_a_bundler.js&#39;</span><span style="color:#61676ccc;">;
+	</span><span style="color:#fa6e32;">async function </span><span style="color:#f29718;">run</span><span style="color:#61676c;">() {
+		</span><span style="color:#fa6e32;">await </span><span style="color:#f29718;">init</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
+	</span><span style="color:#61676c;">}
+	</span><span style="color:#f29718;">run</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
+</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
+</span></pre>
+<p>Then you just need some kind of simple webserver <code>python3 -m http.server</code> or <code>python -m SimpleHTTPServer</code></p>
+<p>We can add the rest of the autogenerated JavaScript APIs that are guaranteed to exist in all standards-compliant ECMAScript environments such as such as Array, Date, and eval with the <a href="https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys">js-sys</a> crate.</p>
+<p>We still need efficient dom updates. Many people are working across many different concepts, but two members of the Wasm WG have competing visions that stand out:</p>
+<ul>
+<li>@fitzgen has a bump allocated virtual dom<a href="https://github.com/fitzgen/dodrio">dodrio</a></li>
+<li>@Pauan has a stack allocated frp signals approach called <a href="https://github.com/Pauan/rust-dominator/tree/master/examples">dominator</a> which apparently gets better performance than vdoms.</li>
+</ul>
+<p>Who wants to write Rust though? Cant I have a JSX style html dsl? Yes, I have several to sell you but lets focus on <a href="https://github.com/bodil/typed-html">typed-html</a></p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">let mut doc: DOMTree&lt;String&gt; = html!(
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;&quot;Hello Kitty&quot;&lt;/title&gt;
+            &lt;meta name=Metadata::Author content=&quot;Not Sanrio Co., Ltd&quot;/&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;h1&gt;&quot;Hello Kitty&quot;&lt;/h1&gt;
+            &lt;p class=&quot;official&quot;&gt;
+                &quot;She is not a cat. She is a human girl.&quot;
+            &lt;/p&gt;
+            { (0..3).map(|_| html!(
+                &lt;p class=&quot;emphasis&quot;&gt;
+                    &quot;Her name is Kitty White.&quot;
+                &lt;/p&gt;
+            )) }
+            &lt;p class=&quot;citation-needed&quot;&gt;
+                &quot;We still don&#39;t know how she eats.&quot;
+            &lt;/p&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+);
+let doc_str = doc.to_string();
+</span></pre>
+<p>What about Elm and React inspired frameworks? Yes yes and Yes.</p>
+<ul>
+<li><a href="https://seed-rs.org/guide">seed</a> <a href="https://seed-rs-realworld.netlify.com">'realworld' example</a> and <a href="https://github.com/MartinKavik/seed-quickstart-webpack">Quickstart with webpack typescript</a></li>
+<li><a href="https://github.com/yewstack/yew">yew</a> <a href="https://github.com/yewstack/yew-wasm-pack-template">wasm-pack template</a></li>
+<li><a href="https://github.com/rustwasm/gloo">gloo</a> The WG's official effort to build modular toolkit for the entire ecosystem.. Frankly has gone quiet lately.</li>
+</ul>
+<h3 id="soo">Soo..</h3>
+<p>So whats our status. Nothing here is at all battle tested. If you were paying attention besides the working group's efforts, these are all mostly 1 person outfits. Some of it is occasionally benchmarked but not most of it yet. Nothing considered production or 1.0 yet. By no means arguming you should be shipping Rust for frontend web today, but these issues are going to close faster than we think and you may be suprised.</p>
+<h2 id="crates-you-should-know">Crates you should know</h2>
+<ul>
+<li><a href="https://crates.io/crates/chrono">chrono</a> via <a href="https://github.com/finkegabriel">@finkegabriel</a> &quot;aims to be a feature-complete superset of the time library&quot;</li>
+<li><a href="https://github.com/yewstack/facade">facade</a> via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a> &quot;a framework to rapidly add web-UI to any Rust program. It let enrich your console or server app with an awesome UI just in a matter of seconds. Facade fuses web-server and WASM-based web-app into Rust program. No external files. No external dependencies. Just your binary.&quot;</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;wasm&#x2F;">#WASM</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-07-24&#x2F;">‹ Cross Compiling Rust to Your Pi</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-09-25&#x2F;">Web Assembly ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

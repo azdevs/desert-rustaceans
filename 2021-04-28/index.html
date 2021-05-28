@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Desert Rust - Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</title>
+
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">Desert Rust</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                            Topics
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                            Meetup
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                            Facebook
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;azdevs.org">
+                            Slack #rust
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                            Github
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;rust.azdevs.org">Desert Rust</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags">
+                                    Topics
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.meetup.com&#x2F;Desert-Rustaceans&#x2F;">
+                                    Meetup
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;www.facebook.com&#x2F;groups&#x2F;873973386288785&#x2F;">
+                                    Facebook
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;azdevs.org">
+                                    Slack #rust
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;github.com&#x2F;azdevs&#x2F;desert-rustaceans">
+                                    Github
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-04-28/#minimal-dockerfile-for-building-rust-via-jesusguzmanjr" class="toc-link">Minimal Dockerfile for Building Rust via @JesusGuzmanJr</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#another-hand-rolled-example" class="toc-link">Another Hand-Rolled Example</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#yet-another-similar-example" class="toc-link">Yet Another Similar Example</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-04-28/#mocking-in-rust-and-rust-in-the-linux-kernel-via-mysteriouspants" class="toc-link">Mocking in Rust and Rust in the Linux Kernel via @mysteriouspants</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#mocking-with-mockall" class="toc-link">Mocking with Mockall</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#linux-kernel" class="toc-link">Linux Kernel</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-04-28/#conversations-around-webassembly-via-jacobrosenthal-blainebublitz-and-peterkehl" class="toc-link">Conversations around WebAssembly via @jacobrosenthal, @BlaineBublitz, and @PeterKehl</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#wizer" class="toc-link">Wizer</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#ocaml-rs" class="toc-link">OCaml-rs</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://rust.azdevs.org/2021-04-28/#watt" class="toc-link">Watt</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-04-28/#some-blockchain-stuff-via-jacobrosenthal" class="toc-link">Some Blockchain Stuff via @jacobrosenthal</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://rust.azdevs.org/2021-04-28/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-04-28&#x2F;">Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-04-28</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Topics:</p>
+<ul>
+<li>Minimal Dockerfile for Rust via <a href="https://github.com/JesusGuzmanJr">@JesusGuzmanJr</a></li>
+<li>Mocking in Rust and Rust in the Linux Kernel via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>Conversations around WebAssembly via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a>, <a href="https://github.com/phated">@BlaineBublitz</a>, and <a href="https://github.com/peter-kehl">@PeterKehl</a></li>
+<li>Some Blockchain Stuff via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+</ul>
+<p id="zola-continue-reading"><a name="continue-reading"></a></p>
+<h1 id="minimal-dockerfile-for-building-rust-via-jesusguzmanjr">Minimal Dockerfile for Building Rust via <a href="https://github.com/JesusGuzmanJr">@JesusGuzmanJr</a></h1>
+<p>Repo: <a href="https://github.com/JesusGuzmanJr/CodeSnippets/blob/main/Dockerfile">https://github.com/JesusGuzmanJr/CodeSnippets/blob/main/Dockerfile</a></p>
+<p>Jesus shared <a href="https://github.com/JesusGuzmanJr/CodeSnippets/blob/main/Dockerfile">a minimal Dockerfile</a> for building Rust in a CI pipeline. It utilizes <a href="https://github.com/LukeMathWalker/cargo-chef">cargo-chef</a> which is a cargo-subcommand to speed up Rust Docker builds using Docker layer caching. It does this in following steps:</p>
+<ul>
+<li>
+<p>Compute a recipe file, or a set of information required to build dependencies. The relevant command is <code>cargo chef prepare --recipe-path /build/recipe.json</code></p>
+</li>
+<li>
+<p>Cache dependencies using the recipe (<code>cargo chef cook --release --recipe-path recipe.json</code>)</p>
+</li>
+<li>
+<p>Build the application (using <a href="https://github.com/sagiegurari/cargo-make">cargo-make</a> and <a href="https://github.com/rustwasm/wasm-bindgen">wasm-bindgen</a>). The final command is <code>cargo make build --profile production</code></p>
+</li>
+<li>
+<p>Run the application.</p>
+</li>
+</ul>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">FROM fedora:33 as planning_layer
+WORKDIR /build
+RUN curl --proto &#39;=https&#39; --tlsv1.3 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH=&quot;/root/.cargo/bin:${PATH}&quot;
+RUN dnf -y install gcc-c++
+RUN cargo install cargo-chef
+COPY . .
+RUN cargo chef prepare --recipe-path /build/recipe.json
+
+FROM fedora:33 as dependency_cache_layer
+WORKDIR /build
+RUN curl --proto &#39;=https&#39; --tlsv1.3 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH=&quot;/root/.cargo/bin:${PATH}&quot;
+RUN dnf -y install gcc-c++ pkg-config openssl-static
+COPY --from=planning_layer /build/recipe.json recipe.json
+RUN cargo install cargo-chef
+RUN cargo chef cook --release --recipe-path recipe.json
+
+FROM fedora:33 as build_layer
+WORKDIR /build
+RUN curl --proto &#39;=https&#39; --tlsv1.3 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH=&quot;/root/.cargo/bin:${PATH}&quot;
+RUN dnf -y install gcc-c++ pkg-config musl-gcc git perl-core
+RUN git clone git://git.openssl.org/openssl.git
+RUN cd openssl &amp;&amp; git checkout OpenSSL_1_1_1-stable
+RUN cd openssl &amp;&amp; ./config -fPIC no-weak-ssl-ciphers no-async --prefix=/usr/local/ssl --openssldir=/usr/local/ssl
+RUN cd openssl &amp;&amp; make &amp;&amp; make install
+ENV OPENSSL_STATIC true
+ENV OPENSSL_DIR /usr/local/ssl
+RUN cargo install trunk
+RUN cargo install cargo-make
+RUN cargo install wasm-bindgen-cli --version 0.2.70
+RUN rustup target add wasm32-unknown-unknown
+RUN rustup target add x86_64-unknown-linux-musl
+RUN dnf -y install nodejs npm
+RUN npm install -g sass
+COPY . .
+COPY --from=dependency_cache_layer /build/target target
+COPY --from=dependency_cache_layer $CARGO_HOME $CARGO_HOME
+RUN cargo make build --profile production
+
+FROM scratch
+COPY --from=build_layer /build/target/x86_64-unknown-linux-musl/release/server /
+EXPOSE 80/tcp
+ENTRYPOINT [&quot;/server&quot;]
+</span></pre><h2 id="another-hand-rolled-example">Another Hand-Rolled Example</h2>
+<p>Jacob showed <a href="https://github.com/balena-io-examples/balena-rust-hello-world/blob/master/Dockerfile.template#L27-L55">an example Dockerfile</a> with a similar process of caching except done manually (not using cargo-chef):</p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">FROM rust as dependencies
+
+WORKDIR /build
+
+# Create new fake project ($USER is needed by `cargo new`)
+RUN USER=root cargo new app
+
+WORKDIR /build/app
+
+# Copy real app dependencies
+COPY Cargo.* ./
+
+# Build fake project with real dependencies
+RUN cargo build --release
+
+# Remove the fake app build artifacts
+#
+# NOTE If your application name contains `-` (`foo-bar` for example)
+# then the correct command to remove build artifacts looks like:
+#
+# RUN rm -rf target/release/foo-bar target/release/deps/foo_bar-*
+#                              ^                           ^
+RUN rm -rf target/release/hello* target/release/deps/hello-*
+</span></pre><h2 id="yet-another-similar-example">Yet Another Similar Example</h2>
+<p>Chris also had found a similar example in a blog post on <a href="https://alexbrand.dev/post/how-to-package-rust-applications-into-minimal-docker-containers/">How to Package Rust Applications Into Minimal Docker Containers</a></p>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;"># Dockerfile for creating a statically-linked Rust application using docker&#39;s
+# multi-stage build feature. This also leverages the docker build cache to avoid
+# re-downloading dependencies if they have not changed.
+FROM rust:1.35.0 AS build
+WORKDIR /usr/src
+
+# Download the target for static linking.
+RUN rustup target add x86_64-unknown-linux-musl
+
+# Create a dummy project and build the app&#39;s dependencies.
+# If the Cargo.toml or Cargo.lock files have not changed,
+# we can use the docker build cache and skip these (typically slow) steps.
+RUN USER=root cargo new url-shortener
+WORKDIR /usr/src/url-shortener
+COPY Cargo.toml Cargo.lock ./
+RUN cargo build --release
+
+# Copy the source and build the application.
+COPY src ./src
+RUN cargo install --target x86_64-unknown-linux-musl --path .
+
+# Copy the statically-linked binary into a scratch container.
+FROM scratch
+COPY --from=build /usr/local/cargo/bin/url-shortener .
+USER 1000
+CMD [&quot;./url-shortener&quot;]
+</span></pre><h1 id="mocking-in-rust-and-rust-in-the-linux-kernel-via-mysteriouspants">Mocking in Rust and Rust in the Linux Kernel via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<h2 id="mocking-with-mockall">Mocking with Mockall</h2>
+<p>Chris was looking at <a href="https://crates.io/crates/mockall">mockall</a> for isolating some code and making it more testable. Mocking is tradionally done in more dynamic languages, but that doesn't stop people from trying to do it in Rust. There are two ways to use Mockall. The easiest is to use <a href="https://docs.rs/mockall/0.9.1/mockall/attr.automock.html">#[automock]</a>. It can mock most traits, or structs that only have a single impl block. For things it can't handle, there is <a href="https://docs.rs/mockall/0.9.1/mockall/macro.mock.html">mock!</a>.</p>
+<h2 id="linux-kernel">Linux Kernel</h2>
+<p>Chris was also excited by news that Linus Torvalds, <a href="https://lkml.org/lkml/2021/4/14/1099">responding to an RFC that adds support for Rust to the Linux kernel</a>, said:</p>
+<blockquote>
+<p>on the whole I don't hate it.</p>
+</blockquote>
+<p>The conversation went on to other developments in the Linux kernel space. A few links from the discussion are below:</p>
+<ul>
+<li><a href="https://github.com/Rust-for-Linux/linux">The Rust for Linux website</a>: Work to support Rust that will be eventually submitted for review to the <a href="https://lkml.org">LKML</a>.</li>
+<li><a href="https://rust-for-linux.github.io/docs/kernel/">kernel crate</a>: Crate containing kernel APIs that have been ported or wrapped for usage by Rust code in the kernel</li>
+<li><a href="https://itnext.io/modern-storage-is-plenty-fast-it-is-the-apis-that-are-bad-6a68319fbc1a">Modern storage is plenty fast. It is the APIs that are bad</a>: A post about building better APIs for high performance I/O systems. In particular it mentions io_uring, an interface for performing I/O with the kernel, and introduces <a href="https://crates.io/crates/glommio">a crate</a> that leverages it.</li>
+<li><a href="https://www.datadoghq.com/blog/engineering/introducing-glommio/">Introducing Glommio</a>: The introduction blog post for Glommio, a Thread-per-Core Crate for Rust &amp; Linux</li>
+</ul>
+<h1 id="conversations-around-webassembly-via-jacobrosenthal-blainebublitz-and-peterkehl">Conversations around WebAssembly via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a>, <a href="https://github.com/phated">@BlaineBublitz</a>, and <a href="https://github.com/peter-kehl">@PeterKehl</a></h1>
+<h2 id="wizer">Wizer</h2>
+<p>Jacob was watching the <a href="https://webassembly-summit.org/">WebAssembly Summit</a>. He thought that the presentation on <a href="https://github.com/bytecodealliance/wizer">Wizer</a>, a WebAssembly Pre-Initializer, was interesting. From the Wizer README:</p>
+<blockquote>
+<p>Wizer instantiates your WebAssembly module, executes its initialization function, and then snapshots the initialized state out into a new WebAssembly module. Now you can use this new, pre-initialized WebAssembly module to hit the ground running, without making your users wait for that first-time set up code to complete.</p>
+</blockquote>
+<h2 id="ocaml-rs">OCaml-rs</h2>
+<p>Another presentation from the WebAssembly Summit was on <a href="https://grain-lang.org/">Grain</a>, a WebAssembly-First Programming Language. Blaine contributes to Grain and was looking at <a href="https://github.com/zshipko/ocaml-rs">ocaml-rs</a> as part of his work on the project as a way to avoid writing more C bindings to OCaml.</p>
+<h2 id="watt">Watt</h2>
+<p>Peter brought up <a href="https://crates.io/crates/watt">Watt</a>, a crate providing a runtime for executing Rust procedural macros compiled as WebAssembly. There is a cargo subcommand, <a href="https://github.com/jakobhellermann/cargo-watt">cargo watt</a>, which aims to improve the Watt tooling by:</p>
+<ul>
+<li>Compiling existing proc-macro crates without manual intervention for the watt runtime</li>
+<li>Verifying that a wasm file is compiled from a particular source</li>
+</ul>
+<h1 id="some-blockchain-stuff-via-jacobrosenthal">Some Blockchain Stuff via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Jacob also shared some links on Blockchain:</p>
+<ul>
+<li>
+<p><a href="https://github.com/ethereum/fe">Fe</a>: Fe is a statically typed language for the Ethereum Virtual Machine (EVM)inspired by Rust.</p>
+</li>
+<li>
+<p><a href="https://crates.io/crates/uint">uint</a> is a crate providing facilities to construct big unsigned integer types which use no allocations (stack-based, fixed bit length). They also have <a href="https://github.com/paritytech/parity-common/blob/master/primitive-types/src/lib.rs">primitive types</a> and implement math on top of it. This is what Jacob used to get an advantage playing the Blockchain-based game, <a href="https://zkga.me/">Dark Forest</a>, building a miner that was 10x faster than the competition.</p>
+</li>
+</ul>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
+<ul>
+<li><a href="https://crates.io/crates/mockall">mockall</a>: A powerful mock object library for Rust</li>
+<li><a href="https://crates.io/crates/glommio">glommio</a>: A set of utilities to allow one to write thread per core applications</li>
+<li><a href="https://crates.io/crates/ocaml">ocaml</a>: OCaml bindings for Rust</li>
+<li><a href="https://crates.io/crates/watt">watt</a>: Runtime for executing Rust procedural macros compiled as WebAssembly</li>
+<li><a href="https://crates.io/crates/uint">uint</a>: Large fixed-size integer arithmetic</li>
+<li><a href="https://crates.io/crates/rmp">rmp</a>: Pure Rust <a href="https://msgpack.org/">MessagePack</a> serialization implementation</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;rust&#x2F;">#Rust</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;linux&#x2F;">#Linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;wasm&#x2F;">#WASM</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;blockchain&#x2F;">#Blockchain</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-03-31&#x2F;">‹ Links for Learning Rust</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-05-26&#x2F;">Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

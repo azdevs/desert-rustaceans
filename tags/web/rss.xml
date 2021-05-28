@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Desert Rust</title>
+        <link>https%3A//rust.azdevs.org</link>
+        <description>Phoenix Rust Community</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//rust.azdevs.org/tags/web/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</title>
+                <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-05-26/</link>
+                <guid>https%3A//rust.azdevs.org/2021-05-26/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wheel of Names with Bevy via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Embedded Graphics Updates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Making a Tiny Game with Raylib via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Enforcing Api Specs with Traits &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Rebuilding a Rocket Server with Actix and Other Projects</title>
+                <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-01-27/</link>
+                <guid>https%3A//rust.azdevs.org/2021-01-27/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rebuilding a Rocket Server with Actix via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Dark Forest Tweeter via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Thinking about Mobile Development with Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Rant about the State of Rust Web Frameworks via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;likebike&quot;&gt;@ChristopherSebastian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server</title>
+                <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-09-30/</link>
+                <guid>https%3A//rust.azdevs.org/2020-09-30/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rants via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nelsonjchen&quot;&gt;@NelsonChen&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Linking with C Libraries via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;likebike&quot;&gt;@ChristopherSebastian&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;An Async Rocket Server with OAuth, Cookies, Diesel, and Templates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Dark Forest Game via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines</title>
+                <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-08-26/</link>
+                <guid>https%3A//rust.azdevs.org/2020-08-26/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Serving PyTorch Predictions with Rocket via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Extending a File Renaming CLI Tool via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zanayr&#x2F;&quot;&gt;@RyanFickenscher&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Boa JavaScript Lexer, Parser, Compiler built with Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;zanayr&#x2F;&quot;&gt;@RyanFickenscher&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Rust on PyGamer Updates via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Smol Async Example via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Caveat on Using rust-analyzer in VSCode&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Lightning Talks</title>
+                <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-06-24/</link>
+                <guid>https%3A//rust.azdevs.org/2020-06-24/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mandelbrot Plotter in Python and WASM via &lt;a href=&quot;https:&#x2F;&#x2F;hoetker.engineer&#x2F;&quot;&gt;@AndrewHoetker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Loading Binary Data for Might and Magic via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;OAuth Authentication and Authorization in twentyfive-stars via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;CLI Tools You Should Know&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>sqlx and WASM in React</title>
+                <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-05-27/</link>
+                <guid>https%3A//rust.azdevs.org/2020-05-27/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;SQLX via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Using Rust-built WebAssembly in a Create React App via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GraphQL and OAuth</title>
+                <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2020-04-29/</link>
+                <guid>https%3A//rust.azdevs.org/2020-04-29/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;GraphQL Server using via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Attempting to Implement OAuth2 Dance with Rocket via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Web Assembly</title>
+                <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-09-25/</link>
+                <guid>https%3A//rust.azdevs.org/2019-09-25/</guid>
+                <description>&lt;p&gt;Join us at HeatSync Labs for a tour of web assembly from Rust. Last months web talks left more questions than answers so we dig deeper into Wasm.&lt;&#x2F;p&gt;
+&lt;p&gt;Come help us knock out some topics like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exporting Rust crates to NPM&lt;&#x2F;li&gt;
+&lt;li&gt;Serverless with Cloudflare and Amazon&lt;&#x2F;li&gt;
+&lt;li&gt;A continuation of our frontend web talk&lt;&#x2F;li&gt;
+&lt;li&gt;The future of wasm outside of the browsers as scripting languages, on desktops, and even microcontrollers&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Frontend Web</title>
+                <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-08-28/</link>
+                <guid>https%3A//rust.azdevs.org/2019-08-28/</guid>
+                <description>&lt;p&gt;Join us at HeatSync Labs for a tour of front end web work in Rust. Yep, were doing front end in Rust, too. Theres a lot to talk about so help us by knocking off some of these topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;static site generators&lt;&#x2F;li&gt;
+&lt;li&gt;single-page application (SPA) and web apps&lt;&#x2F;li&gt;
+&lt;li&gt;isomorphic web apps&lt;&#x2F;li&gt;
+&lt;li&gt;elm inspired frameworks&lt;&#x2F;li&gt;
+&lt;li&gt;virtual dom libraries&lt;&#x2F;li&gt;
+&lt;li&gt;jsx style templating&lt;&#x2F;li&gt;
+&lt;li&gt;and of course web assembly&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Backend Web Frameworks</title>
+                <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2019-05-22/</link>
+                <guid>https%3A//rust.azdevs.org/2019-05-22/</guid>
+                <description>&lt;p&gt;Theres several production ready frameworks and the Rust working groups are also working on a new player, Tide. Well discuss the ecosystem in general and then well have Christopher Miller talking about his use of rocket.rs and its design decisions vs Tower.&lt;&#x2F;p&gt;
+&lt;p&gt;Well probably keep most front end chat for another (next months?) meetup but maybe a brief digression. So come with your questions and help set the agenda.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>
