@@ -7,7 +7,20 @@
         <generator>Zola</generator>
         <language>en</language>
         <atom:link href="https%3A//rust.azdevs.org/tags/embedded/rss.xml" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Wed, 26 May 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Crates You Should Know</title>
+                <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-06-30/</link>
+                <guid>https%3A//rust.azdevs.org/2021-06-30/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Revamping Rust Training Materials via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Github1s Extension and Octotree via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
         
             <item>
                 <title>Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</title>
