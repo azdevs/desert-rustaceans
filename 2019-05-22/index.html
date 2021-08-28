@@ -206,7 +206,7 @@
 <h3 id="backend-web-overview-via-jacobrosenthal">Backend Web Overview via <a href="https://github.com/jacobRosenthal">@jacobRosenthal</a></h3>
 <h4 id="why-rust-for-backend">Why Rust for backend:</h4>
 <ul>
-<li>speed and footprint. Certainly huge gains over something like Node or Python. Performs well against c++ and golang but theyre all in the mix. https://www.techempower.com/benchmarks/#section=data-r15&amp;hw=ph&amp;test=plaintext Though frankly not that many of us are deploying load balancers</li>
+<li>speed and footprint. Certainly huge gains over something like Node or Python. Performs well against c++ and golang but theyre all in the mix. <a href="https://www.techempower.com/benchmarks/#section=data-r15&amp;hw=ph&amp;test=plaintext">https://www.techempower.com/benchmarks/#section=data-r15&amp;hw=ph&amp;test=plaintext</a> Though frankly not that many of us are deploying load balancers</li>
 <li>presumably because we like Rust and want to write more of it</li>
 </ul>
 <h4 id="what-is-the-backend-space">What is the backend space</h4>
@@ -214,16 +214,16 @@
 <li>api servers</li>
 <li>database connectors</li>
 <li>websockets</li>
-<li>much more https://www.arewewebyet.org</li>
+<li>much more <a href="https://www.arewewebyet.org">https://www.arewewebyet.org</a></li>
 </ul>
 <h4 id="backend-web-frameworks">Backend Web Frameworks</h4>
-<p>The barest tcp server example http://rosettacode.org/wiki/Hello_world/Web_server#Rust like the node few liner from years back http://rosettacode.org/wiki/Hello_world/Web_server#JavaScript/</p>
+<p>The barest tcp server example <a href="http://rosettacode.org/wiki/Hello_world/Web_server#Rust">http://rosettacode.org/wiki/Hello_world/Web_server#Rust</a> like the node few liner from years back <a href="http://rosettacode.org/wiki/Hello_world/Web_server#JavaScript/">http://rosettacode.org/wiki/Hello_world/Web_server#JavaScript/</a></p>
 <p>what does a web page request even look like? we can talk to that server with a browser obviously.
 we dont need a webbrowser to connect though, we could use already installed telnet to <code>telnet localhost 8080</code>
 and we literally get our Content text sent to us</p>
 <p>but pretty much everyone goes one step up and uses <a href="https://github.com/hyperium/hyper">hyper</a> for a bare minimum server</p>
 <p>Up from that you have full featured platforms (many of which might use hyper themselves) not unlike you might have used in other languages
-Tons of options available to choose from https://github.com/flosse/rust-web-framework-comparison</p>
+Tons of options available to choose from <a href="https://github.com/flosse/rust-web-framework-comparison">https://github.com/flosse/rust-web-framework-comparison</a></p>
 <p>The big split is those that are trying to implmenet the (still not shipped) asynchronous networking. Those trying might still be stuck on nightly. Other more stable projects are delaying their implementation until really soon so expect some churn or try to build for the future now. Most of the existing ones use Tokio, a userland library that has been where most async code has lived the past few years.</p>
 <p>Beyond that its a personal choice of syntax (procedural, declaritive). Things like if you're setting up routes with macros decorating functions like <a href="https://rocket.rs/v0.4/guide/overview/#routing">rocket</a>, or calling a function like <a href="https://actix.rs/docs/getting-started/">actix</a></p>
 <p>The rust web-wg is building <a href="https://github.com/rustasync/tide">Tide</a> in order to find and bolster the underlying crates and show idiomatic style especially around the new async and future language features. not sure if they expect that it becomes standard or just teaching tool. IE they want to show how not to use tokio but the underlying core libraries for async.</p>
@@ -239,8 +239,8 @@ Keep the server running and do
 <p>But these patterns are not very async-ey.. want them to spit out a future/ stream instead of spin of an event loop. And you're going to have a thread pool of some kind, manual or something like tokio or core futures. It would be cool for the http and the websocket to share the same thread pool, all in one application. Plus that really helps us tie websocket directly into our web flow, theres no reason these should be seperate, theyre just tcp routes</p>
 <p>I still havent settled on anything myself, but my googling has found these might be better implementations, but I dont think either has jsonrpc:</p>
 <ul>
-<li>https://github.com/snapview/tokio-tungstenite</li>
-<li>https://github.com/websockets-rs/rust-websocket/blob/master/examples/async-server.rs</li>
+<li><a href="https://github.com/snapview/tokio-tungstenite">https://github.com/snapview/tokio-tungstenite</a></li>
+<li><a href="https://github.com/websockets-rs/rust-websocket/blob/master/examples/async-server.rs">https://github.com/websockets-rs/rust-websocket/blob/master/examples/async-server.rs</a></li>
 </ul>
 <p>Probably most promising, <a href="https://github.com/actix/examples/blob/master/websocket/src/main.rs">actix server</a> has a nice web server and websocket example <code>websocat --linemode-strip-newlines ws://127.0.0.1:8080/ws</code></p>
 <h3 id="meet-rocket-via-mysteriouspants">Meet Rocket via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h3>

@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Desert Rust - Scientific Computing</title>
+      <title>Desert Rust - Reactive Rocket on AWS Lambda and Async Bluetooth on the BBC micro:bit Microcontroller</title>
 
       
         <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
@@ -140,27 +140,17 @@
             <ul>
                 
                 <li>
-                    <a href="https://rust.azdevs.org/2019-03-27/#scientific-computing-via-jacobrosenthal" class="toc-link">Scientific Computing via @jacobRosenthal</a>
+                    <a href="https://rust.azdevs.org/2021-08-25/#reactive-rocket-on-aws-lambda-via-mysteriouspants" class="toc-link">Reactive Rocket on AWS Lambda via @mysteriouspants</a>
                     
                 </li>
                 
                 <li>
-                    <a href="https://rust.azdevs.org/2019-03-27/#linear-regression-and-classification-via-danielbank" class="toc-link">Linear regression and classification via @danielbank</a>
+                    <a href="https://rust.azdevs.org/2021-08-25/#async-bluetooth-on-the-bbc-micro-bit-microcontroller-via-jacobrosenthal" class="toc-link">Async Bluetooth on the BBC micro:bit Microcontroller via @jacobrosenthal</a>
                     
                 </li>
                 
                 <li>
-                    <a href="https://rust.azdevs.org/2019-03-27/#neural-nets-via-elbow-jason" class="toc-link">Neural Nets via @elbow-jason</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://rust.azdevs.org/2019-03-27/#matrix-math-via-craigjb" class="toc-link">Matrix math via @craigjb</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://rust.azdevs.org/2019-03-27/#level-up-your-crate-via-mysteriouspants" class="toc-link">Level Up Your Crate via @mysteriouspants</a>
+                    <a href="https://rust.azdevs.org/2021-08-25/#crates-you-should-know" class="toc-link">Crates You Should Know</a>
                     
                 </li>
                 
@@ -174,52 +164,55 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-03-27&#x2F;">Scientific Computing</a>
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-08-25&#x2F;">Reactive Rocket on AWS Lambda and Async Bluetooth on the BBC micro:bit Microcontroller</a>
         </h1>
         <div class="post__meta">
-            <span class="post__time">2019-03-27</span>
+            <span class="post__time">2021-08-25</span>
             
         </div>
     </header>
 
     <div class="post-content">
-      <p>First Chris Miller talks the ins and outs of making your own crate. Then Daniel Bank talks regression and classification over data sets. Finally Craig Bishop will close with 3D math and simple rendering with Rust using the crate cgmath. Think: vectors, matrices, transforms, projections, Phong lighting, and image output.</p>
+      <p>Topics:</p>
+<ul>
+<li>Reactive Rocket on AWS Lambda via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></li>
+<li>Async Bluetooth on the BBC micro:bit Microcontroller via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></li>
+</ul>
 <p id="zola-continue-reading"><a name="continue-reading"></a></p>
-<h3 id="scientific-computing-via-jacobrosenthal">Scientific Computing via <a href="https://github.com/jacobRosenthal">@jacobRosenthal</a></h3>
+<h1 id="reactive-rocket-on-aws-lambda-via-mysteriouspants">Reactive Rocket on AWS Lambda via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h1>
+<p>Repo: <a href="https://github.com/mysteriouspants/rocket-on-lambdas-starter-template">https://github.com/mysteriouspants/rocket-on-lambdas-starter-template</a></p>
+<p>Blog Post: <a href="https://www.mysteriouspants.com/2021/07/21/reactive-rocket-on-lambda.html">https://www.mysteriouspants.com/2021/07/21/reactive-rocket-on-lambda.html</a></p>
+<p>Chris showed everyone how to write a lambda in Rust and deploy it to AWS. He wrote <a href="https://www.mysteriouspants.com/2021/07/21/reactive-rocket-on-lambda.html">an excellent blog post</a> describing the process in detail. The project uses the <a href="https://crates.io/crates/lambda_runtime">AWS Lambda Runtime</a> and the <a href="https://crates.io/crates/lambda-web">lambda-web crate</a>, which adapts requests from API Gateway V2 passed through the Lambda runtime to Rocket. Actix and Warp are also supported Rust web frameworks.</p>
+<h1 id="async-bluetooth-on-the-bbc-micro-bit-microcontroller-via-jacobrosenthal">Async Bluetooth on the BBC micro:bit Microcontroller via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
+<p>Repo: <a href="https://github.com/jacobrosenthal/microbitv2-rs">https://github.com/jacobrosenthal/microbitv2-rs</a></p>
+<p>Jacob wrote an example async Bluetooth LE program for the <a href="https://microbit.org/">BBC micro:bit microcontroller</a>.</p>
+<p>The project makes use of the following crates:</p>
 <ul>
-<li><a href="https://en.wikiversity.org/wiki/Scientific_computing">&quot;Scientific computing is the science of solving problems with computers&quot;</a></li>
+<li><a href="https://github.com/embassy-rs/embassy">embassy</a> for using async / await in an embedded no-std context</li>
+<li><a href="https://github.com/probe-rs/probe-rs">probe-run</a> for flashing the program to the microcontroller</li>
+<li><a href="https://github.com/probe-rs/probe-rs">probe-rs</a> for displaying logs from the microcontroller's onboard debugger.</li>
+<li><a href="https://crates.io/crates/flip-link">flip-link</a> which protects against <a href="https://github.com/knurling-rs/flip-link#the-problem">overflowing the stack region of data</a> into the <code>.bss + .data</code> region by <a href="https://github.com/knurling-rs/flip-link#the-solution">putting the stack region below</a> the <code>.bss + .data</code> memory region.</li>
 </ul>
-<h3 id="linear-regression-and-classification-via-danielbank">Linear regression and classification via <a href="https://github.com/danielbank">@danielbank</a></h3>
-<p><a href="https://github.com/danielbank/rust-ml-examples">Linear regression and classification</a></p>
+<p>The program allows us to read and write data to a dummy <a href="http://www.blesstags.eu/2018/08/services-characteristics-descriptors.html">BLE characteristic</a>, which we did using the nRF Connect app (available for <a href="https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop">Desktop</a>, <a href="https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&amp;hl=en_US&amp;gl=US">Android</a>, and <a href="https://apps.apple.com/us/app/nrf-connect-for-mobile/id1054362403">iOS</a>).</p>
+<p>Some additional reading materials:</p>
 <ul>
-<li><a href="http://www.arewelearningyet.com/">Are We Learning Yet</a></li>
-<li><a href="https://github.com/AtheMathmo/rusty-machine/">Rusty Machine</a></li>
-<li><a href="http://athemathmo.github.io/2016/07/28/rusty-machine-talk.html#/10">Rusty Machine Model traits</a></li>
-<li><a href="https://github.com/AtheMathmo/rusty-machine/issues/199">Rusty Machine vs Rust Sim</a></li>
-<li><a href="https://docs.rs/csv/1.0.5/csv/tutorial/index.html">CSV Tutorial</a></li>
-<li><a href="https://blog.burntsushi.net/rust-error-handling/">Error Handling in Rust</a></li>
-<li><a href="https://newonlinecourses.science.psu.edu/stat501/node/382/">Linear Regression</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/svm.html">Support Vector Machines</a></li>
-<li><a href="https://crates.io/crates/rusty-machine">rusty-machine</a></li>
-<li><a href="https://crates.io/crates/csv">csv</a></li>
-<li><a href="https://crates.io/crates/serde">serde</a></li>
-<li><a href="https://crates.io/crates/serde_derive">serde_derive</a></li>
+<li>
+<p><a href="https://www.amazon.com/Make-Bluetooth-Projects-Raspberry-Smartphones/dp/1457187094">Make: Bluetooth</a> by <a href="https://github.com/sandeepmistry">Sandeep Mistry</a>, <a href="https://github.com/aallan">Alasdair Allan</a>, and <a href="https://github.com/don">Don Coleman</a>: an awesome book on making Bluetooth programs</p>
+</li>
+<li>
+<p><a href="https://blog.drogue.io/rust-and-microbit/">Rust on the BBC micro:bit</a>: a blog post for writing Rust programs for the BBC micro:bit</p>
+</li>
+<li>
+<p><a href="https://github.com/nrf-rs/microbit">nrf-rs/microbit</a>: another example repo of running a Rust program on the BBC micro:bit from the <a href="https://github.com/nrf-rs">nRF Rust</a> collection of Rust repos for the nRF series of microcontrollers.</p>
+</li>
 </ul>
-<h3 id="neural-nets-via-elbow-jason">Neural Nets via <a href="https://github.com/elbow-jason">@elbow-jason</a></h3>
+<h1 id="crates-you-should-know">Crates You Should Know</h1>
 <ul>
-<li>An impromptu talk about nueral nets and <a href="https://github.com/elbow-jason/lib_annex">annex</a></li>
-</ul>
-<h3 id="matrix-math-via-craigjb">Matrix math via <a href="https://github.com/craigjb">@craigjb</a></h3>
-<p><a href="https://github.com/craigjb/cgmathdemo">Matrix math, scaling, rotating, reflection, shearing, composing</a></p>
-<ul>
-<li><a href="https://github.com/rustgd/cgmath">https://github.com/rustgd/cgmath</a></li>
-<li><a href="http://www.ccis.northeastern.edu/home/fell/CSU540/lectures/CSU540SP2008-11-MatricesandTransformations.ppt">http://www.ccis.northeastern.edu/home/fell/CSU540/lectures/CSU540SP2008-11-MatricesandTransformations.ppt</a></li>
-</ul>
-<h3 id="level-up-your-crate-via-mysteriouspants">Level Up Your Crate via <a href="https://github.com/mysteriouspants">@mysteriouspants</a></h3>
-<ul>
-<li><a href="https://www.mysteriouspants.com/blog/2019/level-up-your-crate/">Level Up Your Crate</a></li>
-<li><a href="https://doc.rust-lang.org/cargo/reference/manifest.html">https://doc.rust-lang.org/cargo/reference/manifest.html</a></li>
-<li><a href="https://www.mysteriouspants.com">https://www.mysteriouspants.com</a></li>
+<li><a href="https://crates.io/crates/probe-rs">probe-rs</a>: A collection of on chip debugging tools to communicate with microchips.</li>
+<li><a href="https://crates.io/crates/probe-run">probe-run</a>: Runs embedded programs just like native ones</li>
+<li><a href="https://crates.io/crates/flip-link">flip-link</a>: Flips the memory layout of embedded programs to protect against stack overflows</li>
+<li><a href="https://crates.io/crates/lambda_runtime">lambda_runtime</a>: AWS Lambda Runtime</li>
+<li><a href="https://crates.io/crates/lambda-web">lambda-web</a>: Run Rust web frameworks on AWS Lambda</li>
 </ul>
 
     </div>
@@ -232,19 +225,19 @@
             
                 <div class="post-tags">
                     
-                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;math&#x2F;">#Math</a>
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;embedded&#x2F;">#Embedded</a>
                     
-                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;ml&#x2F;">#ML</a>
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;web&#x2F;">#Web</a>
+                    
+                        <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;tags&#x2F;serverless&#x2F;">#Serverless</a>
                     
                 </div>
             
             
                 <div class="post-nav">
                     
-                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-02-27&#x2F;">‹ Embedded</a>
+                        <a class="previous" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-06-30&#x2F;">‹ Crates You Should Know</a>
                     
-                    
-                        <a class="next" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2019-04-24&#x2F;">Options or Results and_then Combinators ›</a>
                     
                     
                     

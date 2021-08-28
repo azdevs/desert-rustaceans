@@ -182,6 +182,13 @@
         </url>
     
         <url>
+            <loc>https%3A//rust.azdevs.org/2021-08-25/</loc>
+            
+                <lastmod>2021-08-25</lastmod>
+            
+        </url>
+    
+        <url>
             <loc>https%3A//rust.azdevs.org/categories/</loc>
             
         </url>
@@ -213,6 +220,11 @@
     
         <url>
             <loc>https%3A//rust.azdevs.org/page/5/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//rust.azdevs.org/page/6/</loc>
             
         </url>
     
@@ -293,6 +305,11 @@
     
         <url>
             <loc>https%3A//rust.azdevs.org/tags/server/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//rust.azdevs.org/tags/serverless/</loc>
             
         </url>
     

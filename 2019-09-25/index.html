@@ -233,23 +233,24 @@ pub extern &quot;C&quot; fn add_one(x: i32) -&gt; i32 {
 <pre style="background-color:#fafafa;">
 <span style="color:#55b4d490;">&lt;!</span><span style="color:#399ee6;">DOCTYPE</span><span style="color:#55b4d4;"> html</span><span style="color:#55b4d490;">&gt;
 &lt;</span><span style="color:#399ee6;">html</span><span style="color:#55b4d490;">&gt;
-	&lt;</span><span style="color:#399ee6;">head</span><span style="color:#55b4d490;">&gt;
-		&lt;</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
-			</span><span style="color:#f29718;">fetch</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&#39;./target/wasm32-unknown-unknown/release/add1.wasm&#39;</span><span style="color:#61676c;">)
-				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">response</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="color:#61676c;">response</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">arrayBuffer</span><span style="color:#61676c;">())
-				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">bytes</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="font-style:italic;color:#55b4d4;">WebAssembly</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">instantiate</span><span style="color:#61676c;">(bytes))
-				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">results</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="color:#61676c;">{
-					instance </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">results</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">instance</span><span style="color:#61676ccc;">;
-					</span><span style="font-style:italic;color:#55b4d4;">document</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">getElementById</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&#39;demo&#39;</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">innerText </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">instance</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">exports</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">add_one</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">41</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;
-				</span><span style="color:#61676c;">})
-				</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">catch</span><span style="color:#61676c;">(</span><span style="font-style:italic;color:#55b4d4;">console</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">error</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;
-		</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
-	&lt;/</span><span style="color:#399ee6;">head</span><span style="color:#55b4d490;">&gt;
-	&lt;</span><span style="color:#399ee6;">body</span><span style="color:#55b4d490;">&gt;
-		&lt;</span><span style="color:#399ee6;">h1</span><span style="color:#55b4d490;">&gt;</span><span style="color:#61676c;">Wasm Demo</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">h1</span><span style="color:#55b4d490;">&gt;
-		&lt;</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;</span><span style="color:#61676c;">1 + 41 equals</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;
-		&lt;</span><span style="color:#399ee6;">p </span><span style="color:#f29718;">id</span><span style="color:#61676ccc;">=</span><span style="color:#86b300;">&quot;demo&quot;</span><span style="color:#55b4d490;">&gt;&lt;/</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;
-	&lt;/</span><span style="color:#399ee6;">body</span><span style="color:#55b4d490;">&gt;
+  &lt;</span><span style="color:#399ee6;">head</span><span style="color:#55b4d490;">&gt;
+    &lt;</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
+      </span><span style="color:#f29718;">fetch</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;./target/wasm32-unknown-unknown/release/add1.wasm&quot;</span><span style="color:#61676c;">)
+        </span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">response</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="color:#61676c;">response</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">arrayBuffer</span><span style="color:#61676c;">())
+        </span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">bytes</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="font-style:italic;color:#55b4d4;">WebAssembly</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">instantiate</span><span style="color:#61676c;">(bytes))
+        </span><span style="color:#ed9366;">.</span><span style="color:#f29718;">then</span><span style="color:#61676c;">((</span><span style="color:#ff8f40;">results</span><span style="color:#61676c;">) </span><span style="color:#fa6e32;">=&gt; </span><span style="color:#61676c;">{
+          instance </span><span style="color:#ed9366;">= </span><span style="color:#61676c;">results</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">instance</span><span style="color:#61676ccc;">;
+          </span><span style="font-style:italic;color:#55b4d4;">document</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">getElementById</span><span style="color:#61676c;">(</span><span style="color:#86b300;">&quot;demo&quot;</span><span style="color:#61676c;">)</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">innerText </span><span style="color:#ed9366;">=
+            </span><span style="color:#61676c;">instance</span><span style="color:#ed9366;">.</span><span style="color:#61676c;">exports</span><span style="color:#ed9366;">.</span><span style="color:#f29718;">add_one</span><span style="color:#61676c;">(</span><span style="color:#ff8f40;">41</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;
+        </span><span style="color:#61676c;">})
+        </span><span style="color:#ed9366;">.</span><span style="color:#f29718;">catch</span><span style="color:#61676c;">(</span><span style="font-style:italic;color:#55b4d4;">console</span><span style="color:#ed9366;">.</span><span style="color:#f07171;">error</span><span style="color:#61676c;">)</span><span style="color:#61676ccc;">;
+    </span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
+  &lt;/</span><span style="color:#399ee6;">head</span><span style="color:#55b4d490;">&gt;
+  &lt;</span><span style="color:#399ee6;">body</span><span style="color:#55b4d490;">&gt;
+    &lt;</span><span style="color:#399ee6;">h1</span><span style="color:#55b4d490;">&gt;</span><span style="color:#61676c;">Wasm Demo</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">h1</span><span style="color:#55b4d490;">&gt;
+    &lt;</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;</span><span style="color:#61676c;">1 + 41 equals</span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;
+    &lt;</span><span style="color:#399ee6;">p </span><span style="color:#f29718;">id</span><span style="color:#61676ccc;">=</span><span style="color:#86b300;">&quot;demo&quot;</span><span style="color:#55b4d490;">&gt;&lt;/</span><span style="color:#399ee6;">p</span><span style="color:#55b4d490;">&gt;
+  &lt;/</span><span style="color:#399ee6;">body</span><span style="color:#55b4d490;">&gt;
 &lt;/</span><span style="color:#399ee6;">html</span><span style="color:#55b4d490;">&gt;
 </span></pre>
 <p>and run a server to view it <code>python -m SimpleHTTPServer 8000</code></p>
@@ -358,16 +359,16 @@ and it will run anywhere because you already previously downloaded a native inte
 <p>Thats wasm, except lets have a singular language all the other languages can target so you can bring your favorite programming langauge with you and embed the result from websites to native to serverless to games and plugins to microcontrollers.</p>
 <p>Resources:</p>
 <ul>
-<li>https://wasmbyexample.dev</li>
-<li>https://rustwasm.github.io/book/</li>
-<li>Programming WebAssembly with Rust https://pragprog.com/book/khrust/programming-webassembly-with-rust</li>
-<li>Main book that links to the wasm bindgen and wasm pack books https://rustwasm.github.io/docs/book/introduction.html</li>
+<li><a href="https://wasmbyexample.dev">https://wasmbyexample.dev</a></li>
+<li><a href="https://rustwasm.github.io/book/">https://rustwasm.github.io/book/</a></li>
+<li>Programming WebAssembly with Rust <a href="https://pragprog.com/book/khrust/programming-webassembly-with-rust">https://pragprog.com/book/khrust/programming-webassembly-with-rust</a></li>
+<li>Main book that links to the wasm bindgen and wasm pack books <a href="https://rustwasm.github.io/docs/book/introduction.html">https://rustwasm.github.io/docs/book/introduction.html</a></li>
 </ul>
 <h1 id="wasm-for-serverless-via-monteslu">Wasm for serverless via <a href="https://github.com/monteslu">@monteslu</a></h1>
 <p>Walkthrough and demo of the Wrangler tool from Cloudflare</p>
 <ul>
-<li>https://blog.cloudflare.com/introducing-wrangler-cli/</li>
-<li>https://developers.cloudflare.com/workers/templates/boilerplates/rustwasm/</li>
+<li><a href="https://blog.cloudflare.com/introducing-wrangler-cli/">https://blog.cloudflare.com/introducing-wrangler-cli/</a></li>
+<li><a href="https://developers.cloudflare.com/workers/templates/boilerplates/rustwasm/">https://developers.cloudflare.com/workers/templates/boilerplates/rustwasm/</a></li>
 </ul>
 <h1 id="crates-you-should-know-via-bitmage">Crates you should know via <a href="https://github.com/bitmage">@bitmage</a></h1>
 <ul>
