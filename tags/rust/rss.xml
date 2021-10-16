@@ -7,7 +7,22 @@
         <generator>Zola</generator>
         <language>en</language>
         <atom:link href="https%3A//rust.azdevs.org/tags/rust/rss.xml" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Vancouver Rust Visitors, Klabnik&#x27;s Tweet, Rant on Overloading, Language Negotiation</title>
+                <pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-09-29/</link>
+                <guid>https%3A//rust.azdevs.org/2021-09-29/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visitors from Vancouver Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jonathanrlouie&quot;&gt;@JonathanLouie&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;wangxiaoying&quot;&gt;WangXiaoying&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Conversation around &lt;a href=&quot;https:&#x2F;&#x2F;steveklabnik.com&#x2F;&quot;&gt;Steve Klabnik&lt;&#x2F;a&gt;&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;steveklabnik&#x2F;status&#x2F;1437441118745071617&quot;&gt;&amp;quot;Refuse to Let Amazon Define Rust&amp;quot; Tweet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Rant on (lack of) Overloading via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ngbrown&quot;&gt;@NathanBrown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Language Negotiation via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
         
             <item>
                 <title>Crates You Should Know</title>
