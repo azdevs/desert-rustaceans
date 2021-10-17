@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Desert Rust - Vancouver Rust Visitors, Klabnik&#x27;s Tweet, Rant on Overloading, Language Negotiation</title>
+      <title>Desert Rust - Vancouver Rust Visitors, Klabnik&#x27;s Tweet, a Rant on Overloading, Language Negotiation</title>
 
       
         <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;rss.xml">
@@ -150,7 +150,7 @@
                 </li>
                 
                 <li>
-                    <a href="https://rust.azdevs.org/2021-09-29/#rant-on-lack-of-overloading-via-nathanbrown" class="toc-link">Rant on (lack of) Overloading via @NathanBrown</a>
+                    <a href="https://rust.azdevs.org/2021-09-29/#rant-on-the-lack-of-overloading-via-nathanbrown" class="toc-link">Rant on (the lack of) Overloading via @NathanBrown</a>
                     
                 </li>
                 
@@ -179,7 +179,7 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-09-29&#x2F;">Vancouver Rust Visitors, Klabnik&#x27;s Tweet, Rant on Overloading, Language Negotiation</a>
+            <a href="https:&#x2F;&#x2F;rust.azdevs.org&#x2F;2021-09-29&#x2F;">Vancouver Rust Visitors, Klabnik&#x27;s Tweet, a Rant on Overloading, Language Negotiation</a>
         </h1>
         <div class="post__meta">
             <span class="post__time">2021-09-29</span>
@@ -192,7 +192,7 @@
 <ul>
 <li>Visitors from Vancouver Rust via <a href="https://github.com/jonathanrlouie">@JonathanLouie</a> and <a href="https://github.com/wangxiaoying">WangXiaoying</a></li>
 <li>Conversation around <a href="https://steveklabnik.com/">Steve Klabnik</a>'s <a href="https://twitter.com/steveklabnik/status/1437441118745071617">&quot;Refuse to Let Amazon Define Rust&quot; Tweet</a></li>
-<li>Rant on (lack of) Overloading via <a href="https://github.com/ngbrown">@NathanBrown</a></li>
+<li>Rant on (the lack of) Overloading via <a href="https://github.com/ngbrown">@NathanBrown</a></li>
 <li>Language Negotiation via <a href="https://github.com/JesusGuzmanJr">@JesusGuzmanJr</a></li>
 </ul>
 <p id="zola-continue-reading"><a name="continue-reading"></a></p>
@@ -203,7 +203,7 @@
 <p>We talked about <a href="https://twitter.com/steveklabnik/status/1437441118745071617">Steve Klabnik's tweet</a> responding to <a href="https://www.infoworld.com/article/3633002/the-future-of-rust.html">an article by Matt Asay</a> which suggested that Rust's principles were modeled after Amazon's leadership principles.</p>
 <p>Originally Rust was developed by a single person, <a href="https://github.com/graydon">Graydon Hoare</a>. It expanded to <a href="https://github.com/rust-lang/team">a team of developers</a>. Now it is community-run and has a foundation. That's a good thing. Do we really want a <a href="https://tc39.es/">TC39 committee</a> controlled by FAANG companies to hand things down to us? The point of the Rust foundation should be to cycle in new blood.</p>
 <p>We also talked about <a href="https://rust-lang.github.io/wg-async-foundations/vision/roadmap.html">Rust's async roadmap</a>, specifically about how <a href="https://github.com/rust-lang/rfcs/blob/master/text/1598-generic_associated_types.md">Generic Associated Types (GATs)</a> are <a href="https://github.com/rust-lang/generic-associated-types-initiative">coming soon to Rust</a>.</p>
-<h1 id="rant-on-lack-of-overloading-via-nathanbrown">Rant on (lack of) Overloading via <a href="https://github.com/ngbrown">@NathanBrown</a></h1>
+<h1 id="rant-on-the-lack-of-overloading-via-nathanbrown">Rant on (the lack of) Overloading via <a href="https://github.com/ngbrown">@NathanBrown</a></h1>
 <p>Repo: <a href="https://github.com/ngbrown/rust-in-action">https://github.com/ngbrown/rust-in-action</a></p>
 <p>Nathan is working through the projects in the <a href="https://www.manning.com/books/rust-in-action">Rust in Action</a> book by Tim McNamara. In the <a href="https://github.com/ngbrown/rust-in-action/tree/master/ch3-not-quite-file">Chapter 3 project</a>, he has a <code>File</code> struct containing <code>name</code> and <code>data</code> fields. Sometimes he wants to create a <code>File</code> with only a <code>name</code> (<code>data</code> is empty). Sometimes, he wants to create a <code>File</code> with both <code>name</code> and <code>data</code>. He wishes that he could overload the <code>new()</code> method; that way he wouldn't have to think about the name of the method, just its parameters. However, this is not possible in Rust. The best he could do was have <a href="https://github.com/ngbrown/rust-in-action/compare/88d0a060...866c06dd#diff-99615b9c1723d1818911ecb89a2ee4d07e6248defffeaea663894534e2b8fd7eR14-R17">an enum enumerating the possible parameter combinations</a> and use the <a href="https://doc.rust-lang.org/std/convert/trait.From.html">From<T></a> to convert the tuples passed in into the appropriate enum type. There is <a href="https://stackoverflow.com/a/67064869/25182">a StackOverflow answer</a> that describes how to do this.</p>
 <p>Jacob mentioned the <a href="https://doc.rust-lang.org/1.0.0/style/ownership/builders.html">builder pattern</a> as Rust's way of constructing complex data structures. With the builder pattern, you make a struct to hold all the intermediates and then a final build step that checks that you have everything you need before making the final struct. So rather than overloading, we could have something like:</p>
