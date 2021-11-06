@@ -46,7 +46,7 @@
                 <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
                 <link>https%3A//rust.azdevs.org/2019-10-24/</link>
                 <guid>https%3A//rust.azdevs.org/2019-10-24/</guid>
-                <description>&lt;p&gt;Topics Included:&lt;&#x2F;p&gt;
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Binary serialization for bootloader protocols.&lt;&#x2F;li&gt;
 &lt;li&gt;Rust and WASM in a Chrome extension&lt;&#x2F;li&gt;

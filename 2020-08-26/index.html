@@ -210,7 +210,7 @@
 <p id="zola-continue-reading"><a name="continue-reading"></a></p>
 <h1 id="serving-pytorch-predictions-with-rocket-via-danielpbank">Serving PyTorch Predictions with Rocket via <a href="https://github.com/danielbank">@DanielPBank</a></h1>
 <p>Repo: <a href="https://github.com/danielbank/rust-tch-server">https://github.com/danielbank/rust-tch-server</a></p>
-<p>I made an <a href="https://github.com/danielbank/rust-tch-server">example web server</a> with <a href="http://rocket.rs/">Rocket</a> which serves up linear regression predictions using <a href="https://crates.io/crates/tch">tch</a>, a crate providing Rust bindings for PyTorch.  The project consists of two parts:</p>
+<p>I made an <a href="https://github.com/danielbank/rust-tch-server">example web server</a> with <a href="http://rocket.rs/">Rocket</a> which serves up linear regression predictions using <a href="https://crates.io/crates/tch">tch</a>, a crate providing Rust bindings for PyTorch. The project consists of two parts:</p>
 <ul>
 <li>
 <p>An example program called <code>train</code> which trains a linear regression model and saves its weights in a file so that it can be loaded.</p>
@@ -220,7 +220,7 @@
 </li>
 </ul>
 <p>I found that the best place to learn how to use tch to make a linear regression model was the <a href="https://github.com/LaurentMazare/tch-rs/blob/master/tests/nn_tests.rs">tch project's tests</a>.</p>
-<p>The main challenge I faced in making the example was when I wanted to utilize the linear regression model in the prediction route.  The model is created in <code>main()</code>:</p>
+<p>The main challenge I faced in making the example was when I wanted to utilize the linear regression model in the prediction route. The model is created in <code>main()</code>:</p>
 <pre style="background-color:#fafafa;">
 <span style="color:#61676c;">let mut vs = nn::VarStore::new(Device::Cpu);
 let linear = net(&amp;vs.root());
@@ -231,7 +231,7 @@ let linear = net(&amp;vs.root());
   .manage(linear)
   .mount(&quot;/&quot;, routes![index]).launch();
 </span></pre>
-<p>The type of <code>linear</code> is <a href="https://doc.rust-lang.org/edition-guide/rust-2018/trait-system/impl-trait-for-returning-complex-types-with-ease.html#return-position"><code>impl Module</code></a> or &quot;a type that implement nn::Module&quot;.  Trouble arises when I try to wrap this in State in the definition for the route handler:</p>
+<p>The type of <code>linear</code> is <a href="https://doc.rust-lang.org/edition-guide/rust-2018/trait-system/impl-trait-for-returning-complex-types-with-ease.html#return-position"><code>impl Module</code></a> or &quot;a type that implement nn::Module&quot;. Trouble arises when I try to wrap this in State in the definition for the route handler:</p>
 <pre style="background-color:#fafafa;">
 <span style="color:#61676c;">fn predict(bmi: Form&lt;BMI&gt;, classifier_state: State&lt;impl Module&gt;) -&gt; std::string::String { ... }
 </span></pre>
@@ -252,7 +252,7 @@ doesn&#39;t have a size known at compile-time
 
 help: the trait `std::marker::Sized` is not implemented for `(dyn tch::nn::Module + std::marker::Sync + &#39;static)`
 </span></pre>
-<p>The solution I found was to use a <a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html">mutex</a> to ensure that shared access to the model in the route and main thread is protected.  The <code>main()</code> function becomes:</p>
+<p>The solution I found was to use a <a href="https://doc.rust-lang.org/std/sync/struct.Mutex.html">mutex</a> to ensure that shared access to the model in the route and main thread is protected. The <code>main()</code> function becomes:</p>
 <pre style="background-color:#fafafa;">
 <span style="color:#61676c;">rocket::ignite()
   .manage(Mutex::new(Box::new(linear) as Box&lt;dyn Module&gt;))
@@ -262,22 +262,22 @@ help: the trait `std::marker::Sized` is not implemented for `(dyn tch::nn::Modul
 <pre style="background-color:#fafafa;">
 <span style="color:#61676c;">fn predict(bmi: Form&lt;BMI&gt;, classifier_mutex: State&lt;Mutex&lt;Box&lt;dyn Module&gt;&gt;&gt;) -&gt; std::string::String { ... }
 </span></pre>
-<p>Another solution would be to make a concrete type that implements <code>tch::nn::Module</code> and <code>std::marker::Sync</code>.  This would take a little more work but has the advantage that the route handler definition would be a little clearer with <code>State&lt;MyConcreteType&gt;</code>.</p>
+<p>Another solution would be to make a concrete type that implements <code>tch::nn::Module</code> and <code>std::marker::Sync</code>. This would take a little more work but has the advantage that the route handler definition would be a little clearer with <code>State&lt;MyConcreteType&gt;</code>.</p>
 <p>Chris notes that the <a href="https://doc.rust-lang.org/book/ch16-03-shared-state.html#atomic-reference-counting-with-arct">Shared State section</a> of the Rust book recommends using <code>Arc&lt;Send + Sync&gt;</code>.</p>
 <h1 id="extending-a-file-renaming-cli-tool-via-ryanfickenscher">Extending a File Renaming CLI Tool via <a href="https://github.com/zanayr/">@RyanFickenscher</a></h1>
-<p>Ryan shared his <a href="https://github.com/jtkirkpatrick/fdname/pull/1">contribution</a> to <a href="https://github.com/jtkirkpatrick/fdname">fdname</a>, a CLI tool for batch renaming files and directories.  He needed the ability to rename file names as hashes (to prevent duplicate files) as well as removing whitespace from the file names.  In order to implement his changes, he needed to learn how to use a <a href="https://doc.rust-lang.org/std/hash/trait.Hasher.html">hasher</a>.</p>
+<p>Ryan shared his <a href="https://github.com/jtkirkpatrick/fdname/pull/1">contribution</a> to <a href="https://github.com/jtkirkpatrick/fdname">fdname</a>, a CLI tool for batch renaming files and directories. He needed the ability to rename file names as hashes (to prevent duplicate files) as well as removing whitespace from the file names. In order to implement his changes, he needed to learn how to use a <a href="https://doc.rust-lang.org/std/hash/trait.Hasher.html">hasher</a>.</p>
 <h1 id="boa-javascript-lexer-parser-compiler-built-with-rust-via-ryanfickenscher">Boa JavaScript Lexer, Parser, Compiler built with Rust via <a href="https://github.com/zanayr/">@RyanFickenscher</a></h1>
 <p>Another project that Ryan is contributing to is <a href="https://github.com/boa-dev/boa">Boa</a>, an experimental Javascript lexer, parser, and compiler written in Rust.</p>
-<p>One point that came up during his talk was the question how this project is different from <a href="https://github.com/denoland/deno">Deno</a>.  Deno is a secure runtime for JavaScript and TypeScript.  Whereas Deno has portions of its architecture written in Rust like the Tokio thread pool and its execution context (<a href="https://docs.rs/deno/0.3.8/deno/struct.Isolate.html">deno::Isolate</a>), it is still using the V8 engine which is implemented in C++.</p>
+<p>One point that came up during his talk was the question how this project is different from <a href="https://github.com/denoland/deno">Deno</a>. Deno is a secure runtime for JavaScript and TypeScript. Whereas Deno has portions of its architecture written in Rust like the Tokio thread pool and its execution context (<a href="https://docs.rs/deno/0.3.8/deno/struct.Isolate.html">deno::Isolate</a>), it is still using the V8 engine which is implemented in C++.</p>
 <p><img src="https://deno.land/images/schematic_v0.2.png" alt="Deno Architecture Diagram" /></p>
 <h1 id="rust-on-pygamer-updates-via-jacobrosenthal">Rust on PyGamer Updates via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
-<p>Jacob created a new repository for the <a href="https://github.com/jacobrosenthal/pygamer-quickstart">PyGamer board support crate</a>.  This makes it easier to get started than trying to find the <a href="https://github.com/atsamd-rs/atsamd/tree/master/boards/pygamer">pygamer folder</a> nested two levels deep in the <a href="https://github.com/atsamd-rs/atsamd">atsamd</a> repo.</p>
+<p>Jacob created a new repository for the <a href="https://github.com/jacobrosenthal/pygamer-quickstart">PyGamer board support crate</a>. This makes it easier to get started than trying to find the <a href="https://github.com/atsamd-rs/atsamd/tree/master/boards/pygamer">pygamer folder</a> nested two levels deep in the <a href="https://github.com/atsamd-rs/atsamd">atsamd</a> repo.</p>
 <p>He also made improvements to the <a href="https://github.com/jacobrosenthal/hf2-rs/tree/master/hf2">hf2</a> command so now you can simply <code>cargo run --example blah</code> or hit the Play button in VSCode to build and upload to the board.</p>
-<p>One final improvement Jacob made in the examples repo was to light the red LED on the back of the PyGamer during a panic by <a href="https://github.com/jacobrosenthal/pygamer-panic-led">stealing the LED from the underlying device singleton</a>.  You won't know where you panic'ed but at least you can know that you did.</p>
+<p>One final improvement Jacob made in the examples repo was to light the red LED on the back of the PyGamer during a panic by <a href="https://github.com/jacobrosenthal/pygamer-panic-led">stealing the LED from the underlying device singleton</a>. You won't know where you panic'ed but at least you can know that you did.</p>
 <h1 id="smol-async-example-via-jacobrosenthal">Smol Async Example via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
-<p><a href="https://github.com/stjepang/smol">smol</a> is a fast async runtime with a small API.  It was made to address the ecosystem split between <a href="https://github.com/tokio-rs/tokio">tokio</a> and <a href="https://github.com/async-rs/async-std">async-std</a> async libraries.  The author wrote a <a href="https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html">blog post</a> about why he built it.</p>
-<p>Jacob made an <a href="https://github.com/jacobrosenthal/shtcx-rs/blob/smol2/examples/monitor-shtc3.rs">example program using smol</a> which monitors an SHTC3 sensor on Linux in the terminal.  The program shares a thread between 3 different tasks, polling a sensor in one async task, printing it in another async task, and watching for <a href="https://crates.io/crates/ctrlc">control-c signal</a> in a third, joining them all with a <code>futures::or!</code>.</p>
-<p><code>smol::block_on</code> is single-threaded by default. An alternative would be to spawn three threads for each of the processes.  However why should we deal with the overhead of additional syscalls?</p>
+<p><a href="https://github.com/stjepang/smol">smol</a> is a fast async runtime with a small API. It was made to address the ecosystem split between <a href="https://github.com/tokio-rs/tokio">tokio</a> and <a href="https://github.com/async-rs/async-std">async-std</a> async libraries. The author wrote a <a href="https://stjepang.github.io/2020/04/03/why-im-building-a-new-async-runtime.html">blog post</a> about why he built it.</p>
+<p>Jacob made an <a href="https://github.com/jacobrosenthal/shtcx-rs/blob/smol2/examples/monitor-shtc3.rs">example program using smol</a> which monitors an SHTC3 sensor on Linux in the terminal. The program shares a thread between 3 different tasks, polling a sensor in one async task, printing it in another async task, and watching for <a href="https://crates.io/crates/ctrlc">control-c signal</a> in a third, joining them all with a <code>futures::or!</code>.</p>
+<p><code>smol::block_on</code> is single-threaded by default. An alternative would be to spawn three threads for each of the processes. However why should we deal with the overhead of additional syscalls?</p>
 <p><code>smol::channel::unbounded</code> gives you a sender and receiver:</p>
 <pre style="background-color:#fafafa;">
 <span style="color:#61676c;">    smol::block_on(async {
@@ -300,7 +300,7 @@ help: the trait `std::marker::Sized` is not implemented for `(dyn tch::nn::Modul
     }
 }
 </span></pre><h1 id="caveat-on-using-rust-analyzer-in-vscode">Caveat on Using rust-analyzer in VSCode</h1>
-<p><a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer</a> is an experimental modular compiler frontend for Rust.  It's really good but if you are using it in VSCode, there is an important caveat:  As of August 26th 2020, it has not been merged with the <a href="https://github.com/rust-lang/vscode-rust">Rust language extension</a>. <strong>You need to uninstall the Rust language extension when using rust-analyzer</strong>.  It should get merged eventually.</p>
+<p><a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer</a> is an experimental modular compiler frontend for Rust. It's really good but if you are using it in VSCode, there is an important caveat: As of August 26th 2020, it has not been merged with the <a href="https://github.com/rust-lang/vscode-rust">Rust language extension</a>. <strong>You need to uninstall the Rust language extension when using rust-analyzer</strong>. It should get merged eventually.</p>
 <h1 id="dark-forest-via-blainebublitz">Dark Forest via <a href="https://github.com/phated">@BlaineBublitz</a></h1>
 <p>Blaine wasted his week playing / editing the open source, serverless, smart contract game <a href="http://zkga.me/">Dark Forest</a> instead of writing any Rust.</p>
 <h1 id="crates-you-should-know">Crates You Should Know</h1>

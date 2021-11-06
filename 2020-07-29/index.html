@@ -228,7 +228,7 @@
 <h1 id="digital-signal-processing-via-jacobrosenthal">Digital Signal Processing via <a href="https://github.com/jacobrosenthal">@jacobrosenthal</a></h1>
 <p>Repo: <a href="https://www.arm.com/resources/education/books/dsptextbook">https://www.arm.com/resources/education/books/dsptextbook</a></p>
 <p>I've has been working through the <a href="https://www.arm.com/resources/education/books/dsptextbook">Digital Signal Processing using Arm Cortex-M based Microcontrollers</a> book. The goal was to better understand translating C code to Rust, attempting to utilize functional paradigms, and exlore and fill in the math shortcomings in no_std embedded Rust.</p>
-<p>Ive got a nice setup https://github.com/jacobrosenthal/dsp-discoveryf4-rust/  where I'm building up the examples from the book in Rust and some nice patterns around graphing on command line, or in browser when necessary, as well as running them on an actual device and doing timing calculations to see how Rust fares.</p>
+<p>Ive got a nice setup https://github.com/jacobrosenthal/dsp-discoveryf4-rust/ where I'm building up the examples from the book in Rust and some nice patterns around graphing on command line, or in browser when necessary, as well as running them on an actual device and doing timing calculations to see how Rust fares.</p>
 <h2 id="dsp">DSP</h2>
 <p>Digital Signal Processing is about trying to find the signal in the noise. THis is a very short crash course on signals and systems, mostly from the point of view of translating c code to a functional style.</p>
 <h2 id="signals">Signals</h2>
@@ -313,20 +313,20 @@ unit_pulse</span><span style="color:#ed9366;">.</span><span style="color:#f07171
 </span></pre><pre style="background-color:#fafafa;">
 <span style="color:#86b300;">&quot;exponential&quot;</span><span style="color:#f29718;">:</span><span style="color:#61676c;"> 1.0000, 0.8000, 0.6400, 0.5120, 0.4096, 0.3277, 0.2621, 0.2097, 0.1678, 0.1342
 </span><span style="color:#f29718;">⡁</span><span style="color:#61676c;">                                                             1.0
-</span><span style="color:#f29718;">⠄                                                            
-⠂                                                            
-⡁</span><span style="color:#61676c;">     ⠄                                                      
-</span><span style="color:#f29718;">⠄                                                            
-⠂                                                            
-⡁</span><span style="color:#61676c;">           ⠂                                                
-</span><span style="color:#f29718;">⠄                                                            
-⠂</span><span style="color:#61676c;">                 ⠄                                          
-</span><span style="color:#f29718;">⡁                                                            
-⠄</span><span style="color:#61676c;">                       ⠂                                    
-</span><span style="color:#f29718;">⠂</span><span style="color:#61676c;">                             ⡀                              
-</span><span style="color:#f29718;">⡁</span><span style="color:#61676c;">                                   ⡀                        
-</span><span style="color:#f29718;">⠄</span><span style="color:#61676c;">                                         ⡀                  
-</span><span style="color:#f29718;">⠂</span><span style="color:#61676c;">                                               ⠄            
+</span><span style="color:#f29718;">⠄
+⠂
+⡁</span><span style="color:#61676c;">     ⠄
+</span><span style="color:#f29718;">⠄
+⠂
+⡁</span><span style="color:#61676c;">           ⠂
+</span><span style="color:#f29718;">⠄
+⠂</span><span style="color:#61676c;">                 ⠄
+</span><span style="color:#f29718;">⡁
+⠄</span><span style="color:#61676c;">                       ⠂
+</span><span style="color:#f29718;">⠂</span><span style="color:#61676c;">                             ⡀
+</span><span style="color:#f29718;">⡁</span><span style="color:#61676c;">                                   ⡀
+</span><span style="color:#f29718;">⠄</span><span style="color:#61676c;">                                         ⡀
+</span><span style="color:#f29718;">⠂</span><span style="color:#61676c;">                                               ⠄
 </span><span style="color:#f29718;">⠁</span><span style="color:#61676c;">                                                     ⠁       0.1
 </span><span style="color:#f29718;">0.0</span><span style="color:#61676c;">                                                      10.0
 </span></pre>
@@ -336,20 +336,20 @@ unit_pulse</span><span style="color:#ed9366;">.</span><span style="color:#f07171
 </span></pre><pre style="background-color:#fafafa;">
 <span style="color:#61676c;">&quot;exp_window&quot;: 1.0000, 0.8000, 0.6400, 0.5120, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000, 0.0000
 ⡁                                                             1.0
-⠄                                                            
-⠂                                                            
-⡁     ⠁                                                      
-⠄                                                            
-⠂           ⠄                                                
-⡁                                                            
-⠄                 ⠂                                          
-⠂                                                            
-⡁                                                            
-⠄                                                            
-⠂                                                            
-⡁                                                            
-⠄                                                            
-⠂                                                            
+⠄
+⠂
+⡁     ⠁
+⠄
+⠂           ⠄
+⡁
+⠄                 ⠂
+⠂
+⡁
+⠄
+⠂
+⡁
+⠄
+⠂
 ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁⠈ ⠁ 0.0
 0.0                                                      10.0
 </span></pre><h2 id="rust-math-performance-and-cmsis-dsp-sys">Rust math performance and cmsis-dsp-sys</h2>

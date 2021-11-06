@@ -7,7 +7,23 @@
         <generator>Zola</generator>
         <language>en</language>
         <atom:link href="https%3A//rust.azdevs.org/tags/rust/rss.xml" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>🎃 Desert Rust Halloween</title>
+                <pubDate>Wed, 27 Oct 2021 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2021-10-27/</link>
+                <guid>https%3A//rust.azdevs.org/2021-10-27/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;👻 PhantomData Example: RefWithFlag via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;⛓️ New Array Features in Rust 2021 Nightly via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;👹 OS Development on a Raspberry Pi via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;🦇 Deconstructing Floating Point Numbers via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ngbrown&quot;&gt;@NathanBrown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;🐉 Rust Shaders via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;AtnNn&quot;&gt;@EtienneLaurin&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
         
             <item>
                 <title>Vancouver Rust Visitors, Klabnik&#x27;s Tweet, a Rant on Overloading, Language Negotiation</title>

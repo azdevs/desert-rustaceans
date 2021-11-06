@@ -278,11 +278,11 @@ package.json            without_a_bundler.js        without_a_bundler_bg.wasm
 <p>So well need to load our 'script'. Theres one issue with Wasm, we need to manually init</p>
 <pre style="background-color:#fafafa;">
 <span style="color:#55b4d490;">&lt;</span><span style="color:#399ee6;">script </span><span style="color:#f29718;">type</span><span style="color:#61676ccc;">=</span><span style="color:#86b300;">&quot;module&quot;</span><span style="color:#55b4d490;">&gt;
-	</span><span style="color:#fa6e32;">import </span><span style="color:#61676c;">init</span><span style="color:#61676ccc;">, </span><span style="color:#61676c;">{ add } </span><span style="color:#fa6e32;">from </span><span style="color:#86b300;">&#39;./pkg/without_a_bundler.js&#39;</span><span style="color:#61676ccc;">;
-	</span><span style="color:#fa6e32;">async function </span><span style="color:#f29718;">run</span><span style="color:#61676c;">() {
-		</span><span style="color:#fa6e32;">await </span><span style="color:#f29718;">init</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
-	</span><span style="color:#61676c;">}
-	</span><span style="color:#f29718;">run</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
+  </span><span style="color:#fa6e32;">import </span><span style="color:#61676c;">init</span><span style="color:#61676ccc;">, </span><span style="color:#61676c;">{ add } </span><span style="color:#fa6e32;">from </span><span style="color:#86b300;">&quot;./pkg/without_a_bundler.js&quot;</span><span style="color:#61676ccc;">;
+  </span><span style="color:#fa6e32;">async function </span><span style="color:#f29718;">run</span><span style="color:#61676c;">() {
+    </span><span style="color:#fa6e32;">await </span><span style="color:#f29718;">init</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
+  </span><span style="color:#61676c;">}
+  </span><span style="color:#f29718;">run</span><span style="color:#61676c;">()</span><span style="color:#61676ccc;">;
 </span><span style="color:#55b4d490;">&lt;/</span><span style="color:#399ee6;">script</span><span style="color:#55b4d490;">&gt;
 </span></pre>
 <p>Then you just need some kind of simple webserver <code>python3 -m http.server</code> or <code>python -m SimpleHTTPServer</code></p>
