@@ -7,7 +7,20 @@
         <generator>Zola</generator>
         <language>en</language>
         <atom:link href="https%3A//rust.azdevs.org/rss.xml" rel="self" type="application/rss+xml"/>
-        <lastBuildDate>Wed, 27 Oct 2021 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 27 Apr 2022 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>An Exploration of wasmcloud Microservices</title>
+                <pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate>
+                <link>https%3A//rust.azdevs.org/2022-04-27/</link>
+                <guid>https%3A//rust.azdevs.org/2022-04-27/</guid>
+                <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;What&#x27;s changed in Rust? via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jacobrosenthal&quot;&gt;@jacobrosenthal&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;An Exploration of wasmcloud Microservices via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;louiemontes&quot;&gt;@LJ&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</description>
+            </item>
         
             <item>
                 <title>🎃 Desert Rust Halloween</title>
