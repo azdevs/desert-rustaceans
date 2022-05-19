@@ -182,6 +182,11 @@
                     
                 </li>
                 
+                <li>
+                    <a href="https://rust.azdevs.org/2022-04-27/#notes-from-the-presentation" class="toc-link">Notes From The Presentation</a>
+                    
+                </li>
+                
             </ul>
         </nav>
     </div>
@@ -243,7 +248,69 @@
 <ul>
 <li><a href="https://rust-lang.github.io/rfcs/3176-cargo-multi-dep-artifacts.html">multidep</a>: Allow Cargo packages to depend on the same crate multiple times with different dependency names, to support artifact dependencies for multiple targets. This will make it easier to build a native binary project that depends on one or more wasm crates.</li>
 </ul>
+<h1 id="notes-from-the-presentation">Notes From The Presentation</h1>
+<pre style="background-color:#fafafa;">
+<span style="color:#61676c;">The paradigm How 
+	Actor: Client that&#39;s taking initiative in the system,	
+	Provider: Services-provider, 
 
+
+	Lattice: RPC -bus layer- over the OS Go server - messaging broker.  Contract defined between actor and provider to route message from the actor to the provider that can service the request
+
+	No complex config!
+
+
+Setup:
+
+1. Need wash command
+	brew tap wasmcloud/wasmcloud
+	brew install wash
+		
+2. Need a NATS server
+3. Need the wasmcloud runtime:
+short circuit 2. + 3. this with a docker-compose.yml wasmcloud recommends
+
+
+Gotchas:
+	Make sure you have the Xcode stuff installed
+	JQ, get it installed
+	If on Monterey turn off Settings -&gt; Sharing -&gt; Airplay Receiver to keep port 5000 from constantly being in use
+
+http://localhost:4000
+	start actor
+
+		OCI wasmcloud.azurecr.io/echo:0.3.4
+	Start provider
+		OCI wasmcloud.azurecr.io/httpserver:0.14.10
+	Start link
+		Contract ID wasmcloud:httpserver
+		Values address=0.0.0.0:8080
+
+
+	try to request it!
+		curl localhost:8080/echo
+
+
+I want to make an actor!:
+
+
+Toolchain addition for your directory:
+rustup target add wasm32-unknown-unknown
+
+wash new actor test
+Build the actor
+
+Add the actor with start actor from file
+
+Now link!
+# Paste your actor ID after the `=` below (with no space after the `=`)
+export HELLO_ACTOR_ID=MDFV5HY6HIQBL46DKOYGAHIAS5NNRTFFCURIQZFO245RC2D7PSWGAEKR
+
+wash ctl link put ${HELLO_ACTOR_ID} VAG3QITQQ2ODAOWB5TTQSDJ53XK3SHBEIFNK4AYJ5RKAX2UNSCAPHA5M wasmcloud:httpserver address=0.0.0.0:8087
+
+
+curl &quot;localhost:8087?name=Carol&quot;
+</span></pre>
     </div>
 
     
