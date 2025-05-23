@@ -2,18 +2,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Desert Rust</title>
-        <link>https%3A//rust.azdevs.org</link>
+        <link>https%3A//azdevs.github.io/desert-rustaceans</link>
         <description>Phoenix Rust Community</description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https%3A//rust.azdevs.org/tags/performance/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https%3A//azdevs.github.io/desert-rustaceans/tags/performance/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
         
             <item>
                 <title>Embedded and Performance</title>
                 <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-02-26/</link>
-                <guid>https%3A//rust.azdevs.org/2020-02-26/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-02-26/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-02-26/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Intro to Embedded via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;craigjb&quot;&gt;@craig_jbishop&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;

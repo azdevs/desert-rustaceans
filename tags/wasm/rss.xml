@@ -2,18 +2,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Desert Rust</title>
-        <link>https%3A//rust.azdevs.org</link>
+        <link>https%3A//azdevs.github.io/desert-rustaceans</link>
         <description>Phoenix Rust Community</description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https%3A//rust.azdevs.org/tags/wasm/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https%3A//azdevs.github.io/desert-rustaceans/tags/wasm/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
         
             <item>
                 <title>Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</title>
                 <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2021-04-28/</link>
-                <guid>https%3A//rust.azdevs.org/2021-04-28/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2021-04-28/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2021-04-28/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Minimal Dockerfile for Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -27,8 +27,8 @@
             <item>
                 <title>Lightning Talks</title>
                 <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-06-24/</link>
-                <guid>https%3A//rust.azdevs.org/2020-06-24/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-06-24/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-06-24/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Mandelbrot Plotter in Python and WASM via &lt;a href=&quot;https:&#x2F;&#x2F;hoetker.engineer&#x2F;&quot;&gt;@AndrewHoetker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -42,8 +42,8 @@
             <item>
                 <title>sqlx and WASM in React</title>
                 <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-05-27/</link>
-                <guid>https%3A//rust.azdevs.org/2020-05-27/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-05-27/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-05-27/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;SQLX via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -55,8 +55,8 @@
             <item>
                 <title>Web Assembly</title>
                 <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2019-09-25/</link>
-                <guid>https%3A//rust.azdevs.org/2019-09-25/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2019-09-25/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2019-09-25/</guid>
                 <description>&lt;p&gt;Join us at HeatSync Labs for a tour of web assembly from Rust. Last months web talks left more questions than answers so we dig deeper into Wasm.&lt;&#x2F;p&gt;
 &lt;p&gt;Come help us knock out some topics like:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -71,8 +71,8 @@
             <item>
                 <title>Frontend Web</title>
                 <pubDate>Wed, 28 Aug 2019 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2019-08-28/</link>
-                <guid>https%3A//rust.azdevs.org/2019-08-28/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2019-08-28/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2019-08-28/</guid>
                 <description>&lt;p&gt;Join us at HeatSync Labs for a tour of front end web work in Rust. Yep, were doing front end in Rust, too. Theres a lot to talk about so help us by knocking off some of these topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;static site generators&lt;&#x2F;li&gt;

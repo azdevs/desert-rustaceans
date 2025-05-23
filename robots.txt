@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://rust.azdevs.org/sitemap.xml
+Sitemap: https://azdevs.github.io/desert-rustaceans/sitemap.xml

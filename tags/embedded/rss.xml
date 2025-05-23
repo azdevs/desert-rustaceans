@@ -2,18 +2,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Desert Rust</title>
-        <link>https%3A//rust.azdevs.org</link>
+        <link>https%3A//azdevs.github.io/desert-rustaceans</link>
         <description>Phoenix Rust Community</description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https%3A//rust.azdevs.org/tags/embedded/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https%3A//azdevs.github.io/desert-rustaceans/tags/embedded/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate>
         
             <item>
                 <title>Reactive Rocket on AWS Lambda and Async Bluetooth on the BBC micro:bit Microcontroller</title>
                 <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2021-08-25/</link>
-                <guid>https%3A//rust.azdevs.org/2021-08-25/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2021-08-25/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2021-08-25/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Reactive Rocket on AWS Lambda via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -25,8 +25,8 @@
             <item>
                 <title>Bevy Game Engine, Embedded Graphics Updates, and Enforcing API Spec with Traits</title>
                 <pubDate>Wed, 26 May 2021 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2021-05-26/</link>
-                <guid>https%3A//rust.azdevs.org/2021-05-26/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2021-05-26/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2021-05-26/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Wheel of Names with Bevy via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -40,8 +40,8 @@
             <item>
                 <title>Links for Learning Rust</title>
                 <pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2021-03-31/</link>
-                <guid>https%3A//rust.azdevs.org/2021-03-31/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2021-03-31/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2021-03-31/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Rust Search Extension via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;peter-kehl&quot;&gt;@PeterKehl&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -54,8 +54,8 @@
             <item>
                 <title>LRU Cache, Const Generics, and Embedded Stuff</title>
                 <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2021-02-24/</link>
-                <guid>https%3A//rust.azdevs.org/2021-02-24/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2021-02-24/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2021-02-24/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Building an LRU Cache via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -70,8 +70,8 @@
             <item>
                 <title>Discord Bots, Digital Signal Processing, and TensorFlow Lite</title>
                 <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-07-29/</link>
-                <guid>https%3A//rust.azdevs.org/2020-07-29/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-07-29/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-07-29/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Discord Bots via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mysteriouspants&quot;&gt;@mysteriouspants&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -84,8 +84,8 @@
             <item>
                 <title>Embedded and Performance</title>
                 <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-02-26/</link>
-                <guid>https%3A//rust.azdevs.org/2020-02-26/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-02-26/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-02-26/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Intro to Embedded via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;craigjb&quot;&gt;@craig_jbishop&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -99,8 +99,8 @@
             <item>
                 <title>Cross Compiling Rust to Your Pi</title>
                 <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2019-07-24/</link>
-                <guid>https%3A//rust.azdevs.org/2019-07-24/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2019-07-24/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2019-07-24/</guid>
                 <description>&lt;p&gt;Daniel Bank has been working with Snips offline machine learning stack and explains the ins and outs of cross compiling for a different architecture than you&#x27;re machine.&lt;&#x2F;p&gt;
 </description>
             </item>
@@ -108,8 +108,8 @@
             <item>
                 <title>Embedded</title>
                 <pubDate>Wed, 27 Feb 2019 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2019-02-27/</link>
-                <guid>https%3A//rust.azdevs.org/2019-02-27/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2019-02-27/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2019-02-27/</guid>
                 <description>&lt;p&gt;I know there are folks in our community already making drones, stepper drivers, robots, and more so well have plenty to talk about.&lt;&#x2F;p&gt;
 </description>
             </item>

@@ -2,18 +2,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Desert Rust</title>
-        <link>https%3A//rust.azdevs.org</link>
+        <link>https%3A//azdevs.github.io/desert-rustaceans</link>
         <description>Phoenix Rust Community</description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https%3A//rust.azdevs.org/tags/cli/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https%3A//azdevs.github.io/desert-rustaceans/tags/cli/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 26 Aug 2020 00:00:00 +0000</lastBuildDate>
         
             <item>
                 <title>Serving PyTorch Predictions, Extending CLI Tools, and JavaScript Engines</title>
                 <pubDate>Wed, 26 Aug 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-08-26/</link>
-                <guid>https%3A//rust.azdevs.org/2020-08-26/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-08-26/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-08-26/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Serving PyTorch Predictions with Rocket via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;danielbank&quot;&gt;@DanielPBank&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -29,8 +29,8 @@
             <item>
                 <title>Lightning Talks</title>
                 <pubDate>Wed, 24 Jun 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-06-24/</link>
-                <guid>https%3A//rust.azdevs.org/2020-06-24/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-06-24/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-06-24/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Mandelbrot Plotter in Python and WASM via &lt;a href=&quot;https:&#x2F;&#x2F;hoetker.engineer&#x2F;&quot;&gt;@AndrewHoetker&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -44,8 +44,8 @@
             <item>
                 <title>uf2 Binary Serialization and Cargo Subcommands</title>
                 <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2019-10-24/</link>
-                <guid>https%3A//rust.azdevs.org/2019-10-24/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2019-10-24/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2019-10-24/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Binary serialization for bootloader protocols.&lt;&#x2F;li&gt;

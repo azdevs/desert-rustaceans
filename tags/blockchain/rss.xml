@@ -2,18 +2,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Desert Rust</title>
-        <link>https%3A//rust.azdevs.org</link>
+        <link>https%3A//azdevs.github.io/desert-rustaceans</link>
         <description>Phoenix Rust Community</description>
         <generator>Zola</generator>
         <language>en</language>
-        <atom:link href="https%3A//rust.azdevs.org/tags/blockchain/rss.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https%3A//azdevs.github.io/desert-rustaceans/tags/blockchain/rss.xml" rel="self" type="application/rss+xml"/>
         <lastBuildDate>Wed, 28 Apr 2021 00:00:00 +0000</lastBuildDate>
         
             <item>
                 <title>Faster Rust Docker Builds, Rust in Linux, Mocking in Rust, and More</title>
                 <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2021-04-28/</link>
-                <guid>https%3A//rust.azdevs.org/2021-04-28/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2021-04-28/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2021-04-28/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Minimal Dockerfile for Rust via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;JesusGuzmanJr&quot;&gt;@JesusGuzmanJr&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -27,8 +27,8 @@
             <item>
                 <title>Gaming Discussion, More Dark Forest, and Async Rust</title>
                 <pubDate>Wed, 28 Oct 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-10-28/</link>
-                <guid>https%3A//rust.azdevs.org/2020-10-28/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-10-28/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-10-28/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;A Discussion about Game Development&lt;&#x2F;li&gt;
@@ -41,8 +41,8 @@
             <item>
                 <title>Rants, Linking with C Libraries, the Dark Forest Game, and an Async Rocket Web Server</title>
                 <pubDate>Wed, 30 Sep 2020 00:00:00 +0000</pubDate>
-                <link>https%3A//rust.azdevs.org/2020-09-30/</link>
-                <guid>https%3A//rust.azdevs.org/2020-09-30/</guid>
+                <link>https%3A//azdevs.github.io/desert-rustaceans/2020-09-30/</link>
+                <guid>https%3A//azdevs.github.io/desert-rustaceans/2020-09-30/</guid>
                 <description>&lt;p&gt;Topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Rants via &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nelsonjchen&quot;&gt;@NelsonChen&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;phated&quot;&gt;@BlaineBublitz&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
