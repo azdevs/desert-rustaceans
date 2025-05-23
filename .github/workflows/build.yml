@@ -15,6 +15,7 @@ jobs:
           submodules: true
       - run: curl -s -L https://github.com/getzola/zola/releases/download/v0.8.0/zola-v0.8.0-x86_64-unknown-linux-gnu.tar.gz | sudo tar xvzf - -C /usr/local/bin
       - run: zola build
+      # - run: echo 'azdevs.github.io/desert-rustaceans' > public/CNAME
       - run: touch public/.nojekyll
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
