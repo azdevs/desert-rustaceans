@@ -35,7 +35,7 @@ even_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/tags", name = "Topics"},
     {url = "https://www.meetup.com/Desert-Rustaceans/", name = "Meetup"},
-    {url = "https://discord.gg/6SNb2daz", name = "PHX Tech Council Discord #rust"},
+    {url = "https://discord.gg/yaNcXzV4tr", name = "Discord (#rust)"},
     {url = "https://github.com/azdevs/desert-rustaceans", name = "Github"},
 ]
 
