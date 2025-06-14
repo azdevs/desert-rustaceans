@@ -18,32 +18,34 @@ Of course [crates.io](https://crates.io) where you get you some crates.
 
 Want to give a talk at our meetup? Want to hear more about a particular topic? Here are some topic ideas ...
 
-* wasm
-* embedded
-* cli
-* networking (futures/coroutines/async await)  wont really be ready until 4 months from now anyway
-* c/c++ to rust and back, ffi bindings, bindgen, unsafe
-* declarative/reactive/functional rust
-* web frameworks (api), wasm frontend!
-* whats wrong with rust, lightning talks from elixer/reason/ proponents
-* cryptography
-* cryptocurrency and blockchain
-* servo and mozilla
-* halloween special, scare me with your worst procedural macros
-* Patterns (prelude, alias, that github, unwrap_or_else  match and ?)
-* antipatterns
-* mobile ios android
-
+- wasm
+- embedded
+- cli
+- networking (futures/coroutines/async await) wont really be ready until 4 months from now anyway
+- c/c++ to rust and back, ffi bindings, bindgen, unsafe
+- declarative/reactive/functional rust
+- web frameworks (api), wasm frontend!
+- whats wrong with rust, lightning talks from elixer/reason/ proponents
+- cryptography
+- cryptocurrency and blockchain
+- servo and mozilla
+- halloween special, scare me with your worst procedural macros
+- Patterns (prelude, alias, that github, unwrap_or_else match and ?)
+- antipatterns
+- mobile ios android
 
 ## Building the site locally
+
 [Install zola](https://www.getzola.org/documentation/getting-started/installation/) then:
-```
+
+```bash
 git clone --recursive git@github.com:azdevs/desert-rustaceans.git
 cd desert-rustaceans
 zola build && zola serve
 ```
+
 And you'll see your the url the local server is available at
 
-Check out the rest of the docs on that page. Help always wanted, and were not tied to this theme at all. 
+Check out the rest of the docs on that page. Help always wanted, and were not tied to this theme at all.
 
 Pushes to master automatically deploy to our github pages via travis
